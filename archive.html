@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Archive &amp; Index · DRIP</title>
+<link rel="stylesheet" href="colors_and_type.css" />
+<link rel="stylesheet" href="drip-pages.css" />
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+  :root{ --pa:#477E59; --pa-deep:#2f5d42; --pa-soft:#8FB59B; --pa-wash:rgba(71,126,89,.07); }
+  /* stat tiles */
+  .statrow{ display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
+  .st{ background:var(--surface); border:1px solid var(--border); border-radius:var(--r-lg); padding:16px 18px; box-shadow:var(--shadow-sm); }
+  .st .big{ font-family:var(--font-display); font-size:34px; line-height:1; color:var(--pa-deep); }
+  .st .lab{ font-family:var(--font-sans); font-size:11.5px; color:var(--ink-3); letter-spacing:.04em; text-transform:uppercase; margin-top:6px; }
+  .st.up .big{ font-size:22px; padding-top:8px; } .st.up .big small{ font-size:13px; }
+  /* channel cards */
+  .chcards{ display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
+  .chc{ background:var(--surface); border:1px solid var(--border); border-radius:var(--r-lg); padding:18px; box-shadow:var(--shadow-sm); }
+  .chc .ci2{ width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; color:#fff; margin-bottom:11px; }
+  .chc .ci2 i{ width:18px; height:18px; } .chc h4{ font-family:var(--font-serif); font-weight:700; font-size:16px; margin:0 0 5px; }
+  .chc p{ font-family:var(--font-body); font-size:12.5px; line-height:1.5; color:var(--ink-2); margin:0; }
+  /* search + controls */
+  .controls{ display:flex; gap:12px; flex-wrap:wrap; align-items:center; margin-bottom:18px; }
+  .search2{ position:relative; flex:1; min-width:240px; }
+  .search2 i{ position:absolute; left:13px; top:50%; transform:translateY(-50%); width:16px; height:16px; color:var(--ink-3); }
+  .search2 input{ width:100%; box-sizing:border-box; font-family:var(--font-sans); font-size:14px; padding:11px 14px 11px 38px;
+    border:1px solid var(--border-strong); border-radius:var(--r-pill); background:var(--surface); color:var(--ink); outline:none; }
+  .search2 input:focus{ border-color:var(--pa); }
+  .sortsel{ font-family:var(--font-sans); font-size:13px; padding:10px 14px; border:1px solid var(--border-strong);
+    border-radius:var(--r-pill); background:var(--surface); color:var(--ink); cursor:pointer; }
+  .facetgroups{ display:flex; flex-direction:column; gap:12px; margin-bottom:22px; }
+  .fg{ display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+  .fg .fglab{ font-family:var(--font-sans); font-weight:600; font-size:11px; text-transform:uppercase; letter-spacing:.1em; color:var(--ink-3); width:74px; flex:none; }
+  .ft{ font-family:var(--font-sans); font-weight:600; font-size:12px; padding:5px 12px; border-radius:var(--r-pill);
+    border:1.4px solid var(--border-strong); background:transparent; color:var(--ink-2); cursor:pointer; transition:.14s; display:inline-flex; align-items:center; gap:6px; }
+  .ft:hover{ color:var(--ink); } .ft .sw{ width:8px; height:8px; border-radius:50%; }
+  .ft.on{ color:#fff; border-color:transparent; }
+  .clearf{ font-family:var(--font-sans); font-size:12px; color:var(--clay-deep); background:none; border:none; cursor:pointer; text-decoration:underline; }
+  /* results */
+  .reslist{ display:flex; flex-direction:column; gap:12px; }
+  .rescount{ font-family:var(--font-sans); font-size:12.5px; color:var(--ink-3); margin-bottom:12px; }
+  .item{ position:relative; display:block; text-decoration:none; color:inherit; background:var(--surface); border:1px solid var(--border);
+    border-radius:var(--r-lg); padding:18px 20px 16px 22px; box-shadow:var(--shadow-sm); transition:.16s; overflow:hidden; }
+  .item:hover{ transform:translateY(-2px); box-shadow:var(--shadow-md); border-color:var(--pa-soft); }
+  .item .bar{ position:absolute; left:0; top:0; bottom:0; width:5px; }
+  .item .top{ display:flex; align-items:flex-start; justify-content:space-between; gap:12px; }
+  .item h3{ font-family:var(--font-serif); font-weight:700; font-size:18px; margin:0 0 6px; line-height:1.2; }
+  .item .sum{ font-family:var(--font-body); font-size:13.5px; line-height:1.55; color:var(--ink-2); margin:0 0 11px; max-width:78ch; }
+  .badges{ display:flex; flex-wrap:wrap; gap:6px; align-items:center; }
+  .bdg{ font-family:var(--font-sans); font-weight:600; font-size:10.5px; letter-spacing:.02em; padding:3px 9px; border-radius:var(--r-pill);
+    display:inline-flex; align-items:center; gap:5px; }
+  .bdg.type{ background:var(--paper-2); color:var(--ink-2); border:1px solid var(--border); }
+  .bdg.pil{ color:#fff; } .bdg.src{ background:rgba(36,31,27,.06); color:var(--ink-2); border:1px solid var(--border); }
+  .bdg.src .sw{ width:7px; height:7px; border-radius:50%; }
+  .bdg.ok{ background:rgba(71,126,89,.14); color:var(--forest-deep); border:1px solid rgba(71,126,89,.3); }
+  .bdg.pend{ background:rgba(232,177,51,.16); color:#9a6a14; border:1px solid rgba(232,177,51,.4); }
+  .bdg.draft{ background:var(--clay); color:#fff; }
+  .item .meta2{ display:flex; align-items:center; gap:12px; margin-top:10px; font-family:var(--font-sans); font-size:11.5px; color:var(--ink-3); flex-wrap:wrap; }
+  .item .open2{ font-family:var(--font-sans); font-weight:600; font-size:12px; color:var(--pa); display:inline-flex; align-items:center; gap:4px; }
+  .item .open2 i{ width:13px; height:13px; }
+  /* recently added rail */
+  .rail{ display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:12px; }
+  .rcard{ background:var(--pa-wash); border:1px solid var(--pa-soft); border-radius:var(--r-md); padding:15px 16px; text-decoration:none; color:inherit; display:block; transition:.15s; }
+  .rcard:hover{ background:#fff; box-shadow:var(--shadow-sm); }
+  .rcard .when{ font-family:var(--font-sans); font-size:10.5px; font-weight:600; color:var(--pa-deep); letter-spacing:.04em; }
+  .rcard .rt{ font-family:var(--font-serif); font-weight:700; font-size:14.5px; margin:5px 0 0; line-height:1.25; }
+  /* intake */
+  .intake{ display:grid; grid-template-columns:1.1fr .9fr; gap:22px; }
+  .form .fl{ display:block; font-family:var(--font-sans); font-size:11px; text-transform:uppercase; letter-spacing:.06em; color:var(--ink-3); margin:12px 0 5px; }
+  .form input[type=text], .form textarea, .form select{ width:100%; box-sizing:border-box; font-family:var(--font-sans); font-size:13.5px;
+    padding:9px 12px; border:1px solid var(--border-strong); border-radius:var(--r-sm); background:var(--surface); color:var(--ink); outline:none; }
+  .form textarea{ min-height:64px; resize:vertical; font-family:var(--font-body); }
+  .form input:focus, .form textarea:focus, .form select:focus{ border-color:var(--pa); }
+  .form .row{ display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+  .pchips{ display:flex; flex-wrap:wrap; gap:6px; }
+  .pchip{ font-family:var(--font-sans); font-weight:600; font-size:11.5px; padding:5px 11px; border-radius:var(--r-pill);
+    border:1.4px solid var(--border-strong); background:transparent; cursor:pointer; }
+  .pchip.on{ color:#fff; border-color:transparent; }
+  .ck2{ display:flex; align-items:center; gap:8px; font-family:var(--font-sans); font-size:13px; color:var(--ink-2); margin-top:12px; cursor:pointer; }
+  .ck2 input{ width:15px; height:15px; accent-color:var(--pa); }
+  .formbtns{ display:flex; gap:8px; flex-wrap:wrap; margin-top:16px; }
+  .btn{ font-family:var(--font-sans); font-weight:600; font-size:13px; padding:9px 16px; border-radius:var(--r-pill); border:1px solid var(--pa);
+    background:var(--pa); color:#fff; cursor:pointer; transition:.15s; } .btn:hover{ background:var(--pa-deep); }
+  .btn.ghost{ background:transparent; color:var(--pa); } .btn.ghost:hover{ background:var(--pa-wash); }
+  .btn.warn{ border-color:var(--clay); background:transparent; color:var(--clay-deep); } .btn.warn:hover{ background:rgba(207,113,93,.1); }
+  .howbox{ background:var(--paper-2); border:1px solid var(--border); border-radius:var(--r-md); padding:18px 20px; }
+  .howbox ol{ margin:8px 0 0; padding-left:18px; } .howbox li{ font-family:var(--font-body); font-size:13px; line-height:1.6; color:var(--ink-2); margin-bottom:7px; }
+  .flash{ position:fixed; bottom:22px; left:50%; transform:translate(-50%,12px); z-index:60; opacity:0; transition:.3s;
+    background:var(--forest-deep); color:#fff; font-family:var(--font-sans); font-size:13px; padding:11px 20px; border-radius:var(--r-pill); box-shadow:var(--shadow-lg); }
+  .flash.show{ opacity:1; transform:translate(-50%,0); }
+  @media(max-width:820px){ .statrow,.chcards{ grid-template-columns:1fr 1fr; } .intake{ grid-template-columns:1fr; } .form .row{ grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+
+<nav class="topnav">
+  <div class="page">
+    <a class="home" href="DRIP.html"><span class="dm">DRIP<span class="dot">.</span></span><small>Dryland Research &amp; Information Platform</small></a>
+    <div class="crumbs"><a href="DRIP.html">DRIP</a><span class="sep">/</span><span class="here">Archive &amp; Index</span></div>
+  </div>
+</nav>
+
+<header class="phero">
+  <div class="grain"></div>
+  <div class="page">
+    <div class="tagline">The living registry</div>
+    <div class="ttl"><span class="pic"><i data-lucide="library"></i></span><h1>Archive &amp; Index</h1></div>
+    <p class="lead">One catalogue for everything DRIP holds — searchable, indexed by pillar, type and source, and built to <b>stay current</b>. Every knowledge product is logged with where it came from and when it last changed, so the platform never goes dormant again.</p>
+    <div class="kpis" id="kpis"></div>
+  </div>
+</header>
+
+<!-- how it stays current -->
+<section>
+  <div class="page">
+    <div class="sec-head"><span class="sec-num">01</span><h2 class="sec-title">How the index stays current</h2></div>
+    <p class="prose" style="max-width:72ch;">New knowledge enters the archive through four channels. Whatever the route, each item is catalogued the same way — given a pillar, a type, a source and a date — so the index updates the moment it is added.</p>
+    <div class="chcards" id="channels"></div>
+  </div>
+</section>
+
+<!-- the index -->
+<section>
+  <div class="page">
+    <div class="sec-head"><span class="sec-num">02</span><h2 class="sec-title">The index</h2></div>
+    <div class="controls">
+      <div class="search2"><i data-lucide="search"></i><input id="q" type="text" placeholder="Search titles, summaries, tags, origin…" autocomplete="off" /></div>
+      <select class="sortsel" id="sort">
+        <option value="updated">Sort · recently updated</option>
+        <option value="added">Sort · recently added</option>
+        <option value="az">Sort · A–Z</option>
+      </select>
+    </div>
+    <div class="facetgroups" id="facets"></div>
+    <div class="rescount" id="rescount"></div>
+    <div class="reslist" id="results"></div>
+  </div>
+</section>
+
+<!-- recently added -->
+<section>
+  <div class="page">
+    <div class="sec-head"><span class="sec-num">03</span><h2 class="sec-title">Recently added &amp; updated</h2></div>
+    <div class="rail" id="rail"></div>
+  </div>
+</section>
+
+<!-- intake -->
+<section>
+  <div class="page">
+    <div class="sec-head"><span class="sec-num">04</span><h2 class="sec-title">Add to the archive</h2></div>
+    <div class="intake">
+      <div class="form">
+        <label class="fl">Title</label><input id="f_title" type="text" placeholder="e.g. Angola SHARP+ resilience dataset" />
+        <label class="fl">Summary</label><textarea id="f_sum" placeholder="One or two sentences."></textarea>
+        <div class="row">
+          <div><label class="fl">Type</label><select id="f_type"></select></div>
+          <div><label class="fl">Source channel</label><select id="f_source"></select></div>
+        </div>
+        <div class="row">
+          <div><label class="fl">Origin (who / where)</label><input id="f_origin" type="text" placeholder="e.g. Namibia child project" /></div>
+          <div><label class="fl">Link / URL</label><input id="f_url" type="text" placeholder="relative path or https://…" /></div>
+        </div>
+        <label class="fl">Pillars</label><div class="pchips" id="f_pillars"></div>
+        <label class="fl">Tags (comma-separated)</label><input id="f_tags" type="text" placeholder="seed banks, Malawi, dataset" />
+        <label class="ck2"><input id="f_valid" type="checkbox" /> Mark validated (else logged as pending)</label>
+        <div class="formbtns">
+          <button class="btn" id="addBtn"><i data-lucide="plus" style="width:14px;height:14px;vertical-align:-2px;"></i> Add to archive</button>
+          <button class="btn ghost" id="exportBtn">Export updated catalogue</button>
+          <button class="btn warn" id="clearBtn">Clear my drafts</button>
+        </div>
+      </div>
+      <div class="howbox">
+        <span class="kick">How updating works</span>
+        <ol>
+          <li><b>Add</b> an item here — it’s saved in your browser as a draft and appears in the index immediately, tagged <b>Draft</b>.</li>
+          <li>When ready, <b>Export updated catalogue</b> — this downloads a refreshed <code>drip-archive.js</code> containing every entry plus your drafts.</li>
+          <li><b>Commit</b> that file to the site (replace the old one). The drafts become permanent catalogue entries for everyone.</li>
+          <li>The same flow handles <b>reference files</b>, <b>Regional Exchange</b> contributions and <b>knowledge-hub</b> pulls — set the source channel accordingly.</li>
+        </ol>
+        <p class="prose" style="font-size:12.5px; margin:12px 0 0; color:var(--ink-3);">Drafts live only in your browser until exported and committed, so nothing is lost on refresh — but they aren’t shared until the catalogue file is updated.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="page">
+    <p>DRIP · Archive &amp; Index — the living registry of the Dryland Research &amp; Information Platform. A project of the DSL-IP, actively overseen by a UN Officer (programme design · complex programme management · AI · rural development); related to the Programme’s behaviour-change assessments and research. Information is drawn from publicly available sources.</p>
+  </div>
+</footer>
+
+<div class="flash" id="flash"></div>
+
+<script src="drip-archive.js"></script>
+<script>
+const PILLARS = {
+  coordination:{ n:'Coordination & Exchange', c:'#33B193' },
+  assessment:{   n:'Assessment & Evidence',   c:'#3F8FCB' },
+  production:{   n:'Sustainable Production',   c:'#477E59' },
+  gender:{       n:'Gender & Inclusion',       c:'#CF715D' },
+  monitoring:{   n:'Monitoring & Learning',    c:'#E0A23C' },
+  knowledge:{    n:'Knowledge & Outreach',     c:'#B8862F' },
+  finance:{      n:'Finance & Governance',     c:'#754C29' }
+};
+const SRCCOLOR = { direct:'#477E59', reference:'#3F8FCB', exchange:'#33B193', hub:'#8a6d3b' };
+const META = window.DRIP_ARCHIVE_META;
+const DRAFTKEY = 'drip_archive_drafts_v1';
+
+function loadDrafts(){ try { return JSON.parse(localStorage.getItem(DRAFTKEY)) || []; } catch(e){ return []; } }
+function saveDrafts(d){ try { localStorage.setItem(DRAFTKEY, JSON.stringify(d)); } catch(e){} }
+function allEntries(){ return [ ...window.DRIP_ARCHIVE, ...loadDrafts() ]; }
+
+const state = { q:'', sort:'updated', facets:{ pillar:new Set(), type:new Set(), source:new Set(), status:new Set() } };
+const fmtDate = s => { const d = new Date(s); return isNaN(d) ? s : d.toLocaleDateString('en-GB',{ day:'numeric', month:'short', year:'numeric' }); };
+
+/* ---- KPIs ---- */
+function renderKpis(){
+  const all = allEntries();
+  const val = all.filter(e=>e.status==='validated').length;
+  const last = all.map(e=>e.updated).sort().slice(-1)[0] || META.updated;
+  document.getElementById('kpis').innerHTML =
+    `<span class="kpi"><i data-lucide="boxes"></i><span>Items</span><b>${all.length}</b></span>`+
+    `<span class="kpi"><i data-lucide="badge-check"></i><span>Validated</span><b>${val}</b></span>`+
+    `<span class="kpi"><i data-lucide="clock"></i><span>Pending</span><b>${all.length-val}</b></span>`+
+    `<span class="kpi"><i data-lucide="history"></i><span>Last updated</span><b>${fmtDate(last)}</b></span>`;
+}
+
+/* ---- channels ---- */
+function renderChannels(){
+  const box = document.getElementById('channels');
+  box.innerHTML = Object.entries(META.channels).map(([k,c])=>
+    `<div class="chc"><div class="ci2" style="background:${SRCCOLOR[k]}"><i data-lucide="${c.icon}"></i></div>
+     <h4>${c.label}</h4><p>${c.note}</p></div>`).join('');
+}
+
+/* ---- facets ---- */
+function renderFacets(){
+  const all = allEntries();
+  const count = (grp,val) => all.filter(e => grp==='pillar' ? (e.pillars||[]).includes(val) : grp==='status' ? e.status===val : e[grp]===val).length;
+  const groups = [
+    { key:'pillar', lab:'Pillar', items:Object.keys(PILLARS).map(id=>({id,n:PILLARS[id].n,c:PILLARS[id].c})) },
+    { key:'type',   lab:'Type',   items:Object.keys(META.types).map(id=>({id,n:META.types[id]})) },
+    { key:'source', lab:'Source', items:Object.keys(META.channels).map(id=>({id,n:META.channels[id].label,c:SRCCOLOR[id]})) },
+    { key:'status', lab:'Status', items:[{id:'validated',n:'Validated'},{id:'pending',n:'Pending'}] }
+  ];
+  const fb = document.getElementById('facets');
+  fb.innerHTML = groups.map(g=>{
+    const chips = g.items.map(it=>{
+      const n = count(g.key,it.id); if(!n) return '';
+      const on = state.facets[g.key].has(it.id);
+      const sw = it.c ? `<span class="sw" style="background:${it.c}"></span>` : '';
+      return `<button class="ft${on?' on':''}" data-grp="${g.key}" data-val="${it.id}" style="${on&&it.c?`background:${it.c};`:''}">${sw}${it.n} <span style="opacity:.6">${n}</span></button>`;
+    }).join('');
+    return `<div class="fg"><span class="fglab">${g.lab}</span>${chips}</div>`;
+  }).join('') + `<div class="fg"><span class="fglab"></span><button class="clearf" id="clearFacets">Clear all filters</button></div>`;
+  fb.querySelectorAll('.ft').forEach(b=> b.addEventListener('click',()=>{
+    const s = state.facets[b.dataset.grp]; s.has(b.dataset.val)?s.delete(b.dataset.val):s.add(b.dataset.val); renderAll();
+  }));
+  document.getElementById('clearFacets').addEventListener('click',()=>{ Object.values(state.facets).forEach(s=>s.clear()); state.q=''; document.getElementById('q').value=''; renderAll(); });
+}
+
+/* ---- results ---- */
+function matches(e){
+  if(state.q){ const q=state.q.toLowerCase();
+    const hay=(e.title+' '+e.summary+' '+(e.tags||[]).join(' ')+' '+(e.origin||'')).toLowerCase();
+    if(!hay.includes(q)) return false; }
+  const f=state.facets;
+  if(f.pillar.size && !(e.pillars||[]).some(p=>f.pillar.has(p))) return false;
+  if(f.type.size && !f.type.has(e.type)) return false;
+  if(f.source.size && !f.source.has(e.source)) return false;
+  if(f.status.size && !f.status.has(e.status)) return false;
+  return true;
+}
+function sortEntries(arr){
+  if(state.sort==='az') return arr.sort((a,b)=>a.title.localeCompare(b.title));
+  const key = state.sort==='added' ? 'added' : 'updated';
+  return arr.sort((a,b)=> (b[key]||'').localeCompare(a[key]||''));
+}
+function renderResults(){
+  const drafts = new Set(loadDrafts().map(d=>d.id));
+  const list = sortEntries(allEntries().filter(matches));
+  document.getElementById('rescount').textContent = `${list.length} item${list.length===1?'':'s'}${list.length!==allEntries().length?` of ${allEntries().length}`:''}`;
+  document.getElementById('results').innerHTML = list.map(e=>{
+    const prim = (e.pillars||[])[0]; const pc = prim?PILLARS[prim].c:'#999';
+    const pills = (e.pillars||[]).map(p=>`<span class="bdg pil" style="background:${PILLARS[p].c}">${PILLARS[p].n}</span>`).join('');
+    const ch = META.channels[e.source]||{label:e.source};
+    const tag = (window.DRIP_ARCHIVE_META.types[e.type]||e.type);
+    const ext = /^https?:/.test(e.url||'');
+    return `<a class="item" href="${e.url||'#'}" ${ext?'target="_blank" rel="noopener"':''}>
+      <span class="bar" style="background:${pc}"></span>
+      <div class="top"><div>
+        <div class="badges" style="margin-bottom:7px;">
+          <span class="bdg type">${tag}</span>${pills}
+          <span class="bdg ${e.status==='validated'?'ok':'pend'}">${e.status==='validated'?'Validated':'Pending'}</span>
+          ${drafts.has(e.id)?'<span class="bdg draft">Draft</span>':''}
+        </div>
+        <h3>${e.title}</h3>
+        <p class="sum">${e.summary||''}</p>
+      </div></div>
+      <div class="badges"><span class="bdg src"><span class="sw" style="background:${SRCCOLOR[e.source]||'#999'}"></span>${ch.label}</span>
+        ${(e.tags||[]).slice(0,4).map(t=>`<span class="bdg type">#${t}</span>`).join('')}</div>
+      <div class="meta2"><span><i data-lucide="map-pin" style="width:12px;height:12px;vertical-align:-2px;"></i> ${e.origin||'—'}</span>
+        <span>Added ${fmtDate(e.added)}</span><span>Updated ${fmtDate(e.updated)}</span>
+        <span class="open2" style="margin-left:auto">Open <i data-lucide="arrow-up-right"></i></span></div>
+    </a>`;
+  }).join('') || `<p class="prose" style="color:var(--ink-3)">No items match these filters.</p>`;
+}
+
+/* ---- recently added rail ---- */
+function renderRail(){
+  const recent = allEntries().slice().sort((a,b)=>(b.added||'').localeCompare(a.added||'')).slice(0,5);
+  document.getElementById('rail').innerHTML = recent.map(e=>{
+    const ch = META.channels[e.source]||{label:e.source};
+    return `<a class="rcard" href="${e.url||'#'}"><div class="when">${fmtDate(e.added)} · ${ch.label}</div><div class="rt">${e.title}</div></a>`;
+  }).join('');
+}
+
+function renderAll(){ renderFacets(); renderResults(); renderRail(); renderKpis(); if(window.lucide) lucide.createIcons(); }
+
+/* ---- intake form ---- */
+function buildForm(){
+  document.getElementById('f_type').innerHTML = Object.entries(META.types).map(([k,v])=>`<option value="${k}">${v}</option>`).join('');
+  document.getElementById('f_source').innerHTML = Object.entries(META.channels).map(([k,v])=>`<option value="${k}">${v.label}</option>`).join('');
+  const pillSel = new Set();
+  const box = document.getElementById('f_pillars');
+  box.innerHTML = Object.entries(PILLARS).map(([id,p])=>`<button type="button" class="pchip" data-p="${id}" style="color:${p.c};border-color:${p.c}">${p.n}</button>`).join('');
+  box.querySelectorAll('.pchip').forEach(b=>b.addEventListener('click',()=>{
+    const id=b.dataset.p; if(pillSel.has(id)){pillSel.delete(id);b.classList.remove('on');b.style.background='';}
+    else{pillSel.add(id);b.classList.add('on');b.style.background=PILLARS[id].c;}
+  }));
+  document.getElementById('addBtn').addEventListener('click',()=>{
+    const title=document.getElementById('f_title').value.trim(); if(!title){ flash('Add a title first'); return; }
+    const today=new Date().toISOString().slice(0,10);
+    const slug=title.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,40)+'-'+Date.now().toString(36).slice(-4);
+    const entry={ id:slug, title, summary:document.getElementById('f_sum').value.trim(),
+      type:document.getElementById('f_type').value, pillars:[...pillSel],
+      source:document.getElementById('f_source').value, origin:document.getElementById('f_origin').value.trim(),
+      status:document.getElementById('f_valid').checked?'validated':'pending',
+      url:document.getElementById('f_url').value.trim(),
+      tags:document.getElementById('f_tags').value.split(',').map(t=>t.trim()).filter(Boolean), added:today, updated:today };
+    const d=loadDrafts(); d.push(entry); saveDrafts(d);
+    ['f_title','f_sum','f_origin','f_url','f_tags'].forEach(i=>document.getElementById(i).value='');
+    document.getElementById('f_valid').checked=false; pillSel.clear(); box.querySelectorAll('.pchip').forEach(b=>{b.classList.remove('on');b.style.background='';});
+    renderAll(); flash('Added — appears as a draft. Export to make it permanent.');
+  });
+  document.getElementById('exportBtn').addEventListener('click',()=>{
+    const all=[...window.DRIP_ARCHIVE, ...loadDrafts()];
+    const meta={...META}; meta.updated=new Date().toISOString().slice(0,10);
+    const text='/* DRIP — knowledge catalogue (exported '+meta.updated+') */\n'+
+      'window.DRIP_ARCHIVE_META = '+JSON.stringify(meta,null,2)+';\n\n'+
+      'window.DRIP_ARCHIVE = '+JSON.stringify(all,null,2)+';\n';
+    const blob=new Blob([text],{type:'text/javascript'}); const a=document.createElement('a');
+    a.href=URL.createObjectURL(blob); a.download='drip-archive.js'; document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(()=>URL.revokeObjectURL(a.href),1500); flash('Exported drip-archive.js — commit it to the site to publish.');
+  });
+  document.getElementById('clearBtn').addEventListener('click',()=>{ if(confirm('Remove all your unexported drafts?')){ localStorage.removeItem(DRAFTKEY); renderAll(); flash('Drafts cleared'); } });
+}
+function flash(msg){ const f=document.getElementById('flash'); f.textContent=msg; f.classList.add('show'); clearTimeout(f._t); f._t=setTimeout(()=>f.classList.remove('show'),2200); }
+
+document.getElementById('q').addEventListener('input',e=>{ state.q=e.target.value; renderResults(); if(window.lucide) lucide.createIcons(); });
+document.getElementById('sort').addEventListener('change',e=>{ state.sort=e.target.value; renderResults(); if(window.lucide) lucide.createIcons(); });
+
+renderChannels(); buildForm(); renderAll();
+</script>
+</body>
+</html>

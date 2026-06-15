@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>The Constellation — DRIP</title>
+<style>
+:root{--terracotta:#CF715D;--forest:#477E59;--forest-deep:#356046;--cream:#F5F2E8;--amber:#F8B133;--teal:#33B193;
+ --soil:#2C2A24;--ink:#2b2723;--muted:#6b6258;--line:#e2dccc;--paper2:#efe9da;}
+*{box-sizing:border-box;}html,body{margin:0;background:#d9d3c4;color:var(--ink);font-family:"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.55;}
+.page{background:var(--cream);max-width:1080px;margin:14px auto;padding:0 0 40px;box-shadow:0 6px 26px rgba(0,0,0,.22);position:relative;overflow:hidden;}
+.hero{background:var(--soil);color:var(--cream);padding:46px 52px 38px;position:relative;overflow:hidden;}
+.hero .orbit{position:absolute;right:-70px;top:-70px;width:320px;height:320px;opacity:.5;pointer-events:none;}
+.hero .kick{font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--teal);font-weight:700;position:relative;}
+.hero h1{font-family:Georgia,serif;font-size:42px;margin:10px 0 0;color:var(--cream);line-height:1.06;position:relative;}
+.hero p{margin:18px 0 0;color:#d8cfb8;font-size:15px;max-width:60ch;position:relative;}
+.hero .btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px;position:relative;}
+.hero .btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:700;font-size:13.5px;border-radius:999px;padding:12px 22px;transition:.15s;}
+.hero .btn.primary{background:var(--amber);color:#3a2408;}.hero .btn.primary:hover{background:#ffc658;}
+.hero .btn.ghost{background:rgba(245,242,232,.12);color:#fff;border:1px solid rgba(245,242,232,.32);}.hero .btn.ghost:hover{background:rgba(245,242,232,.2);}
+.band{height:8px;background:linear-gradient(90deg,var(--teal) 0 33%,var(--amber) 33% 66%,var(--terracotta) 66% 100%);}
+.body{padding:34px 52px 0;}
+.eyebrow{font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--forest);}
+h2{font-family:Georgia,serif;color:var(--ink);font-size:25px;margin:8px 0 6px;}
+.lead{font-size:14.5px;color:var(--muted);max-width:72ch;margin:0 0 8px;}
+.sec{margin-top:40px;}
+.lenses{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px;}
+.lens{background:var(--paper2);border:1px solid var(--line);border-radius:12px;padding:15px 16px;}
+.lens .d{width:11px;height:11px;border-radius:50%;margin-bottom:9px;box-shadow:0 0 8px currentColor;}
+.lens h4{font-family:Georgia,serif;font-size:15px;margin:0 0 4px;color:var(--ink);}
+.lens p{font-size:12px;line-height:1.5;color:var(--muted);margin:0;}
+.modules{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px;}
+.mod{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 18px 16px;display:flex;flex-direction:column;}
+.mod .mtop{display:flex;align-items:baseline;justify-content:space-between;gap:8px;}
+.mod .code{font-family:"SFMono-Regular",Consolas,monospace;font-weight:700;font-size:15px;color:var(--ink);}
+.mod .price{font-family:Georgia,serif;font-weight:700;font-size:16px;color:var(--forest-deep);}
+.mod .tag{font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--terracotta);margin:8px 0 6px;}
+.mod p{font-size:12px;line-height:1.5;color:var(--muted);margin:0 0 14px;}
+.mod .get{margin-top:auto;text-decoration:none;text-align:center;font-weight:700;font-size:12.5px;border-radius:999px;padding:9px 12px;background:var(--paper2);color:var(--forest-deep);border:1px solid var(--line);transition:.15s;}
+.mod .get:hover{background:var(--forest);color:#fff;border-color:var(--forest);}
+.mod.flagship{border-color:var(--amber);box-shadow:0 6px 20px rgba(248,177,51,.16);}
+.mod.flagship .get{background:var(--amber);color:#3a2408;border-color:var(--amber);}
+.mod.flagship .get:hover{background:#ffc658;}
+.kitnote{font-size:12px;color:var(--muted);margin-top:14px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
+.kitnote .bundle{text-decoration:none;font-weight:700;color:var(--terracotta);}
+.fin{margin-top:40px;background:linear-gradient(160deg,#3a2914,#2c2118);color:var(--cream);border-radius:16px;padding:34px 36px;position:relative;overflow:hidden;}
+.fin .eyebrow{color:var(--amber);}
+.fin h2{color:#fff;}
+.fin p{color:rgba(245,242,232,.88);font-size:14px;max-width:74ch;}
+.ladder{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:22px 0;}
+.tier{background:rgba(245,242,232,.07);border:1px solid rgba(245,242,232,.18);border-radius:12px;padding:14px 10px;text-align:center;}
+.tier .pr{font-family:Georgia,serif;font-size:26px;color:#fff;line-height:1;}
+.tier .nm{font-size:11.5px;font-weight:600;color:var(--amber);margin-top:7px;}
+.fin .finbtns{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px;}
+.fin .btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:700;font-size:13.5px;border-radius:999px;padding:12px 22px;}
+.fin .btn.primary{background:var(--amber);color:#3a2408;}
+.fin .btn.ghost{background:rgba(245,242,232,.1);color:#fff;border:1px solid rgba(245,242,232,.3);}
+.honest{font-size:12px;line-height:1.55;color:rgba(245,242,232,.7);background:rgba(207,113,93,.16);border:1px solid rgba(227,162,147,.4);border-radius:10px;padding:13px 16px;margin-top:18px;}
+.foot{font-size:10.5px;color:var(--muted);border-top:1px solid var(--line);margin:34px 52px 0;padding-top:12px;}
+@media(max-width:760px){.lenses,.modules{grid-template-columns:1fr 1fr;}.ladder{grid-template-columns:repeat(2,1fr);}.hero,.body{padding-left:24px;padding-right:24px;}.foot{margin-left:24px;margin-right:24px;}}
+</style><style>
+.drip-topbar{position:sticky;top:0;z-index:9999;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;
+ background:#1f523a;border-bottom:1px solid rgba(245,242,232,.16);padding:11px 24px;
+ font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased;}
+.drip-topbar *{box-sizing:border-box;}
+.drip-topbar .db-brand{display:flex;align-items:center;gap:11px;text-decoration:none;}
+.drip-topbar .db-dm{font-weight:800;font-size:23px;letter-spacing:.04em;color:#F5F2E8;line-height:1;}
+.drip-topbar .db-dm span{color:#F8B133;}
+.drip-topbar .db-sub{font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;color:rgba(245,242,232,.6);}
+.drip-topbar .db-nav{display:flex;align-items:center;gap:4px;flex-wrap:wrap;justify-content:flex-end;}
+.drip-topbar .db-nav a{font-size:13px;font-weight:500;color:rgba(245,242,232,.86);text-decoration:none;padding:7px 11px;border-radius:999px;white-space:nowrap;transition:.14s;text-transform:none;letter-spacing:normal;}
+.drip-topbar .db-nav a:hover{background:rgba(245,242,232,.12);color:#fff;}
+.drip-topbar .db-nav a.db-home{background:rgba(245,242,232,.12);color:#fff;}
+.drip-topbar .db-nav a.db-cta{background:#F8B133;color:#3a2408;font-weight:600;}
+.drip-topbar .db-nav a.db-cta:hover{background:#ffc658;}
+@media(max-width:780px){.drip-topbar .db-sub{display:none;}.drip-topbar{padding:9px 16px;}.drip-topbar .db-nav a{padding:6px 9px;font-size:12px;}}
+</style>
+</head><body>
+<div class="drip-topbar">
+  <a class="db-brand" href="DRIP.html"><span class="db-dm">DRIP<span>.</span></span><span class="db-sub">Dryland Research &amp; Information Platform</span></a>
+  <nav class="db-nav">
+    <a class="db-home" href="DRIP.html">⌂ Home</a>
+    <a href="DRIP.html#story">About</a>
+    <a href="DRIP Map.html">Map</a>
+    <a href="DRIP.html#pillars-sec">Research</a>
+    <a href="DRIP.html#transparency">Transparency &amp; Data Policy</a>
+    <a class="db-cta" href="DRIP.html#partner">Become a partner</a>
+  </nav>
+</div>
+
+<section class="page">
+  <div class="hero">
+    <svg class="orbit" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="60" cy="60" r="9" fill="#F8B133"/>
+      <circle cx="96" cy="40" r="5" fill="#33B193"/><circle cx="34" cy="92" r="4.5" fill="#CF715D"/>
+      <circle cx="98" cy="86" r="4" fill="#fff"/><circle cx="28" cy="40" r="4" fill="#477E59"/><circle cx="64" cy="20" r="3.6" fill="#fff"/>
+      <g stroke="#e6c98a" stroke-width="1" opacity=".5"><line x1="60" y1="60" x2="96" y2="40"/><line x1="60" y1="60" x2="34" y2="92"/><line x1="60" y1="60" x2="98" y2="86"/><line x1="60" y1="60" x2="28" y2="40"/><line x1="60" y1="60" x2="64" y2="20"/></g>
+    </svg>
+    <div class="kick">DRIP · Coordination &amp; Exchange</div>
+    <h1>The Constellation</h1>
+    <p>The whole Programme as a living, interactive 3D network — its coordination core, frameworks, country projects, partners and themes, all connected. The navigational backbone of DRIP, and the connective tissue of its knowledge exchange.</p>
+    <div class="btns">
+      <a class="btn primary" href="DSL-IP Constellation Dashboard.html">▶ Enter the interactive tool</a>
+      <a class="btn ghost" href="#kit">Get the modules ↓</a>
+    </div>
+  </div>
+  <div class="band"></div>
+
+  <div class="body">
+
+    <div class="sec" id="about">
+      <div class="eyebrow">What it is</div>
+      <h2>One system, many lenses</h2>
+      <p class="lead">The Constellation maps the Drylands Sustainable Landscapes Impact Program as a network you can explore — drag to orbit, click a node to open it, and trace how coordination, knowledge and monitoring data move between the parts. It belongs to the platform's <strong>Coordination &amp; Exchange</strong> pillar: the place where the whole Programme is aligned, pooled and connected.</p>
+      <div class="lenses">
+        <div class="lens"><span class="d" style="color:#5ba9de;background:#5ba9de"></span><h4>Programme</h4><p>The whole Programme at a glance — core, functions, the two REMs and the eleven child projects.</p></div>
+        <div class="lens"><span class="d" style="color:#36b3a6;background:#36b3a6"></span><h4>Regional Exchange</h4><p>The REM as the bridge between global coordination and country delivery.</p></div>
+        <div class="lens"><span class="d" style="color:#6fb04a;background:#6fb04a"></span><h4>Project</h4><p>A single child project end to end — Malawi from ministries down to farmers.</p></div>
+        <div class="lens"><span class="d" style="color:#edab73;background:#edab73"></span><h4>Information flow</h4><p>How knowledge and monitoring data move — with a packet router that times any journey.</p></div>
+        <div class="lens"><span class="d" style="color:#b08fe0;background:#b08fe0"></span><h4>Merged network</h4><p>Everything in one network, with shared nodes acting as bridges.</p></div>
+        <div class="lens"><span class="d" style="color:#f2b33d;background:#f2b33d"></span><h4>Builder</h4><p>Add nodes, connect and delete them, validate, and export your own network.</p></div>
+      </div>
+    </div>
+
+    <div class="sec" id="kit">
+      <div class="eyebrow">The Constellation Kit</div>
+      <h2>Six modules — build your own</h2>
+      <p class="lead">The Constellation is also a reusable toolkit: map <em>any</em> network as an interactive 3D constellation. The engine plus five modules, plain HTML/JS, no build step, offline-ready. Each is a per-download on Patreon — buy only what you need, or take the whole kit.</p>
+      <div class="modules">
+        <div class="mod flagship">
+          <div class="mtop"><span class="code">cn-core</span><span class="price">$5</span></div>
+          <div class="tag">The engine</div>
+          <p>The standalone 3D constellation — orbit, zoom, hover, click. Every other module plugs into this.</p>
+          <a class="get" href="PATREON_URL" target="_blank" rel="noopener">Download on Patreon</a>
+        </div>
+        <div class="mod">
+          <div class="mtop"><span class="code">cn-data</span><span class="price">$4</span></div>
+          <div class="tag">The model</div>
+          <p>A clean, documented node/link schema with loaders — bring a spreadsheet, get a constellation.</p>
+          <a class="get" href="PATREON_URL" target="_blank" rel="noopener">Download on Patreon</a>
+        </div>
+        <div class="mod">
+          <div class="mtop"><span class="code">cn-theme</span><span class="price">$4</span></div>
+          <div class="tag">One palette</div>
+          <p>Re-skin everything from one place — change four colours and the whole network follows.</p>
+          <a class="get" href="PATREON_URL" target="_blank" rel="noopener">Download on Patreon</a>
+        </div>
+        <div class="mod">
+          <div class="mtop"><span class="code">cn-tree</span><span class="price">$4</span></div>
+          <div class="tag">Navigate</div>
+          <p>A collapsible tree menu beside the network — isolate any branch and find your way through.</p>
+          <a class="get" href="PATREON_URL" target="_blank" rel="noopener">Download on Patreon</a>
+        </div>
+        <div class="mod">
+          <div class="mtop"><span class="code">cn-popup</span><span class="price">$4</span></div>
+          <div class="tag">Every node, a dossier</div>
+          <p>Click a node for an elegant info-card — title, details, links — while the rest dims.</p>
+          <a class="get" href="PATREON_URL" target="_blank" rel="noopener">Download on Patreon</a>
+        </div>
+        <div class="mod flagship">
+          <div class="mtop"><span class="code">cn-flow</span><span class="price">$7</span></div>
+          <div class="tag">Watch it move</div>
+          <p>Luminous particles streaming along links — both ways — for circulation and accountability.</p>
+          <a class="get" href="PATREON_URL" target="_blank" rel="noopener">Download on Patreon</a>
+        </div>
+      </div>
+      <div class="kitnote">
+        <span>Bought separately the kit is <strong>$28</strong>.</span>
+        <a class="bundle" href="PATREON_URL" target="_blank" rel="noopener">Take the complete kit for $20 →</a>
+      </div>
+    </div>
+
+    <div class="fin">
+      <div class="eyebrow">Innovative Funding Research for Drylands</div>
+      <h2>Fund a node. Watch it move.</h2>
+      <p>The Constellation isn't only a map — it's the instrument for DRIP's open research question: <strong>how do people allocate resources over a complex network when they can choose their preferred lever of change?</strong> The nodes are the potential levers of change. Through Patreon, members pick a node to direct their contribution toward, and the platform becomes their dashboard — revealing more of that node's flows at each tier. Membership, the per-download Constellation codes and node-directed contributions are all instruments of the same Innovative Funding Research for Drylands.</p>
+      <div class="ladder">
+        <div class="tier"><div class="pr">$3</div><div class="nm">Observer</div></div>
+        <div class="tier"><div class="pr">$5</div><div class="nm">Contributor</div></div>
+        <div class="tier"><div class="pr">$10</div><div class="nm">Tracker</div></div>
+        <div class="tier"><div class="pr">$20</div><div class="nm">Auditor</div></div>
+        <div class="tier"><div class="pr">$100</div><div class="nm">VS&amp;L</div></div>
+      </div>
+      <div class="finbtns">
+        <a class="btn primary" href="PATREON_URL" target="_blank" rel="noopener">Contribute on Patreon →</a>
+        <a class="btn ghost" href="Publication Plan/Publication Plan.html">Read the funding plan</a>
+      </div>
+      <div class="honest">Choosing a node is a <strong>symbolic, experimental allocation tracked as data</strong> — part of the Programme's behaviour-change research, <strong>not</strong> a transfer to a specific village or farmer. The $100 tier is a simulation of a Village Savings &amp; Loan.</div>
+    </div>
+
+  </div>
+  <div class="foot">The Constellation · DRIP Coordination &amp; Exchange · a project of the DSL-IP, funded by the GEF, overseen by a UN Officer; information drawn from publicly available sources. The Constellation Kit is offered as a reusable toolkit; purchases support the platform and its research.</div>
+</section>
+</body></html>
