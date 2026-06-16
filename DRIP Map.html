@@ -127,12 +127,10 @@ const GROUPS = {
 /* ---------- nodes = pages ---------- */
 const NODES = [
   { id:'drip',  g:'hub',       label:'DRIP — Home',           url:'DRIP.html', val:30,
-    desc:'The platform landing page — the activation story, the seven pillars, the library and funding.' },
+    desc:'The platform landing page — the activation story, the seven pillars and the library.' },
 
   { id:'const', g:'tool',      label:'The Constellation',     url:'Constellation.html', val:16,
-    desc:'Coordination & Exchange — the whole Programme as a living 3D map (five lenses + Builder), its six modules, and the Innovative Funding Research for Drylands.' },
-  { id:'pub',   g:'tool',      label:'Funding Research',      url:'Publication Plan/Publication Plan.html', val:12,
-    desc:'The multi-platform publication strategy and the Innovative Funding Research for Drylands.' },
+    desc:'Coordination & Exchange — the whole Programme as a living 3D map (five lenses + Builder).' },
   { id:'mon',   g:'tool',      label:'Monitoring system',     url:'dsl-ip-monitoring/DSL-IP Monitoring System.html', val:13,
     desc:'The participatory M&E architecture — results flow from communities up to GEF reporting.' },
   { id:'arch',  g:'tool',      label:'Archive & Index',       url:'archive.html', val:13,
@@ -175,7 +173,7 @@ const NODES = [
 const L = (s,t)=>({source:s,target:t});
 const LINKS = [
   L('drip','const'), L('drip','ilam'), L('drip','slpf'), L('drip','rem'), L('drip','fin'),
-  L('drip','mon'), L('drip','arch'), L('drip','pub'),
+  L('drip','mon'), L('drip','arch'),
   L('drip','about'), L('drip','trans'), L('drip','part'),
   L('ilam','ndvi'), L('ilam','fire'), L('ilam','lada'), L('ilam','stake'),
   L('ilam','vchain'), L('ilam','hh'), L('ilam','carbon'),
@@ -183,12 +181,12 @@ const LINKS = [
   L('slpf','csb'), L('slpf','fff'), L('slpf','ffs'), L('csb','ffs'), L('fff','vchain'), L('ffs','hh'),
   L('gap','wwl'), L('drip','gap'), L('drip','sist'), L('drip','dfsm'), L('dfsm','rem'),
   L('slpf','sna'), L('sna','ffs'), L('sna','gap'), L('sna','stake'), L('sna','const'),
-  L('const','arch'), L('mon','arch'), L('pub','part'),
+  L('const','arch'), L('mon','arch'),
   L('mon','ilam'), L('mon','ndvi'), L('mon','fire'), L('mon','lada'), L('mon','stake'), L('mon','vchain'), L('mon','hh'), L('mon','carbon')
 ];
 
 /* ---------- deterministic layout (pinned: hub centre, primaries on a sphere, children near parents) ---------- */
-const PRIMARIES = ['const','pub','mon','arch','ilam','slpf','rem','fin','gap','dfsm','about','trans','part'];
+const PRIMARIES = ['const','mon','arch','ilam','slpf','rem','fin','gap','dfsm','about','trans','part'];
 const CHILDREN  = { ilam:['ndvi','fire','lada','stake','vchain','hh','carbon'], slpf:['csb','fff','ffs','slm','sist','sna'], gap:['wwl'] };
 const R1 = 170;
 const POS = { drip:[0,0,0] };
