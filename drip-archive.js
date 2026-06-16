@@ -52,12 +52,6 @@ window.DRIP_ARCHIVE = [
     summary:'The whole Programme as a living, interactive 3D map — five lenses plus a Builder. The navigational backbone of DRIP.',
     tags:['network','visualisation','platform','KM'], added:'2026-06-10', updated:'2026-06-13' },
 
-  { id:'publication-plan', title:'Publication & funding plan', type:'tool', pillars:['finance','knowledge'],
-    source:'direct', origin:'DRIP', status:'pending',
-    url:'Publication Plan/Publication Plan.html',
-    summary:'Multi-platform publication strategy and the Innovative Funding Research for Drylands that helps DRIP sustain itself.',
-    tags:['strategy','funding','Patreon','outreach'], added:'2026-06-12', updated:'2026-06-12' },
-
   { id:'monitoring-system', title:'Monitoring system', type:'tool', pillars:['monitoring'],
     source:'direct', origin:'GCP MEL working group', status:'validated',
     url:'dsl-ip-monitoring/DSL-IP Monitoring System.html',

@@ -14,7 +14,7 @@ Monitoring system, the Publication & funding plan, and the knowledge stories.
 
 1. Create a repository (public repo = free Pages; private needs a paid/Enterprise plan).
 2. Upload **the contents of this folder** to the repo root (keep the folder structure:
-   `assets/`, `fonts/`, `Publication Plan/`, `dsl-ip-monitoring/`, the `.html` files,
+   `assets/`, `fonts/`, `dsl-ip-monitoring/`, the `.html` files,
    `colors_and_type.css`, `gap-*.js`, `slpf-assets/`, and `.nojekyll`).
 3. Repo **Settings → Pages → Source: Deploy from a branch → `main` / root → Save**.
 4. Wait ~1 minute. The site is live at

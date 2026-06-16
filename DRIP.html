@@ -338,8 +338,7 @@
   .flag-es{ background:linear-gradient(#AA151B 0 25%, #F1BF00 25% 75%, #AA151B 75%); }
   .flag-fr{ background:linear-gradient(90deg,#0055A4 0 33.34%,#fff 33.34% 66.67%,#EF4135 66.67%); }
   .flag-ru{ background:linear-gradient(#fff 0 33.34%,#0039A6 33.34% 66.67%,#D52B1E 66.67%); }
-  .flag-ar{ background:#137a45; }
-  .flag-ar::before{ content:''; position:absolute; left:50%; top:50%; width:9px; height:1.5px; background:#fff; transform:translate(-50%,-50%); border-radius:2px; }
+  .flag-ar{ background:#137a45 url("assets/flag-ar.png") center/cover no-repeat; }
   .flag-zh{ background:#DE2910; }
   .flag-zh::before{ content:'\2605'; position:absolute; left:3px; top:50%; transform:translateY(-50%); color:#FFDE00; font-size:8px; line-height:1; }
   @media(max-width:880px){ .langsw-ic{ display:none; } .langsw{ margin-left:0; } }
@@ -452,7 +451,7 @@
         <div class="dotrow"><span class="pdot"><i data-lucide="landmark"></i></span><span class="pbar"></span></div>
         <div class="pstat">Phase 3 · the goal</div>
         <h3>Institutionalise</h3>
-        <p>Embed DRIP back into the Drylands Program as standing infrastructure — leveraging the DSL-IP knowledge-management structure and secured by an innovative, self-sustaining funding stream.</p>
+        <p>Embed DRIP back into the Drylands Program as standing infrastructure — leveraging the DSL-IP knowledge-management structure so its upkeep sits inside the Programme’s mandate.</p>
       </div>
     </div>
 
@@ -510,15 +509,8 @@
           <span class="ic"><i data-lucide="share-2"></i></span>
           <div class="meta">Coordination &amp; Exchange · 3D network</div>
           <h4>The Constellation</h4>
-          <p>The whole Programme as a living, interactive map — five lenses plus a Builder, its modules, and the finance experiment. The navigational backbone of DRIP.</p>
+          <p>The whole Programme as a living, interactive map — five lenses plus a Builder. The navigational backbone of DRIP.</p>
           <span class="open">Open the Constellation <i data-lucide="arrow-right"></i></span>
-        </a>
-        <a class="lcard tool" href="Publication Plan/Publication Plan.html">
-          <span class="ic"><i data-lucide="megaphone"></i></span>
-          <div class="meta">Strategy · funding research</div>
-          <h4>Innovative Funding Research for Drylands</h4>
-          <p>How DRIP reaches an audience and funds itself — the multi-platform plan and the open experiment in how people allocate resources across a complex system.</p>
-          <span class="open">Read the research <i data-lucide="arrow-right"></i></span>
         </a>
         <a class="lcard tool" href="dsl-ip-monitoring/DSL-IP Monitoring System.html">
           <span class="ic"><i data-lucide="activity"></i></span>
@@ -567,6 +559,13 @@
           <div class="meta">Finance · governance</div>
           <h4>Financial architecture</h4>
           <p>How the Programme’s funds and fee distribution are structured across the One-FAO delivery model.</p>
+          <span class="open">Open document <i data-lucide="arrow-right"></i></span>
+        </a>
+        <a class="lcard" href="PolOpT Policy Optimization Tool.html">
+          <span class="ic"><i data-lucide="sliders-horizontal"></i></span>
+          <div class="meta">Finance · governance · policy tool</div>
+          <h4>Policy Optimization Tool (PolOpT)</h4>
+          <p>FAO’s MAFAP tool for finding the policy and spending mix that best serves economic and environmental goals — the bridge from SLPF field evidence to national drylands policy.</p>
           <span class="open">Open document <i data-lucide="arrow-right"></i></span>
         </a>
       </div>
@@ -727,38 +726,10 @@
   </div>
 </section>
 
-<!-- ============ 4 · FUNDING MODEL ============ -->
-<section id="funding" class="fund">
-  <div class="page">
-    <div class="sec-head">
-      <span class="sec-num">05</span>
-      <h2 class="sec-title">Innovative Funding Research for Drylands</h2>
-    </div>
-    <p class="lede">DRIP is already funded for activation — but durability needs a model that outlives a single grant. Alongside institutionalising it within the Programme, DRIP runs an open <b>Innovative Funding Research for Drylands</b>: an experiment in how people allocate resources across a complex network when they can choose their preferred lever of change.</p>
-    <div class="fgrid">
-      <div class="fcard">
-        <span class="fi"><i data-lucide="landmark"></i></span>
-        <h4>Institutional core</h4>
-        <p>Re-embed DRIP as standing DSL-IP infrastructure so its baseline upkeep sits inside the Programme’s knowledge-management mandate — not a side project.</p>
-      </div>
-      <div class="fcard lead">
-        <span class="fi"><i data-lucide="network"></i></span>
-        <h4>The funding-research experiment</h4>
-        <p>An open experiment in how people allocate resources across a network when they can choose their lever of change — Patreon memberships, per-download Constellation codes and node-directed contributions. <a href="Publication Plan/Publication Plan.html">See the research →</a></p>
-      </div>
-      <div class="fcard">
-        <span class="fi"><i data-lucide="shield-check"></i></span>
-        <h4>Kept honest</h4>
-        <p>Any contribution mechanic is a transparent, experimental and symbolic allocation — not a transfer to a named beneficiary — and is reconciled against FAO and platform rules before launch.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 6 · TRANSPARENCY & DATA POLICY ============ -->
+<!-- ============ 5 · TRANSPARENCY & DATA POLICY ============ -->
 <section id="transparency">
   <div class="page">
-    <div class="sec-head"><span class="sec-num">06</span><h2 class="sec-title">Transparency &amp; data policy</h2></div>
+    <div class="sec-head"><span class="sec-num">05</span><h2 class="sec-title">Transparency &amp; data policy</h2></div>
     <p class="lede" style="margin-bottom:26px;">DRIP is built to be open about what it holds, where it comes from, and how it is handled. Everything mapped here is drawn from <b>publicly available sources</b> and is reviewable.</p>
     <div class="fgrid">
       <div class="fcard">
@@ -789,7 +760,7 @@
 <!-- ============ 7 · BECOME A PARTNER ============ -->
 <section id="partner">
   <div class="page">
-    <div class="sec-head"><span class="sec-num">07</span><h2 class="sec-title">Become a partner</h2></div>
+    <div class="sec-head"><span class="sec-num">06</span><h2 class="sec-title">Become a partner</h2></div>
     <div class="partner">
       <div class="pgrain"></div>
       <h3>Help keep dryland knowledge alive</h3>
@@ -836,14 +807,13 @@
       <a href="DSL-IP Constellation Dashboard.html"><i data-lucide="share-2"></i><span class="rtxt">Constellation tool<span class="rsub">Interactive 3D network</span></span></a>
       <a href="https://www.fao.org/in-action/dryland-sustainable-landscapes/knowledge-mgmt/newsletters/en" target="_blank" rel="noopener"><i data-lucide="mail"></i><span class="rtxt">Newsletter<span class="rsub">Read &amp; subscribe</span></span></a>
       <a href="https://datastudio.google.com/reporting/c3534ae5-ec25-4acf-9380-6e9b5b68dbf1?s=kLzi7SpCTSU" target="_blank" rel="noopener"><i data-lucide="bar-chart-3"></i><span class="rtxt">MEL dashboard<span class="rsub">Live monitoring &amp; evaluation</span></span></a>
-      <a href="Publication Plan/Publication Plan.html"><i data-lucide="megaphone"></i><span class="rtxt">Funding Research<span class="rsub">Strategy &amp; the experiment</span></span></a>
     </div>
   </div>
 
   <div class="railcard rcta">
-    <h4>Support the experiment</h4>
-    <p>Back DRIP on Patreon — pick a node and take part in the innovative-finance experiment.</p>
-    <a href="Constellation.html#kit">Get involved <i data-lucide="arrow-right"></i></a>
+    <h4>Become a partner</h4>
+    <p>Contribute knowledge, share reference material, or dock an exchange into the living archive.</p>
+    <a href="#partner">Get involved <i data-lucide="arrow-right"></i></a>
   </div>
 </aside>
 
@@ -888,7 +858,6 @@
   const pillarOf = {
     'Constellation.html':'coordination',
     'archive.html':'knowledge',
-    'Publication Plan/Publication Plan.html':'finance',
     'dsl-ip-monitoring/DSL-IP Monitoring System.html':'monitoring',
     'ILAM Integrated Landscape Assessment Methodology.html':'assessment',
     'SLPF Sustainable Landscape Production Framework.html':'production',
@@ -897,6 +866,7 @@
     'SLPF_FFS_FarmerFieldSchools.html':'production',
     'REM Regional Exchange Mechanism.html':'coordination',
     'DSL-IP Financial Architecture.html':'finance',
+    'PolOpT Policy Optimization Tool.html':'finance',
     'When Women Lead.html':'gender',
     'Global Gender Action Plan.html':'gender',
     'Sisteminha-IFES-Malawi-DSL-IP.html':'production',
@@ -970,7 +940,7 @@
     <button class="cnx" id="cnClose" aria-label="Close">&times;</button>
     <span class="cnglow"></span>
     <div class="cnkick">Before you enter</div>
-    <h3>The Constellation is an experiment</h3>
+    <h3>The Constellation is an experimental approach</h3>
     <p>It is an <b>experimental approach</b> to managing dryland forests as <b>complex systems</b> — mapping the Programme as a living network of connected parts rather than a static list. It is a research instrument, under active development and pending validation.</p>
     <div class="cnbtns">
       <a class="cnbtn ghost" id="cnLearn" href="Constellation.html">Learn more</a>
