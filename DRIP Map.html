@@ -166,7 +166,14 @@ const NODES = [
 
   { id:'csb',   g:'module',    label:'Community Seed Banks',  url:'SLPF_CSB_CommunitySeedBanks.html', val:7, desc:'SLPF Pillar 01 — crop diversification, agrobiodiversity and the genetic pool of options communities draw on to adapt.' },
   { id:'fff',   g:'module',    label:'Forest & Farm Facility', url:'SLPF_FFF_ForestFarmFacility.html', val:7, desc:'SLPF Pillar 02 — business incubation along green value chains, so sustainable production pays better than degradation.' },
-  { id:'ffs',   g:'module',    label:'Farmer Field Schools',  url:'SLPF_FFS_FarmerFieldSchools.html', val:7, desc:'SLPF Pillar 03 — experiential, farmer-to-farmer learning that transfers SLM/SFM on demonstration plots.' }
+  { id:'ffs',   g:'module',    label:'Farmer Field Schools',  url:'SLPF_FFS_FarmerFieldSchools.html', val:7, desc:'SLPF Pillar 03 — experiential, farmer-to-farmer learning that transfers SLM/SFM on demonstration plots.' },
+
+  { id:'ffpo',  g:'framework', label:'FFPO Assessment',       url:'resources/DSL-IP-FFPO-Assessment-Infographic.pdf', val:9,
+    desc:'Forest & Farm Producer Organizations — a 48-parameter assessment of 226+ producer organizations across five countries (ILAM Module 3).' },
+  { id:'geb',   g:'tool',      label:'Global Env. Benefits',  url:'resources/DSL-IP-Global-Environmental-Benefits.pdf', val:9,
+    desc:'The programme’s global environmental benefits — 46.3M tCO₂e mitigated and 13.1M ha restored or under improved management.' },
+  { id:'mfin',  g:'framework', label:'Mobilized Finance',     url:'resources/DSL-IP-Mobilized-Finance.pdf', val:9,
+    desc:'USD 635M mobilized from a USD 96M GEF seed — a 1:5.6 co-financing leverage across governments and partners.' }
 ];
 
 /* ---------- links ---------- */
@@ -182,12 +189,13 @@ const LINKS = [
   L('gap','wwl'), L('drip','gap'), L('drip','sist'), L('drip','dfsm'), L('dfsm','rem'),
   L('slpf','sna'), L('sna','ffs'), L('sna','gap'), L('sna','stake'), L('sna','const'),
   L('const','arch'), L('mon','arch'),
-  L('mon','ilam'), L('mon','ndvi'), L('mon','fire'), L('mon','lada'), L('mon','stake'), L('mon','vchain'), L('mon','hh'), L('mon','carbon')
+  L('mon','ilam'), L('mon','ndvi'), L('mon','fire'), L('mon','lada'), L('mon','stake'), L('mon','vchain'), L('mon','hh'), L('mon','carbon'),
+  L('ilam','ffpo'), L('slpf','ffpo'), L('mon','geb'), L('fin','geb'), L('fin','mfin')
 ];
 
 /* ---------- deterministic layout (pinned: hub centre, primaries on a sphere, children near parents) ---------- */
 const PRIMARIES = ['const','mon','arch','ilam','slpf','rem','fin','gap','dfsm','about','trans','part'];
-const CHILDREN  = { ilam:['ndvi','fire','lada','stake','vchain','hh','carbon'], slpf:['csb','fff','ffs','slm','sist','sna'], gap:['wwl'] };
+const CHILDREN  = { ilam:['ndvi','fire','lada','stake','vchain','hh','carbon','ffpo'], slpf:['csb','fff','ffs','slm','sist','sna'], gap:['wwl'], mon:['geb'], fin:['mfin'] };
 const R1 = 170;
 const POS = { drip:[0,0,0] };
 (function(){

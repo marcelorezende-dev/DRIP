@@ -122,5 +122,23 @@ window.DRIP_ARCHIVE = [
     source:'direct', origin:'DSL-IP communications', status:'validated',
     url:'DFSM Campaign.html',
     summary:'Dryland Forest & Sustainable Management — the Programme’s outward-facing campaign and its core messages.',
-    tags:['campaign','communications','drylands','outreach'], added:'2025-10-01', updated:'2025-10-01' }
+    tags:['campaign','communications','drylands','outreach'], added:'2025-10-01', updated:'2025-10-01' },
+
+  { id:'ffpo-assessment', title:'FFPO Assessment — Producer Organizations', type:'framework', pillars:['assessment','production'],
+    source:'direct', origin:'DRIP / DSL-IP · ILAM Module 3', status:'pending',
+    url:'resources/DSL-IP-FFPO-Assessment-Infographic.pdf',
+    summary:'A 48-parameter framework profiling 226+ forest & farm producer organizations across five countries — the georeferenced backbone of ILAM Module 3.',
+    tags:['FFPO','assessment','ILAM','producer organizations','value chains','infographic'], added:'2026-06-23', updated:'2026-06-23' },
+
+  { id:'global-environmental-benefits', title:'Global Environmental Benefits', type:'programme', pillars:['monitoring','finance'],
+    source:'direct', origin:'DRIP / DSL-IP', status:'pending',
+    url:'resources/DSL-IP-Global-Environmental-Benefits.pdf',
+    summary:'The programme’s GEF-7 Core Indicator targets — 46.3M tCO₂e mitigated and 13.1M ha restored or under improved management across 11 countries; backbone of the proposed DFSA.',
+    tags:['GEB','GEF-7','carbon','restoration','DFSA','infographic'], added:'2026-06-23', updated:'2026-06-23' },
+
+  { id:'mobilized-finance', title:'Mobilized Finance & Operational Partners', type:'programme', pillars:['finance'],
+    source:'direct', origin:'DRIP / DSL-IP', status:'pending',
+    url:'resources/DSL-IP-Mobilized-Finance.pdf',
+    summary:'USD 635M of investment mobilized from a USD 96M GEF seed — a 1:5.6 co-financing leverage across recipient governments and finance partners; backbone of the proposed DFSA.',
+    tags:['finance','co-financing','leverage','DFSA','partners','infographic'], added:'2026-06-23', updated:'2026-06-23' }
 ];
