@@ -338,7 +338,8 @@
   .flag-es{ background:linear-gradient(#AA151B 0 25%, #F1BF00 25% 75%, #AA151B 75%); }
   .flag-fr{ background:linear-gradient(90deg,#0055A4 0 33.34%,#fff 33.34% 66.67%,#EF4135 66.67%); }
   .flag-ru{ background:linear-gradient(#fff 0 33.34%,#0039A6 33.34% 66.67%,#D52B1E 66.67%); }
-  .flag-ar{ background:#137a45 url("assets/flag-ar.png") center/cover no-repeat; }
+  .flag-ar{ background:#137a45; }
+  .flag-ar::before{ content:''; position:absolute; left:50%; top:50%; width:9px; height:1.5px; background:#fff; transform:translate(-50%,-50%); border-radius:2px; }
   .flag-zh{ background:#DE2910; }
   .flag-zh::before{ content:'\2605'; position:absolute; left:3px; top:50%; transform:translateY(-50%); color:#FFDE00; font-size:8px; line-height:1; }
   @media(max-width:880px){ .langsw-ic{ display:none; } .langsw{ margin-left:0; } }
@@ -451,7 +452,7 @@
         <div class="dotrow"><span class="pdot"><i data-lucide="landmark"></i></span><span class="pbar"></span></div>
         <div class="pstat">Phase 3 · the goal</div>
         <h3>Institutionalise</h3>
-        <p>Embed DRIP back into the Drylands Program as standing infrastructure — leveraging the DSL-IP knowledge-management structure so its upkeep sits inside the Programme’s mandate.</p>
+        <p>Embed DRIP back into the Drylands Program as standing infrastructure — leveraging the DSL-IP knowledge-management structure and secured by an innovative, self-sustaining funding stream.</p>
       </div>
     </div>
 
@@ -559,13 +560,6 @@
           <div class="meta">Finance · governance</div>
           <h4>Financial architecture</h4>
           <p>How the Programme’s funds and fee distribution are structured across the One-FAO delivery model.</p>
-          <span class="open">Open document <i data-lucide="arrow-right"></i></span>
-        </a>
-        <a class="lcard" href="PolOpT Policy Optimization Tool.html">
-          <span class="ic"><i data-lucide="sliders-horizontal"></i></span>
-          <div class="meta">Finance · governance · policy tool</div>
-          <h4>Policy Optimization Tool (PolOpT)</h4>
-          <p>FAO’s MAFAP tool for finding the policy and spending mix that best serves economic and environmental goals — the bridge from SLPF field evidence to national drylands policy.</p>
           <span class="open">Open document <i data-lucide="arrow-right"></i></span>
         </a>
       </div>
@@ -757,7 +751,7 @@
   </div>
 </section>
 
-<!-- ============ 7 · BECOME A PARTNER ============ -->
+<!-- ============ 6 · BECOME A PARTNER ============ -->
 <section id="partner">
   <div class="page">
     <div class="sec-head"><span class="sec-num">06</span><h2 class="sec-title">Become a partner</h2></div>
@@ -810,11 +804,6 @@
     </div>
   </div>
 
-  <div class="railcard rcta">
-    <h4>Become a partner</h4>
-    <p>Contribute knowledge, share reference material, or dock an exchange into the living archive.</p>
-    <a href="#partner">Get involved <i data-lucide="arrow-right"></i></a>
-  </div>
 </aside>
 
 </div><!-- /.shell -->
@@ -866,7 +855,6 @@
     'SLPF_FFS_FarmerFieldSchools.html':'production',
     'REM Regional Exchange Mechanism.html':'coordination',
     'DSL-IP Financial Architecture.html':'finance',
-    'PolOpT Policy Optimization Tool.html':'finance',
     'When Women Lead.html':'gender',
     'Global Gender Action Plan.html':'gender',
     'Sisteminha-IFES-Malawi-DSL-IP.html':'production',
@@ -940,7 +928,7 @@
     <button class="cnx" id="cnClose" aria-label="Close">&times;</button>
     <span class="cnglow"></span>
     <div class="cnkick">Before you enter</div>
-    <h3>The Constellation is an experimental approach</h3>
+    <h3>The Constellation is an experiment</h3>
     <p>It is an <b>experimental approach</b> to managing dryland forests as <b>complex systems</b> — mapping the Programme as a living network of connected parts rather than a static list. It is a research instrument, under active development and pending validation.</p>
     <div class="cnbtns">
       <a class="cnbtn ghost" id="cnLearn" href="Constellation.html">Learn more</a>
