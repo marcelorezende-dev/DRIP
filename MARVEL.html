@@ -118,6 +118,16 @@ a.inl{ color:var(--slate-2); font-weight:600; text-decoration:none; } a.inl:hove
 .btn-inl{ display:inline-block; font-family:var(--sans); font-weight:600; font-size:.84rem; color:#fff; background:var(--slate-2); padding:.55rem 1.1rem; border-radius:999px; text-decoration:none; }
 .btn-inl:hover{ background:var(--slate); }
 
+/* EMBEDDED GEOPORTAL (EarthMap) */
+.geo-frame{ position:relative; width:100%; height:clamp(460px,70vh,780px); margin:1.3rem 0 .9rem;
+ border-radius:14px; overflow:hidden; border:1px solid var(--border); box-shadow:var(--shadow-md); background:#EEF3F2; }
+.geo-frame iframe{ position:absolute; inset:0; width:100%; height:100%; border:0; display:block; }
+.geo-frame .geo-load{ position:absolute; inset:0; display:flex; align-items:center; justify-content:center; text-align:center;
+ font-family:var(--sans); font-size:.9rem; color:var(--ink-3); padding:1.5rem; pointer-events:none; }
+.geo-bar{ display:flex; align-items:center; justify-content:space-between; gap:1rem; flex-wrap:wrap; margin-top:.6rem; }
+.geo-bar .muted{ max-width:62ch; }
+@media (max-width:768px){ .geo-frame{ height:clamp(440px,72vh,640px); } }
+
 footer{ background:var(--slate); color:#DDECEA; text-align:center; padding:2.6rem 2rem; margin-top:2.6rem; line-height:1.8; }
 footer a{ color:#7FD3C0; text-decoration:none; } footer .foot-rule{ width:60px; height:3px; background:var(--teal); margin:1.2rem auto; border:0; border-radius:2px; }
 
@@ -181,6 +191,7 @@ footer a{ color:#7FD3C0; text-decoration:none; } footer .foot-rule{ width:60px; 
 <nav class="secnav">
  <ul>
   <li><a href="#overview">Overview</a></li>
+  <li><a href="#geoportal">Geoportal</a></li>
   <li><a href="#knowledge">Knowledge</a></li>
   <li><a href="#projects">Projects</a></li>
   <li><a href="#practices">Best practices</a></li>
@@ -215,6 +226,24 @@ footer a{ color:#7FD3C0; text-decoration:none; } footer .foot-rule{ width:60px; 
   <div class="flow-step"><div class="fs-l">L</div><div class="fs-t">Learning</div><p>Feed lessons back through the Regional Exchange Mechanism.</p></div>
  </div>
  <div class="btnrow"><a class="btn-inl" href="dsl-ip-monitoring/DSL-IP Monitoring System.html">Open the Monitoring System →</a></div>
+</section>
+
+<section id="geoportal">
+ <h2><span class="kicker">Geoportal</span>EarthMap – the DSL-IP geospatial window</h2>
+ <p class="lead">The Programme's customized <strong>Open Foris EarthMap</strong> instance, running on Google Earth Engine. It powers the <strong>Assessment</strong> and <strong>Monitoring</strong> steps of MARVEL – wall-to-wall screening of land-productivity dynamics, fire regime, rainfall, land cover and the thematic layers behind <a class="inl" href="ILAM Integrated Landscape Assessment Methodology.html">ILAM</a>. Pan, zoom and switch layers in the live geoportal below.</p>
+ <div class="geo-frame">
+  <div class="geo-load">Loading the DSL-IP EarthMap geoportal… if it doesn't appear, use <strong>Open full map</strong> below.</div>
+  <iframe
+   src="https://dsl.earthmap.org"
+   title="DSL-IP EarthMap geoportal (dsl.earthmap.org)"
+   loading="lazy"
+   allow="fullscreen; geolocation"
+   referrerpolicy="no-referrer-when-downgrade"></iframe>
+ </div>
+ <div class="geo-bar">
+  <span class="muted">Live embed of <a class="inl" href="https://dsl.earthmap.org" target="_blank" rel="noopener">dsl.earthmap.org</a> – the DSL-IP geoportal on Open Foris EarthMap / Google Earth Engine.</span>
+  <a class="btn-inl" href="https://dsl.earthmap.org" target="_blank" rel="noopener">Open full map ↗</a>
+ </div>
 </section>
 
 <section id="knowledge">
