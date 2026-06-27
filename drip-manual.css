@@ -211,3 +211,23 @@ table.w tbody tr:nth-child(even){ background:rgba(236,231,215,.45); }
 .apa-refs li:last-child{ margin-bottom:0; }
 .apa-refs a{ color:var(--accent-deep); }
 @media print{ .apa-refs{ font-size:.8rem; break-inside:avoid; } }
+
+
+/* ===== WOCAT classification block (harmonized with the DRIP app) ===== */
+.m-section.wocat{ background:var(--surface); border-top:1px solid var(--border); margin:0; padding:1.2rem 2.1rem 1.4rem; }
+.wocat-cl{ margin:.5rem 0 0; display:flex; flex-direction:column; gap:.55rem; }
+.wocat-row{ display:grid; grid-template-columns:10rem 1fr; gap:.7rem; align-items:start; }
+.wocat-row dt{ font-family:var(--sans); font-weight:600; font-size:.66rem; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-3); padding-top:.2rem; }
+.wocat-row dd{ margin:0; display:flex; flex-wrap:wrap; gap:.35rem; align-items:center; }
+.wm{ width:1.5rem; height:1.5rem; border-radius:6px; display:inline-flex; align-items:center; justify-content:center; font-family:var(--sans); font-weight:700; font-size:.78rem; color:#fff; }
+.wm[data-m="A"]{ background:var(--amber); color:#3a2408; }
+.wm[data-m="V"]{ background:var(--forest); }
+.wm[data-m="S"]{ background:var(--clay); }
+.wm[data-m="M"]{ background:var(--water); }
+.wm-lbl{ font-family:var(--sans); font-size:.82rem; color:var(--ink-2); margin-left:.15rem; }
+.wtag{ font-family:var(--sans); font-size:.8rem; color:var(--ink-2); background:var(--cream); border:1px solid var(--border); border-radius:999px; padding:.18rem .6rem; }
+.wtag.group{ font-weight:600; color:var(--forest-deep); border-color:var(--forest-soft); background:rgba(71,126,89,.08); }
+.wtag.deg{ color:var(--clay-deep); border-color:rgba(207,113,93,.4); background:rgba(207,113,93,.07); }
+.wocat-src{ font-family:var(--sans); font-size:.74rem; color:var(--ink-3); margin:.65rem 0 0; }
+.wocat-src a{ color:var(--forest-deep); }
+@media(max-width:560px){ .wocat-row{ grid-template-columns:1fr; gap:.25rem; } }
