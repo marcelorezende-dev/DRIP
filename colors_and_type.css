@@ -1,5 +1,5 @@
 /* ============================================================================
-   DSL-IP — Drylands Sustainable Landscapes Impact Program
+   DSL-IP – Drylands Sustainable Landscapes Impact Program
    Colors & Type foundation
    FAO / GEF program. Source of truth: brand logo lockup + PowerPoint template.
    ========================================================================== */
@@ -27,11 +27,11 @@
   src:url("fonts/Oswald-700.woff2") format("woff2"); font-display:swap; }
 
 /* DermawanRough = the brand's AUTHENTIC grunge letterpress condensed display face
-   (supplied by the brand owner — supersedes the Oswald substitute for large display). */
+   (supplied by the brand owner – supersedes the Oswald substitute for large display). */
 @font-face{ font-family:"DermawanRough"; font-weight:400 700; font-style:normal;
   src:url("fonts/DermawanRough-Condensed.otf") format("opentype"); font-display:swap; }
 
-/* Poppins = the brand's geometric SANS companion — UI, labels, kickers, data, captions. */
+/* Poppins = the brand's geometric SANS companion – UI, labels, kickers, data, captions. */
 @font-face{ font-family:"Poppins"; font-weight:400; font-style:normal;
   src:url("fonts/Poppins-400.ttf") format("truetype"); font-display:swap; }
 @font-face{ font-family:"Poppins"; font-weight:400; font-style:italic;
@@ -45,10 +45,10 @@
 
 :root{
   /* ===== BRAND CORE ====================================================== */
-  --clay:        #CF715D;   /* terracotta — primary warm; the program sub-line */
+  --clay:        #CF715D;   /* terracotta – primary warm; the program sub-line */
   --clay-deep:   #B4543F;   /* pressed / on-light text variant of clay        */
   --clay-soft:   #E3A293;   /* tints, washes                                  */
-  --forest:      #477E59;   /* forest green — primary; the headline display   */
+  --forest:      #477E59;   /* forest green – primary; the headline display   */
   --forest-deep: #356046;   /* pressed / deeper green                         */
   --forest-soft: #8FB59B;   /* tints                                          */
 
@@ -65,7 +65,7 @@
   --ink-3:       #9A8C7E;   /* muted / captions                              */
   --ink-on-dark: #FBF8EF;   /* text on clay/forest fills                      */
 
-  /* ===== ACCENT — drawn from the split-globe illustration =============== */
+  /* ===== ACCENT – drawn from the split-globe illustration =============== */
   --amber:       #F8B133;   /* sun / harvest                                  */
   --gold:        #E8C13C;   /* dryland gold                                   */
   --teal:        #33B193;   /* water-life / restoration                       */
@@ -127,7 +127,7 @@
 }
 
 /* ============================================================================
-   SEMANTIC ELEMENT STYLES — opt-in via .dsl-prose or use the classes directly
+   SEMANTIC ELEMENT STYLES – opt-in via .dsl-prose or use the classes directly
    ========================================================================== */
 .dsl-eyebrow{
   font-family:var(--font-serif); font-weight:400; font-style:italic;

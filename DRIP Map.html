@@ -12,7 +12,7 @@
   /* ===== top banner (shared DRIP nav) ===== */
   .drip-topbar{ position:fixed; top:0; left:0; right:0; z-index:50; display:flex; align-items:center; justify-content:space-between;
     gap:16px; flex-wrap:wrap; background:#1f523a; border-bottom:1px solid rgba(245,242,232,.16); padding:11px 24px; }
-  .drip-topbar .db-brand{ display:flex; align-items:center; gap:11px; text-decoration:none; }
+  .drip-topbar .db-brand{ display:flex; flex-direction:column; align-items:flex-start; gap:2px; text-decoration:none; }
   .drip-topbar .db-dm{ font-weight:800; font-size:23px; letter-spacing:.04em; color:#F5F2E8; line-height:1; }
   .drip-topbar .db-dm span{ color:#F8B133; }
   .drip-topbar .db-sub{ font-size:10.5px; letter-spacing:.07em; text-transform:uppercase; color:rgba(245,242,232,.6); }
@@ -66,13 +66,15 @@
 <body>
 
 <div class="drip-topbar">
-  <a class="db-brand" href="DRIP.html"><span class="db-dm">DRIP<span>.</span></span><span class="db-sub">Dryland Research &amp; Information Platform</span></a>
+  <a class="db-brand" href="DRIP.html"><span class="db-dm">DRIP<span>.</span></span><span class="db-sub">Drylands Restoration Initiatives Platform</span></a>
   <nav class="db-nav">
     <a class="db-home" href="DRIP.html">⌂ Home</a>
     <a href="DRIP.html#story">About</a>
-    <a class="active" href="DRIP Map.html">Map</a>
-    <a href="DRIP.html#pillars-sec">Research</a>
-    <a href="DRIP.html#transparency">Transparency &amp; Data Policy</a>
+    <a href="DRIP Map.html">Map</a>
+    <a href="DRIP.html#library">Library</a>
+    <a href="MARVEL.html">MARVEL</a>
+    <a href="Water.html">Water</a>
+    <a href="DRIP.html#transparency">Transparency and Data Policy</a>
     <a class="db-cta" href="DRIP.html#partner">Become a partner</a>
   </nav>
 </div>
@@ -81,7 +83,7 @@
 
 <div class="mtitle">
   <div class="kick">The platform, mapped</div>
-  <h1>DRIP Platform Map</h1>
+  <h1>DRIP platform map</h1>
   <p>Every page of DRIP as one connected network. Click any node to open that page.</p>
 </div>
 
@@ -121,59 +123,65 @@ const GROUPS = {
   framework: { name:'Frameworks & methods',   color:'#6fb04a' },
   module:    { name:'Knowledge modules',      color:'#5ba9de' },
   story:     { name:'Knowledge & stories',    color:'#e0856b' },
-  section:   { name:'Platform sections',      color:'#d8b24a' }
+  section:   { name:'Platform sections',      color:'#d8b24a' },
+  governance:{ name:'Governance & COFO',       color:'#c08457' }
 };
 
 /* ---------- nodes = pages ---------- */
 const NODES = [
-  { id:'drip',  g:'hub',       label:'DRIP — Home',           url:'DRIP.html', val:30,
-    desc:'The platform landing page — the activation story, the seven pillars and the library.' },
+  { id:'drip',  g:'hub',       label:'DRIP – Home',           url:'DRIP.html', val:30,
+    desc:'The platform landing page – the activation story, the seven pillars and the library.' },
 
   { id:'const', g:'tool',      label:'The Constellation',     url:'Constellation.html', val:16,
-    desc:'Coordination & Exchange — the whole Programme as a living 3D map (five lenses + Builder).' },
+    desc:'Coordination & Exchange – the whole Programme as a living 3D map (five lenses + Builder).' },
   { id:'mon',   g:'tool',      label:'Monitoring system',     url:'dsl-ip-monitoring/DSL-IP Monitoring System.html', val:13,
-    desc:'The participatory M&E architecture — results flow from communities up to GEF reporting.' },
+    desc:'The participatory M&E architecture – results flow from communities up to GEF reporting.' },
   { id:'arch',  g:'tool',      label:'Archive & Index',       url:'archive.html', val:13,
-    desc:'The living registry of every knowledge product — searchable, indexed and always updating.' },
+    desc:'The living registry of every knowledge product – searchable, indexed and always updating.' },
 
   { id:'ilam',  g:'framework', label:'ILAM',                  url:'ILAM Integrated Landscape Assessment Methodology.html', val:16,
-    desc:'Integrated Landscape Assessment Methodology — the five-module evidence base from remote sensing to household surveys.' },
+    desc:'Integrated Landscape Assessment Methodology – the five-module evidence base from remote sensing to household surveys.' },
   { id:'slpf',  g:'framework', label:'SLPF',                  url:'SLPF Sustainable Landscape Production Framework.html', val:16,
-    desc:'Sustainable Landscape Production Framework — the integrated FFS, seed bank and green-value-chain approach.' },
+    desc:'Sustainable Landscape Production Framework – the integrated FFS, seed bank and green-value-chain approach.' },
   { id:'rem',   g:'framework', label:'REM',                   url:'REM Regional Exchange Mechanism.html', val:13,
-    desc:'Regional Exchange Mechanism — the bridge through which the GCP coordinates and docks with child projects.' },
+    desc:'Regional Exchange Mechanism – the bridge through which the GCP coordinates and docks with child projects.' },
   { id:'fin',   g:'framework', label:'Financial architecture',url:'DSL-IP Financial Architecture.html', val:11,
     desc:'How the Programme’s funds and fee distribution are structured across the One-FAO delivery model.' },
 
-  { id:'ndvi',  g:'module',    label:'Land productivity (NDVI)', url:'KL_Mod1_LandProductivity_NDVI.html', val:7, desc:'Reading land productivity from satellites — NDVI Trajectory and State indicators.' },
+  { id:'ndvi',  g:'module',    label:'Land productivity (NDVI)', url:'KL_Mod1_LandProductivity_NDVI.html', val:7, desc:'Reading land productivity from satellites – NDVI Trajectory and State indicators.' },
   { id:'fire',  g:'module',    label:'Fire dynamics',         url:'KL_Mod1_Fire.html', val:7, desc:'A 25-year, district-level read on burned area across the Miombo–Mopane ecoregion.' },
   { id:'lada',  g:'module',    label:'Simplified LADA',       url:'KL_Mod3_SimplifiedLADA.html', val:7, desc:'A fast, plot-based field assessment that anchors satellite signals to ground reality.' },
-  { id:'stake', g:'module',    label:'Stakeholder & policy',  url:'KL_Mod3_Stakeholder_Policy.html', val:7, desc:'Stakeholder and policy-institutional assessment — the actors and rules that decide what works.' },
-  { id:'vchain',g:'module',    label:'Value chains',          url:'KL_Mod3_ValueChains.html', val:7, desc:'Rapid sustainable value-chain assessment — the economic entry points for SLM/SFM.' },
-  { id:'hh',    g:'module',    label:'Household & behaviour', url:'KL_Mod4_Household_BehaviourChange.html', val:7, desc:'SHARP+ resilience paired with the COM-B model — what drives adoption decisions.' },
-  { id:'carbon',g:'module',    label:'Carbon balance (EX-ACT)', url:'KL_Mod5_Carbon_EXACT_NEXT.html', val:7, desc:'EX-ACT and EX-ACT NEXT — turning land-use change into a measurable global environmental benefit.' },
+  { id:'stake', g:'module',    label:'Stakeholder & policy',  url:'KL_Mod3_Stakeholder_Policy.html', val:7, desc:'Stakeholder and policy-institutional assessment – the actors and rules that decide what works.' },
+  { id:'vchain',g:'module',    label:'Value chains',          url:'KL_Mod3_ValueChains.html', val:7, desc:'Rapid sustainable value-chain assessment – the economic entry points for SLM/SFM.' },
+  { id:'hh',    g:'module',    label:'Household & behaviour', url:'KL_Mod4_Household_BehaviourChange.html', val:7, desc:'SHARP+ resilience paired with the COM-B model – what drives adoption decisions.' },
+  { id:'carbon',g:'module',    label:'Carbon balance (EX-ACT)', url:'KL_Mod5_Carbon_EXACT_NEXT.html', val:7, desc:'EX-ACT and EX-ACT NEXT – turning land-use change into a measurable global environmental benefit.' },
   { id:'slm',   g:'module',    label:'SLM scaling strategy',  url:'KL_SLM_ScalingStrategy.html', val:8, desc:'A strategy for scaling sustainable land management among smallholders.' },
-  { id:'sna',   g:'module',    label:'Knowledge-flow SNA',    url:'SNA_Tutume_Mosetse.html', val:8, desc:'Social network analysis of two Botswana producer organizations — who shares SLM knowledge with whom, the real influencers, and the bottlenecks.' },
+  { id:'sna',   g:'module',    label:'Knowledge-flow SNA',    url:'SNA_Tutume_Mosetse.html', val:8, desc:'Social network analysis of two Botswana producer organizations – who shares SLM knowledge with whom, the real influencers, and the bottlenecks.' },
 
-  { id:'wwl',   g:'story',     label:'When Women Lead',       url:'When Women Lead.html', val:9, desc:'How women’s leadership and the land’s recovery move together — a story from the gender stream.' },
+  { id:'wwl',   g:'story',     label:'When Women Lead',       url:'When Women Lead.html', val:9, desc:'How women’s leadership and the land’s recovery move together – a story from the gender stream.' },
   { id:'gap',   g:'story',     label:'Gender Action Plan',    url:'Global Gender Action Plan.html', val:10, desc:'The Programme’s gender-responsiveness commitments and actions.' },
-  { id:'sist',  g:'story',     label:'Sisteminha · IFES',     url:'Sisteminha-IFES-Malawi-DSL-IP.html', val:10, desc:'Integrated Food and Energy Systems in practice — Malawi’s champion core theme.' },
-  { id:'dfsm',  g:'story',     label:'DFSM Campaign',         url:'DFSM Campaign.html', val:9, desc:'Dryland Forest & Sustainable Management — the Programme’s outward-facing campaign.' },
+  { id:'sist',  g:'story',     label:'Sisteminha · IFES',     url:'Sisteminha-IFES-Malawi-DSL-IP.html', val:10, desc:'Integrated Food and Energy Systems in practice – Malawi’s champion core theme.' },
+  { id:'dfsm',  g:'story',     label:'DFSA Campaign',         url:'DFSA Campaign.html', val:9, desc:'Dryland Forest Support Accelerator – the Programme’s outward-facing campaign.' },
+  { id:'caat',  g:'story',     label:'Caatinga Biome',        url:'Caatinga Biome.html', val:9, desc:'Brazil’s semi-arid white forest – the largest seasonally dry tropical forest in the Americas; a dryland forest & agrosilvopastoral biome the Programme’s methods speak to.' },
+  { id:'miombo',g:'story',     label:'Miombo & Mopane',       url:'Miombo and Mopane Woodlands.html', val:10, desc:'Africa’s great dry forest – the miombo & mopane woodlands of central & southern Africa; the biome where six DSL-IP child projects work. The African companion to the Caatinga.' },
 
   { id:'about', g:'section',   label:'About',                 url:'DRIP.html#story', val:8, desc:'Why DRIP existed, went dormant, and is being reactivated as the Programme’s knowledge platform.' },
   { id:'trans', g:'section',   label:'Transparency & Data',   url:'DRIP.html#transparency', val:8, desc:'Publicly sourced, validation status, use of AI, and your data & removal mechanism.' },
   { id:'part',  g:'section',   label:'Become a partner',      url:'DRIP.html#partner', val:8, desc:'How institutions, researchers and country teams can contribute to the platform.' },
 
-  { id:'csb',   g:'module',    label:'Community Seed Banks',  url:'SLPF_CSB_CommunitySeedBanks.html', val:7, desc:'SLPF Pillar 01 — crop diversification, agrobiodiversity and the genetic pool of options communities draw on to adapt.' },
-  { id:'fff',   g:'module',    label:'Forest & Farm Facility', url:'SLPF_FFF_ForestFarmFacility.html', val:7, desc:'SLPF Pillar 02 — business incubation along green value chains, so sustainable production pays better than degradation.' },
-  { id:'ffs',   g:'module',    label:'Farmer Field Schools',  url:'SLPF_FFS_FarmerFieldSchools.html', val:7, desc:'SLPF Pillar 03 — experiential, farmer-to-farmer learning that transfers SLM/SFM on demonstration plots.' },
+  { id:'csb',   g:'module',    label:'Community Seed Banks',  url:'SLPF_CSB_CommunitySeedBanks.html', val:7, desc:'SLPF Pillar 01 – crop diversification, agrobiodiversity and the genetic pool of options communities draw on to adapt.' },
+  { id:'fff',   g:'module',    label:'Forest & Farm Facility', url:'SLPF_FFF_ForestFarmFacility.html', val:7, desc:'SLPF Pillar 02 – business incubation along green value chains, so sustainable production pays better than degradation.' },
+  { id:'ffs',   g:'module',    label:'Farmer Field Schools',  url:'SLPF_FFS_FarmerFieldSchools.html', val:7, desc:'SLPF Pillar 03 – experiential, farmer-to-farmer learning that transfers SLM/SFM on demonstration plots.' },
 
   { id:'ffpo',  g:'framework', label:'FFPO Assessment',       url:'resources/DSL-IP-FFPO-Assessment-Infographic.pdf', val:9,
-    desc:'Forest & Farm Producer Organizations — a 48-parameter assessment of 226+ producer organizations across five countries (ILAM Module 3).' },
+    desc:'Forest & Farm Producer Organizations – a 48-parameter assessment of 226+ producer organizations across five countries (ILAM Module 3).' },
   { id:'geb',   g:'tool',      label:'Global Env. Benefits',  url:'resources/DSL-IP-Global-Environmental-Benefits.pdf', val:9,
-    desc:'The programme’s global environmental benefits — 46.3M tCO₂e mitigated and 13.1M ha restored or under improved management.' },
+    desc:'The programme’s global environmental benefits – 46.3M tCO₂e mitigated and 13.1M ha restored or under improved management.' },
   { id:'mfin',  g:'framework', label:'Mobilized Finance',     url:'resources/DSL-IP-Mobilized-Finance.pdf', val:9,
-    desc:'USD 635M mobilized from a USD 96M GEF seed — a 1:5.6 co-financing leverage across governments and partners.' }
+    desc:'USD 635M mobilized from a USD 96M GEF seed – a 1:5.6 co-financing leverage across governments and partners.' },
+
+  { id:'cofowg', g:'governance', label:'COFO Working Group',   url:'COFO Working Group on Dryland Forests.html', val:15,
+    desc:'The FAO Committee on Forestry Working Group on Dryland Forests & Agrosilvopastoral Systems – DRIP’s governance parent; it called for DRIP’s creation at its 2019 Inaugural Session.' }
 ];
 
 /* ---------- links ---------- */
@@ -190,12 +198,15 @@ const LINKS = [
   L('slpf','sna'), L('sna','ffs'), L('sna','gap'), L('sna','stake'), L('sna','const'),
   L('const','arch'), L('mon','arch'),
   L('mon','ilam'), L('mon','ndvi'), L('mon','fire'), L('mon','lada'), L('mon','stake'), L('mon','vchain'), L('mon','hh'), L('mon','carbon'),
-  L('ilam','ffpo'), L('slpf','ffpo'), L('mon','geb'), L('fin','geb'), L('fin','mfin')
+  L('ilam','ffpo'), L('slpf','ffpo'), L('mon','geb'), L('fin','geb'), L('fin','mfin'),
+  L('drip','cofowg'), L('cofowg','mon'), L('cofowg','rem'), L('cofowg','fin'),
+  L('drip','caat'), L('dfsm','caat'), L('caat','cofowg'),
+  L('drip','miombo'), L('dfsm','miombo'), L('miombo','caat'), L('miombo','cofowg')
 ];
 
 /* ---------- deterministic layout (pinned: hub centre, primaries on a sphere, children near parents) ---------- */
-const PRIMARIES = ['const','mon','arch','ilam','slpf','rem','fin','gap','dfsm','about','trans','part'];
-const CHILDREN  = { ilam:['ndvi','fire','lada','stake','vchain','hh','carbon','ffpo'], slpf:['csb','fff','ffs','slm','sist','sna'], gap:['wwl'], mon:['geb'], fin:['mfin'] };
+const PRIMARIES = ['const','mon','arch','ilam','slpf','rem','fin','gap','dfsm','about','trans','part','cofowg'];
+const CHILDREN  = { ilam:['ndvi','fire','lada','stake','vchain','hh','carbon','ffpo'], slpf:['csb','fff','ffs','slm','sist','sna'], gap:['wwl'], mon:['geb'], fin:['mfin'], dfsm:['caat','miombo'] };
 const R1 = 170;
 const POS = { drip:[0,0,0] };
 (function(){
@@ -248,7 +259,7 @@ const Graph = ForceGraph3D()(document.getElementById('map'))
   .onNodeClick(n => openPop(n))
   .onBackgroundClick(()=> hidePop());
 window.__G = Graph;
-Graph.cooldownTicks(0);   // positions are pinned (fx/fy/fz) — no physics drift
+Graph.cooldownTicks(0);   // positions are pinned (fx/fy/fz) – no physics drift
 
 let spin=true, ang=0, radius=470;
 function fit(){ try{ Graph.zoomToFit(500, 70); const c=Graph.cameraPosition(); const r=Math.hypot(c.x,c.y,c.z); if(r>120) radius=r; }catch(e){} }

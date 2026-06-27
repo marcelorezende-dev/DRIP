@@ -1,5 +1,5 @@
 /* ============================================================================
-   DRIP sub-pages — shared layout (pillar / module / program)
+   DRIP sub-pages – shared layout (pillar / module / program)
    Pair with colors_and_type.css. Each page sets --pa / --pa-soft / --pa-deep
    on :root to theme its accent to the pillar.
    ========================================================================== */

@@ -1,5 +1,5 @@
 /* ============================================================================
-   DRIP — floating "Home" button
+   DRIP – floating "Home" button
    Drop <script src="drip-home.js"></script> (optionally data-home="…/DRIP.html")
    before </body> on any page that should offer a way back to the DRIP hub.
    Skips pages that already carry a .topnav home bar.

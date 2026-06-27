@@ -52,6 +52,7 @@
   .bdg{ font-family:var(--font-sans); font-weight:600; font-size:10.5px; letter-spacing:.02em; padding:3px 9px; border-radius:var(--r-pill);
     display:inline-flex; align-items:center; gap:5px; }
   .bdg.type{ background:var(--paper-2); color:var(--ink-2); border:1px solid var(--border); }
+  .bdg.fao{ color:#fff; border:1px solid rgba(0,0,0,.06); }
   .bdg.pil{ color:#fff; } .bdg.src{ background:rgba(36,31,27,.06); color:var(--ink-2); border:1px solid var(--border); }
   .bdg.src .sw{ width:7px; height:7px; border-radius:50%; }
   .bdg.ok{ background:rgba(71,126,89,.14); color:var(--forest-deep); border:1px solid rgba(71,126,89,.3); }
@@ -92,12 +93,26 @@
   .flash.show{ opacity:1; transform:translate(-50%,0); }
   @media(max-width:820px){ .statrow,.chcards{ grid-template-columns:1fr 1fr; } .intake{ grid-template-columns:1fr; } .form .row{ grid-template-columns:1fr; } }
 </style>
+<link rel="stylesheet" href="drip-topbar.css">
 </head>
 <body>
+<div class="drip-topbar">
+  <a class="db-brand" href="DRIP.html"><span class="db-dm">DRIP<span>.</span></span><span class="db-sub">Drylands Restoration Initiatives Platform</span></a>
+  <nav class="db-nav">
+    <a class="db-home" href="DRIP.html">⌂ Home</a>
+    <a href="DRIP.html#story">About</a>
+    <a href="DRIP Map.html">Map</a>
+    <a href="DRIP.html#library">Library</a>
+    <a href="MARVEL.html">MARVEL</a>
+    <a href="Water.html">Water</a>
+    <a href="DRIP.html#transparency">Transparency and Data Policy</a>
+    <a class="db-cta" href="DRIP.html#partner">Become a partner</a>
+  </nav>
+</div>
 
 <nav class="topnav">
   <div class="page">
-    <a class="home" href="DRIP.html"><span class="dm">DRIP<span class="dot">.</span></span><small>Dryland Research &amp; Information Platform</small></a>
+    <a class="home" href="DRIP.html"><span class="dm">DRIP<span class="dot">.</span></span><small>Drylands Restoration Initiatives Platform</small></a>
     <div class="crumbs"><a href="DRIP.html">DRIP</a><span class="sep">/</span><span class="here">Archive &amp; Index</span></div>
   </div>
 </nav>
@@ -107,7 +122,7 @@
   <div class="page">
     <div class="tagline">The living registry</div>
     <div class="ttl"><span class="pic"><i data-lucide="library"></i></span><h1>Archive &amp; Index</h1></div>
-    <p class="lead">One catalogue for everything DRIP holds — searchable, indexed by pillar, type and source, and built to <b>stay current</b>. Every knowledge product is logged with where it came from and when it last changed, so the platform never goes dormant again.</p>
+    <p class="lead">One catalogue for everything DRIP holds – searchable, indexed by pillar, type and source, and built to <b>stay current</b>. Every knowledge product is logged with where it came from and when it last changed, so the platform never goes dormant again.</p>
     <div class="kpis" id="kpis"></div>
   </div>
 </header>
@@ -116,7 +131,7 @@
 <section>
   <div class="page">
     <div class="sec-head"><span class="sec-num">01</span><h2 class="sec-title">How the index stays current</h2></div>
-    <p class="prose" style="max-width:72ch;">New knowledge enters the archive through four channels. Whatever the route, each item is catalogued the same way — given a pillar, a type, a source and a date — so the index updates the moment it is added.</p>
+    <p class="prose" style="max-width:72ch;">New knowledge enters the archive through four channels. Whatever the route, each item is catalogued the same way – given a pillar, a type, a source and a date – so the index updates the moment it is added.</p>
     <div class="chcards" id="channels"></div>
   </div>
 </section>
@@ -142,7 +157,7 @@
 <!-- recently added -->
 <section>
   <div class="page">
-    <div class="sec-head"><span class="sec-num">03</span><h2 class="sec-title">Recently added &amp; updated</h2></div>
+    <div class="sec-head"><span class="sec-num">03</span><h2 class="sec-title">Recently added and updated</h2></div>
     <div class="rail" id="rail"></div>
   </div>
 </section>
@@ -159,6 +174,7 @@
           <div><label class="fl">Type</label><select id="f_type"></select></div>
           <div><label class="fl">Source channel</label><select id="f_source"></select></div>
         </div>
+        <label class="fl">FAO classification</label><select id="f_fao"></select>
         <div class="row">
           <div><label class="fl">Origin (who / where)</label><input id="f_origin" type="text" placeholder="e.g. Namibia child project" /></div>
           <div><label class="fl">Link / URL</label><input id="f_url" type="text" placeholder="relative path or https://…" /></div>
@@ -175,12 +191,12 @@
       <div class="howbox">
         <span class="kick">How updating works</span>
         <ol>
-          <li><b>Add</b> an item here — it’s saved in your browser as a draft and appears in the index immediately, tagged <b>Draft</b>.</li>
-          <li>When ready, <b>Export updated catalogue</b> — this downloads a refreshed <code>drip-archive.js</code> containing every entry plus your drafts.</li>
+          <li><b>Add</b> an item here – it’s saved in your browser as a draft and appears in the index immediately, tagged <b>Draft</b>.</li>
+          <li>When ready, <b>Export updated catalogue</b> – this downloads a refreshed <code>drip-archive.js</code> containing every entry plus your drafts.</li>
           <li><b>Commit</b> that file to the site (replace the old one). The drafts become permanent catalogue entries for everyone.</li>
-          <li>The same flow handles <b>reference files</b>, <b>Regional Exchange</b> contributions and <b>knowledge-hub</b> pulls — set the source channel accordingly.</li>
+          <li>The same flow handles <b>reference files</b>, <b>Regional Exchange</b> contributions and <b>knowledge-hub</b> pulls – set the source channel accordingly.</li>
         </ol>
-        <p class="prose" style="font-size:12.5px; margin:12px 0 0; color:var(--ink-3);">Drafts live only in your browser until exported and committed, so nothing is lost on refresh — but they aren’t shared until the catalogue file is updated.</p>
+        <p class="prose" style="font-size:12.5px; margin:12px 0 0; color:var(--ink-3);">Drafts live only in your browser until exported and committed, so nothing is lost on refresh – but they aren’t shared until the catalogue file is updated.</p>
       </div>
     </div>
   </div>
@@ -188,7 +204,7 @@
 
 <footer class="foot">
   <div class="page">
-    <p>DRIP · Archive &amp; Index — the living registry of the Dryland Research &amp; Information Platform. A project of the DSL-IP, actively overseen by a UN Officer (programme design · complex programme management · AI · rural development); related to the Programme’s behaviour-change assessments and research. Information is drawn from publicly available sources.</p>
+    <p>DRIP · Archive &amp; Index – the living registry of the Drylands Restoration Initiatives Platform. A project of the DSL-IP, actively overseen by a UN Officer (programme design · complex programme management · AI · rural development); related to the Programme’s behaviour-change assessments and research. Information is drawn from publicly available sources.</p>
   </div>
 </footer>
 
@@ -207,13 +223,20 @@ const PILLARS = {
 };
 const SRCCOLOR = { direct:'#477E59', reference:'#3F8FCB', exchange:'#33B193', hub:'#8a6d3b' };
 const META = window.DRIP_ARCHIVE_META;
+const FAO = META.fao || { tiers:{}, categories:{} };
+function faoOf(e){
+  const c = e && e.fao && FAO.categories[e.fao];
+  if(!c) return null;
+  const t = FAO.tiers[c.tier] || {};
+  return { key:e.fao, tier:c.tier, tierName:t.name||('Tier '+c.tier), color:t.color||'#9A8C7E', type:c.type, label:c.label };
+}
 const DRAFTKEY = 'drip_archive_drafts_v1';
 
 function loadDrafts(){ try { return JSON.parse(localStorage.getItem(DRAFTKEY)) || []; } catch(e){ return []; } }
 function saveDrafts(d){ try { localStorage.setItem(DRAFTKEY, JSON.stringify(d)); } catch(e){} }
 function allEntries(){ return [ ...window.DRIP_ARCHIVE, ...loadDrafts() ]; }
 
-const state = { q:'', sort:'updated', facets:{ pillar:new Set(), type:new Set(), source:new Set(), status:new Set() } };
+const state = { q:'', sort:'updated', facets:{ faoTier:new Set(), pillar:new Set(), type:new Set(), source:new Set(), status:new Set() } };
 const fmtDate = s => { const d = new Date(s); return isNaN(d) ? s : d.toLocaleDateString('en-GB',{ day:'numeric', month:'short', year:'numeric' }); };
 
 /* ---- KPIs ---- */
@@ -239,8 +262,13 @@ function renderChannels(){
 /* ---- facets ---- */
 function renderFacets(){
   const all = allEntries();
-  const count = (grp,val) => all.filter(e => grp==='pillar' ? (e.pillars||[]).includes(val) : grp==='status' ? e.status===val : e[grp]===val).length;
+  const count = (grp,val) => all.filter(e =>
+    grp==='pillar'  ? (e.pillars||[]).includes(val)
+    : grp==='status'  ? e.status===val
+    : grp==='faoTier' ? (faoOf(e)||{}).tier===val
+    : e[grp]===val).length;
   const groups = [
+    { key:'faoTier', lab:'FAO tier', items:Object.keys(FAO.tiers).map(id=>({ id, n:(id==='p'?'Platform':'Tier '+id), c:FAO.tiers[id].color })) },
     { key:'pillar', lab:'Pillar', items:Object.keys(PILLARS).map(id=>({id,n:PILLARS[id].n,c:PILLARS[id].c})) },
     { key:'type',   lab:'Type',   items:Object.keys(META.types).map(id=>({id,n:META.types[id]})) },
     { key:'source', lab:'Source', items:Object.keys(META.channels).map(id=>({id,n:META.channels[id].label,c:SRCCOLOR[id]})) },
@@ -268,6 +296,7 @@ function matches(e){
     const hay=(e.title+' '+e.summary+' '+(e.tags||[]).join(' ')+' '+(e.origin||'')).toLowerCase();
     if(!hay.includes(q)) return false; }
   const f=state.facets;
+  if(f.faoTier && f.faoTier.size){ const fa=faoOf(e); if(!fa || !f.faoTier.has(fa.tier)) return false; }
   if(f.pillar.size && !(e.pillars||[]).some(p=>f.pillar.has(p))) return false;
   if(f.type.size && !f.type.has(e.type)) return false;
   if(f.source.size && !f.source.has(e.source)) return false;
@@ -289,11 +318,13 @@ function renderResults(){
     const ch = META.channels[e.source]||{label:e.source};
     const tag = (window.DRIP_ARCHIVE_META.types[e.type]||e.type);
     const ext = /^https?:/.test(e.url||'');
+    const fa = faoOf(e);
+    const faoBadge = fa ? `<span class="bdg fao" style="background:${fa.color}" title="FAO taxonomy · ${fa.tierName} › ${fa.type}">${fa.label}</span>` : '';
     return `<a class="item" href="${e.url||'#'}" ${ext?'target="_blank" rel="noopener"':''}>
       <span class="bar" style="background:${pc}"></span>
       <div class="top"><div>
         <div class="badges" style="margin-bottom:7px;">
-          <span class="bdg type">${tag}</span>${pills}
+          ${faoBadge}<span class="bdg type">${tag}</span>${pills}
           <span class="bdg ${e.status==='validated'?'ok':'pend'}">${e.status==='validated'?'Validated':'Pending'}</span>
           ${drafts.has(e.id)?'<span class="bdg draft">Draft</span>':''}
         </div>
@@ -302,7 +333,7 @@ function renderResults(){
       </div></div>
       <div class="badges"><span class="bdg src"><span class="sw" style="background:${SRCCOLOR[e.source]||'#999'}"></span>${ch.label}</span>
         ${(e.tags||[]).slice(0,4).map(t=>`<span class="bdg type">#${t}</span>`).join('')}</div>
-      <div class="meta2"><span><i data-lucide="map-pin" style="width:12px;height:12px;vertical-align:-2px;"></i> ${e.origin||'—'}</span>
+      <div class="meta2"><span><i data-lucide="map-pin" style="width:12px;height:12px;vertical-align:-2px;"></i> ${e.origin||'–'}</span>
         <span>Added ${fmtDate(e.added)}</span><span>Updated ${fmtDate(e.updated)}</span>
         <span class="open2" style="margin-left:auto">Open <i data-lucide="arrow-up-right"></i></span></div>
     </a>`;
@@ -324,6 +355,7 @@ function renderAll(){ renderFacets(); renderResults(); renderRail(); renderKpis(
 function buildForm(){
   document.getElementById('f_type').innerHTML = Object.entries(META.types).map(([k,v])=>`<option value="${k}">${v}</option>`).join('');
   document.getElementById('f_source').innerHTML = Object.entries(META.channels).map(([k,v])=>`<option value="${k}">${v.label}</option>`).join('');
+  document.getElementById('f_fao').innerHTML = '<option value="">– unclassified –</option>' + Object.entries(FAO.categories).map(([k,v])=>`<option value="${k}">T${v.tier} · ${v.label}</option>`).join('');
   const pillSel = new Set();
   const box = document.getElementById('f_pillars');
   box.innerHTML = Object.entries(PILLARS).map(([id,p])=>`<button type="button" class="pchip" data-p="${id}" style="color:${p.c};border-color:${p.c}">${p.n}</button>`).join('');
@@ -336,25 +368,26 @@ function buildForm(){
     const today=new Date().toISOString().slice(0,10);
     const slug=title.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,40)+'-'+Date.now().toString(36).slice(-4);
     const entry={ id:slug, title, summary:document.getElementById('f_sum').value.trim(),
-      type:document.getElementById('f_type').value, pillars:[...pillSel],
+      type:document.getElementById('f_type').value, fao:document.getElementById('f_fao').value,
+      pillars:[...pillSel],
       source:document.getElementById('f_source').value, origin:document.getElementById('f_origin').value.trim(),
       status:document.getElementById('f_valid').checked?'validated':'pending',
       url:document.getElementById('f_url').value.trim(),
       tags:document.getElementById('f_tags').value.split(',').map(t=>t.trim()).filter(Boolean), added:today, updated:today };
     const d=loadDrafts(); d.push(entry); saveDrafts(d);
     ['f_title','f_sum','f_origin','f_url','f_tags'].forEach(i=>document.getElementById(i).value='');
-    document.getElementById('f_valid').checked=false; pillSel.clear(); box.querySelectorAll('.pchip').forEach(b=>{b.classList.remove('on');b.style.background='';});
-    renderAll(); flash('Added — appears as a draft. Export to make it permanent.');
+    document.getElementById('f_valid').checked=false; document.getElementById('f_fao').value=''; pillSel.clear(); box.querySelectorAll('.pchip').forEach(b=>{b.classList.remove('on');b.style.background='';});
+    renderAll(); flash('Added – appears as a draft. Export to make it permanent.');
   });
   document.getElementById('exportBtn').addEventListener('click',()=>{
     const all=[...window.DRIP_ARCHIVE, ...loadDrafts()];
     const meta={...META}; meta.updated=new Date().toISOString().slice(0,10);
-    const text='/* DRIP — knowledge catalogue (exported '+meta.updated+') */\n'+
+    const text='/* DRIP – knowledge catalogue (exported '+meta.updated+') */\n'+
       'window.DRIP_ARCHIVE_META = '+JSON.stringify(meta,null,2)+';\n\n'+
       'window.DRIP_ARCHIVE = '+JSON.stringify(all,null,2)+';\n';
     const blob=new Blob([text],{type:'text/javascript'}); const a=document.createElement('a');
     a.href=URL.createObjectURL(blob); a.download='drip-archive.js'; document.body.appendChild(a); a.click(); a.remove();
-    setTimeout(()=>URL.revokeObjectURL(a.href),1500); flash('Exported drip-archive.js — commit it to the site to publish.');
+    setTimeout(()=>URL.revokeObjectURL(a.href),1500); flash('Exported drip-archive.js – commit it to the site to publish.');
   });
   document.getElementById('clearBtn').addEventListener('click',()=>{ if(confirm('Remove all your unexported drafts?')){ localStorage.removeItem(DRAFTKEY); renderAll(); flash('Drafts cleared'); } });
 }

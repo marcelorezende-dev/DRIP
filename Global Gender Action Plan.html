@@ -228,6 +228,13 @@
   .req .met i{ width:14px; height:14px; }
   @media(max-width:680px){ .req{ grid-template-columns:40px 1fr; } .req .met{ grid-column:2; justify-self:start; } }
 
+  /* ----------------------------------------------------------- REFERENCES */
+  .refs.band{ background:var(--surface); border-top:1px solid var(--hairline); }
+  .apa-refs{ list-style:none; padding:0; margin:18px 0 0; font-size:15px; line-height:1.6; color:var(--ink-2); max-width:80ch; }
+  .apa-refs li{ padding-left:1.6em; text-indent:-1.6em; margin:0 0 .7rem; }
+  .apa-refs a{ color:var(--clay); text-decoration:none; word-break:break-word; }
+  .apa-refs a:hover{ text-decoration:underline; }
+
   /* ----------------------------------------------------------- FOOTER */
   footer{ background:var(--ink); color:var(--ink-on-dark); padding:54px 0 40px; }
   footer .wrap{ display:grid; grid-template-columns:1.4fr 1fr; gap:30px; align-items:end; }
@@ -244,7 +251,7 @@
 
   /* ====================================================== PRINT =========== */
   @media print {
-    /* Full-bleed A4 portrait — no white page margins; colour bands run edge to edge */
+    /* Full-bleed A4 portrait – no white page margins; colour bands run edge to edge */
     @page { size: A4 portrait; margin: 0; }
     html, body { width:210mm; }
     html { scroll-behavior:auto; }
@@ -287,7 +294,7 @@
     .hero, .stats { break-inside:avoid; }
     h2.sec, .seclabel, .filterhead { break-after:avoid; }
 
-    /* CSS grid fragments badly across printed pages — Chrome slices grid rows
+    /* CSS grid fragments badly across printed pages – Chrome slices grid rows
        at the page edge. Use multi-column flow for the long card lists so each
        card stays whole and the columns paginate cleanly. */
     .grid, .pcagrid { display:block !important; column-gap:9px; }
@@ -297,7 +304,7 @@
       display:inline-block; width:100%; margin:0 0 9px; vertical-align:top;
       break-inside:avoid; -webkit-column-break-inside:avoid;
     }
-    /* the bordered requirements box can't span a page cleanly — flatten it so
+    /* the bordered requirements box can't span a page cleanly – flatten it so
        only the individual rows carry separation */
     .reqlist { display:block !important; border:0 !important; border-radius:0 !important;
       overflow:visible !important; background:transparent !important; }
@@ -316,7 +323,7 @@
  background:#1f523a;border-bottom:1px solid rgba(245,242,232,.16);padding:11px 24px;
  font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased;}
 .drip-topbar *{box-sizing:border-box;}
-.drip-topbar .db-brand{display:flex;align-items:center;gap:11px;text-decoration:none;}
+.drip-topbar .db-brand{display:flex;flex-direction:column;align-items:flex-start;gap:2px;text-decoration:none;}
 .drip-topbar .db-dm{font-weight:800;font-size:23px;letter-spacing:.04em;color:#F5F2E8;line-height:1;}
 .drip-topbar .db-dm span{color:#F8B133;}
 .drip-topbar .db-sub{font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;color:rgba(245,242,232,.6);}
@@ -328,16 +335,19 @@
 .drip-topbar .db-nav a.db-cta:hover{background:#ffc658;}
 @media(max-width:780px){.drip-topbar .db-sub{display:none;}.drip-topbar{padding:9px 16px;}.drip-topbar .db-nav a{padding:6px 9px;font-size:12px;}}
 </style>
+<link rel="stylesheet" href="drip-harmonize.css">
 </head>
 <body>
 <div class="drip-topbar">
-  <a class="db-brand" href="DRIP.html"><span class="db-dm">DRIP<span>.</span></span><span class="db-sub">Dryland Research &amp; Information Platform</span></a>
+  <a class="db-brand" href="DRIP.html"><span class="db-dm">DRIP<span>.</span></span><span class="db-sub">Drylands Restoration Initiatives Platform</span></a>
   <nav class="db-nav">
     <a class="db-home" href="DRIP.html">⌂ Home</a>
     <a href="DRIP.html#story">About</a>
     <a href="DRIP Map.html">Map</a>
-    <a href="DRIP.html#pillars-sec">Research</a>
-    <a href="DRIP.html#transparency">Transparency &amp; Data Policy</a>
+    <a href="DRIP.html#library">Library</a>
+    <a href="MARVEL.html">MARVEL</a>
+    <a href="Water.html">Water</a>
+    <a href="DRIP.html#transparency">Transparency and Data Policy</a>
     <a class="db-cta" href="DRIP.html#partner">Become a partner</a>
   </nav>
 </div>
@@ -375,12 +385,12 @@
 <section class="hero" id="overview">
   <div class="wrap">
     <div class="herotext">
-      <p class="eyebrow">Implementing &amp; monitoring action pillars from the Global Gender Workshop, Nairobi 2024</p>
+      <p class="eyebrow">Implementing and monitoring action pillars from the Global Gender Workshop, Nairobi 2024</p>
       <h1 class="title">Global Gender<br>Action Plan
         <span class="sub2">Putting gender at the front line of dryland restoration</span>
       </h1>
       <p class="lede">A living roadmap that turns three gender action pillars into a costed, monitored
-        work plan across the 11 countries of the GEF-7 Dryland Sustainable Landscapes Impact Program.</p>
+        work plan across the 11 countries of the GEF-7 Dryland Sustainable Landscapes Impact Program (Global Environment Facility, n.d.).</p>
       <div class="herometa">
         <span class="mp"><i data-lucide="users"></i>FAO · IUCN · CDE/WOCAT</span>
         <span class="mp"><i data-lucide="calendar-range"></i>2022 – 2026 · Y1–Y5</span>
@@ -388,7 +398,7 @@
       </div>
     </div>
     <div class="globe">
-      <img src="assets/globe.png" alt="The split globe — degraded dryland transitioning to restored landscape, cradled in a hand">
+      <img src="assets/globe.png" alt="The split globe – degraded dryland transitioning to restored landscape, cradled in a hand">
     </div>
   </div>
 </section>
@@ -410,9 +420,10 @@
     <p class="seclabel">Section 2–3 · The roadmap</p>
     <h2 class="sec">Three action pillars, applied bottom-up</h2>
     <p class="secintro">Stakeholders at the global gender workshop defined three pillars that form the
-      roadmap for the DSL-IP Gender Community of Practice (CoP3). They are implemented stepwise — from
+      roadmap for the DSL-IP Gender Community of Practice (CoP3). They are implemented stepwise – from
       country-informed technical assistance, through monitoring and evaluation, to knowledge management
-      and outreach — so that gender mainstreaming is a long-term programme commitment, not a one-off.</p>
+      and outreach – so that gender mainstreaming is a long-term programme commitment, not a one-off, in line with
+      FAO's corporate gender framework (FAO, 2020).</p>
 
     <div class="pillars">
       <div class="pillar">
@@ -420,7 +431,7 @@
         <div class="pnum" style="background:var(--clay)">1</div>
         <h3>Technical Assistance</h3>
         <div class="abbr" style="color:var(--clay-deep)">Pillar 1 · TA</div>
-        <p>Gender-specific guidance to child projects — refining country Gender Action Plans and
+        <p>Gender-specific guidance to child projects – refining country Gender Action Plans and
           backstopping experts to integrate gender-responsive actions into mainstream project activities,
           building on ILAM evidence and the core-theme approach.</p>
       </div>
@@ -438,8 +449,8 @@
         <div class="pnum" style="background:var(--forest)">3</div>
         <h3>Knowledge Management &amp; Outreach</h3>
         <div class="abbr" style="color:var(--forest)">Pillar 3 · KMO</div>
-        <p>Documenting and exchanging promising gender-responsive practices from the ground — case studies,
-          human-interest stories and knowledge products — and amplifying women leaders across DSL-IP and
+        <p>Documenting and exchanging promising gender-responsive practices from the ground – case studies,
+          human-interest stories and knowledge products – and amplifying women leaders across DSL-IP and
           partner channels.</p>
       </div>
     </div>
@@ -451,7 +462,7 @@
   <div class="wrap">
     <div class="filterhead">
       <div>
-        <p class="seclabel">Section 6 · Table 2 — the living work plan</p>
+        <p class="seclabel">Section 6 · Table 2 – the living work plan</p>
         <h2 class="sec">Explore the work plan</h2>
       </div>
       <p class="secintro" style="margin-top:0; max-width:46ch; text-align:right;">
@@ -504,7 +515,7 @@
   <div class="wrap">
     <p class="seclabel">Section 7 · Where results are generated</p>
     <h2 class="sec">Six Project Core Areas</h2>
-    <p class="secintro">Component 2 — linked to the Sustainable Landscape Production Framework — is the
+    <p class="secintro">Component 2 – linked to the Sustainable Landscape Production Framework – is the
       priority for gender results. Six Project Core Areas (PCAs) focus the refinement of gender plans,
       the tracking of core indicators, and the reporting of the most relevant results at country level.</p>
 
@@ -512,21 +523,21 @@
 
     <h2 class="sec" style="margin-top:64px;">Closing three overarching gender gaps</h2>
     <p class="secintro">By building the gender advantage through the PCAs, the action pillars contribute to
-      addressing the three gender gaps of priority to the GEF.</p>
+      addressing the three gender gaps of priority to the GEF (Global Environment Facility, 2017).</p>
     <div class="gaps">
       <div class="gap">
         <div class="gn">Gap 01</div>
-        <h4>Unequal access to &amp; control of natural resources</h4>
+        <h4>Unequal access to and control of natural resources</h4>
         <p>Land, water and other productive assets and biological resources.</p>
       </div>
       <div class="gap">
         <div class="gn">Gap 02</div>
-        <h4>Unbalanced participation &amp; leadership in decision-making</h4>
+        <h4>Unbalanced participation and leadership in decision-making</h4>
         <p>Institutions and policymaking, environmental planning, and sustainable management of natural resources.</p>
       </div>
       <div class="gap">
         <div class="gn">Gap 03</div>
-        <h4>Uneven access to socio-economic benefits &amp; services</h4>
+        <h4>Uneven access to socio-economic benefits and services</h4>
         <p>Income generation, credit, technology, financing, training and information.</p>
       </div>
     </div>
@@ -538,9 +549,26 @@
   <div class="wrap">
     <p class="seclabel">Annex 1 · Donor requirements</p>
     <h2 class="sec">GEF's seven minimum requirements on gender</h2>
-    <p class="secintro">The action pillars focus corporate partners on meeting the seven minimum
-      requirements of the GEF policy on gender mainstreaming. Progress to date:</p>
+    <p class="secintro">The action pillars focus corporate partners on meeting the minimum
+      requirements on gender of the GEF Policy on Gender Equality (Global Environment Facility, 2017). Progress to date:</p>
     <div class="reqlist" id="reqlist"></div>
+  </div>
+</section>
+
+<!-- ============================================================ REFERENCES -->
+<section class="band refs" id="references">
+  <div class="wrap">
+    <p class="seclabel">References</p>
+    <h2 class="sec">Sources</h2>
+    <p class="secintro">Verified external sources for the policy frameworks and statistics cited above. The action pillars,
+      work-plan actions, Project Core Areas and action-status timing are drawn from the DSL-IP Global Gender Action Plan
+      and the 2024 Nairobi global gender workshop, and are not externally published.</p>
+    <ol class="apa-refs">
+      <li>FAO. (2019). <em>Trees, forests and land use in drylands: The first global assessment</em>. Food and Agriculture Organization of the United Nations. <a href="https://www.fao.org/interactive/dryland-assessment/en/" target="_blank" rel="noopener">https://www.fao.org/interactive/dryland-assessment/en/</a></li>
+      <li>FAO. (2020). <em>FAO policy on gender equality 2020&ndash;2030</em>. Food and Agriculture Organization of the United Nations. <a href="https://www.fao.org/family-farming/detail/en/c/1375135/" target="_blank" rel="noopener">https://www.fao.org/family-farming/detail/en/c/1375135/</a></li>
+      <li>Global Environment Facility. (n.d.). <em>Sustainable Forest Management Impact Program on Dryland Sustainable Landscapes</em>. Retrieved June 24, 2026, from <a href="https://www.thegef.org/projects-operations/projects/10206" target="_blank" rel="noopener">https://www.thegef.org/projects-operations/projects/10206</a></li>
+      <li>Global Environment Facility. (2017). <em>Policy on gender equality</em> (GEF/C.53/04). <a href="https://www.thegef.org/council-meeting-documents/policy-gender-equality" target="_blank" rel="noopener">https://www.thegef.org/council-meeting-documents/policy-gender-equality</a></li>
+    </ol>
   </div>
 </section>
 

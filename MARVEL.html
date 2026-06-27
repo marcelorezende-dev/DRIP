@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MARVEL – the DRIP dashboard | MRV + MEL</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap');
+@font-face{ font-family:"DermawanRough"; src:url('fonts/DermawanRough-Condensed.otf') format('opentype'); font-weight:400 700; font-display:swap; }
+@font-face{ font-family:"Poppins"; font-weight:400; src:url('fonts/Poppins-400.ttf') format('truetype'); font-display:swap; }
+@font-face{ font-family:"Poppins"; font-weight:500; src:url('fonts/Poppins-500.ttf') format('truetype'); font-display:swap; }
+@font-face{ font-family:"Poppins"; font-weight:600; src:url('fonts/Poppins-600.ttf') format('truetype'); font-display:swap; }
+@font-face{ font-family:"Poppins"; font-weight:700; src:url('fonts/Poppins-700.ttf') format('truetype'); font-display:swap; }
+*{ margin:0; padding:0; box-sizing:border-box; }
+:root{
+ --clay:#CF715D; --clay-deep:#B4543F; --clay-soft:#E3A293;
+ --forest:#477E59; --forest-deep:#356046; --forest-soft:#8FB59B;
+ --cream:#F5F2E8; --paper-2:#ECE7D7; --blush:#EDD8CC; --sage:#C3DABA; --surface:#FFFFFF;
+ --ink:#241F1B; --ink-2:#6B5E54; --ink-3:#9A8C7E; --ink-on-dark:#FBF8EF;
+ --amber:#F8B133; --gold:#E8C13C; --gold-deep:#9A7327; --teal:#33B193; --leaf:#68A260; --bark:#754C29; --water:#3E7CB1;
+ --slate:#244C54; --slate-2:#2E5E68;
+ --border:rgba(36,31,27,.14); --border-strong:rgba(36,31,27,.28); --hairline:rgba(36,31,27,.08);
+ --shadow-sm:0 1px 2px rgba(36,31,27,.06),0 1px 3px rgba(36,31,27,.08);
+ --shadow-md:0 4px 10px rgba(36,31,27,.08),0 10px 24px rgba(36,31,27,.07);
+ --shadow-lg:0 12px 28px rgba(36,31,27,.12),0 28px 60px rgba(36,31,27,.10);
+ --serif:"Merriweather",Georgia,serif; --display:"DermawanRough","Oswald",sans-serif; --sans:"Poppins",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+body{ font-family:var(--serif); line-height:1.7; color:var(--ink-2); background:var(--cream); -webkit-font-smoothing:antialiased; }
+
+/* HEADER */
+header.page-head{ background:linear-gradient(135deg,var(--slate),var(--slate-2)); color:var(--ink-on-dark); padding:3rem 2rem 2.4rem; text-align:left;
+ border-bottom:6px solid var(--teal); position:relative; overflow:hidden; }
+.header-inner{ max-width:1200px; margin:0 auto; position:relative; z-index:2; }
+header.page-head .brand-logo{ height:54px; width:auto; filter:brightness(0) invert(1); margin-bottom:1.3rem; opacity:.96; }
+header.page-head .eyebrow{ font-family:var(--sans); text-transform:uppercase; letter-spacing:.16em; font-size:.78rem; color:#BFE3DA; margin-bottom:.6rem; }
+header.page-head h1{ font-family:var(--display); font-weight:700; text-transform:uppercase; letter-spacing:.02em; font-size:3rem; line-height:1; margin:0; color:#fff; }
+header.page-head h1 span{ color:#7FD3C0; }
+header.page-head .lede{ font-size:1.1rem; line-height:1.6; color:#DDECEA; max-width:840px; margin-top:1.1rem; }
+.acronym{ display:flex; flex-wrap:wrap; gap:.5rem; margin-top:1.4rem; }
+.acronym span{ font-family:var(--sans); font-size:.74rem; font-weight:600; letter-spacing:.04em; color:#fff; background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.18); padding:.4rem .8rem; border-radius:8px; }
+.acronym span b{ color:#7FD3C0; }
+
+/* NAV */
+nav.secnav{ background:var(--slate); padding:.5rem 1rem; position:sticky; top:0; z-index:100; box-shadow:0 2px 8px rgba(36,31,27,.18); }
+nav.secnav ul{ list-style:none; display:flex; justify-content:center; flex-wrap:wrap; max-width:1200px; margin:0 auto; gap:.1rem; }
+nav.secnav a{ color:#DDECEA; text-decoration:none; padding:.6rem 1rem; display:block; transition:background .2s,color .2s;
+ font-family:var(--sans); font-weight:500; text-transform:uppercase; letter-spacing:.08em; font-size:.78rem; border-radius:6px; }
+nav.secnav a:hover{ background:rgba(255,255,255,.12); color:#fff; }
+
+.container{ max-width:1200px; margin:0 auto; padding:2.2rem 2rem; }
+section{ background:var(--surface); margin:1.8rem 0; padding:2.4rem; border-radius:16px; border:1px solid var(--border); box-shadow:var(--shadow-md); scroll-margin-top:76px; }
+h2{ font-family:var(--serif); font-weight:900; color:var(--ink); font-size:1.8rem; line-height:1.12; margin-bottom:1.1rem; padding-bottom:.6rem; border-bottom:1px solid var(--hairline); position:relative; }
+h2::after{ content:""; position:absolute; left:0; bottom:-1px; width:60px; height:3px; background:var(--teal); border-radius:2px; }
+h2 .kicker{ display:block; font-family:var(--sans); font-weight:600; text-transform:uppercase; letter-spacing:.14em; font-size:.78rem; color:#2E7D6B; margin-bottom:.45rem; }
+h3{ font-family:var(--serif); font-weight:700; color:var(--forest); font-size:1.3rem; margin:1.6rem 0 .9rem; }
+section > p{ margin:.9rem 0; } .lead{ font-size:1.08rem; color:var(--ink); }
+a.inl{ color:var(--slate-2); font-weight:600; text-decoration:none; } a.inl:hover{ text-decoration:underline; }
+
+/* KPI TILES */
+.kpis{ display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:1.1rem; margin:0; }
+.kpi{ background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:1.3rem 1.3rem 1.2rem; box-shadow:var(--shadow-sm); border-top:4px solid var(--teal); }
+.kpi.t-clay{ border-top-color:var(--clay); } .kpi.t-forest{ border-top-color:var(--forest); } .kpi.t-gold{ border-top-color:var(--gold); } .kpi.t-water{ border-top-color:var(--water); } .kpi.t-amber{ border-top-color:var(--amber); }
+.kpi .kv{ font-family:var(--sans); font-weight:700; font-size:2rem; line-height:1; color:var(--slate); }
+.kpi .kl{ font-family:var(--sans); font-size:.82rem; font-weight:600; color:var(--ink); margin-top:.45rem; }
+.kpi .ks{ font-size:.8rem; color:var(--ink-3); margin-top:.2rem; }
+.kpi a{ color:inherit; text-decoration:none; }
+
+/* hero KPI strip (in header) */
+.hero-kpis{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:1px; margin-top:1.8rem; background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.16); border-radius:12px; overflow:hidden; }
+.hero-kpis .hk{ background:rgba(11,30,33,.18); padding:1rem 1.1rem; }
+.hero-kpis .hk .v{ font-family:var(--sans); font-weight:700; font-size:1.55rem; color:#fff; line-height:1; }
+.hero-kpis .hk .l{ font-family:var(--sans); font-size:.72rem; letter-spacing:.04em; color:#BFE3DA; margin-top:.35rem; text-transform:uppercase; }
+
+/* FLOW (MARVEL steps) */
+.flow{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:0; margin:1.4rem 0; }
+.flow-step{ position:relative; padding:1.1rem 1.1rem; background:#F3F7F6; border:1px solid var(--border); }
+.flow-step .fs-l{ font-family:var(--display); font-weight:700; color:var(--teal); font-size:1.5rem; line-height:1; }
+.flow-step .fs-t{ font-family:var(--sans); text-transform:uppercase; letter-spacing:.04em; font-weight:600; color:var(--slate); font-size:.82rem; margin:.3rem 0 .35rem; }
+.flow-step p{ font-size:.82rem; color:var(--ink-2); margin:0; }
+
+/* BARS */
+.bars{ display:flex; flex-direction:column; gap:.5rem; margin:1rem 0; }
+.bar{ display:grid; grid-template-columns:170px 1fr 42px; align-items:center; gap:.7rem; font-family:var(--sans); font-size:.83rem; }
+.bar .bl{ color:var(--ink-2); text-align:right; }
+.bar .bt{ background:var(--paper-2); border-radius:6px; height:15px; overflow:hidden; }
+.bar .bf{ height:100%; background:linear-gradient(90deg,var(--forest-soft),var(--teal)); border-radius:6px; width:0; transition:width .9s cubic-bezier(.2,.7,.2,1); }
+.bar .bv{ color:var(--ink); font-weight:600; text-align:right; font-variant-numeric:tabular-nums; }
+
+/* PRODUCT / NEWS CARDS */
+.feed{ display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:1.1rem; margin:1.2rem 0; }
+.fcard{ display:block; text-decoration:none; color:inherit; background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.1rem 1.2rem; box-shadow:var(--shadow-sm); transition:transform .2s, box-shadow .2s; }
+.fcard:hover{ transform:translateY(-3px); box-shadow:var(--shadow-md); }
+.fcard .fmeta{ display:flex; align-items:center; gap:.5rem; flex-wrap:wrap; margin-bottom:.5rem; }
+.fcard .badge{ font-family:var(--sans); font-size:.68rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase; padding:.2rem .55rem; border-radius:999px; background:rgba(51,177,147,.14); color:#1f6e5c; }
+.fcard .date{ font-family:var(--sans); font-size:.74rem; color:var(--ink-3); }
+.fcard h4{ font-family:var(--serif); font-weight:700; color:var(--ink); font-size:1.02rem; line-height:1.25; margin:0 0 .35rem; }
+.fcard p{ font-size:.86rem; color:var(--ink-2); margin:0; }
+.fcard .pills{ margin-top:.55rem; display:flex; flex-wrap:wrap; gap:.3rem; }
+.fcard .pill{ font-family:var(--sans); font-size:.68rem; color:var(--ink-3); border:1px solid var(--border); border-radius:999px; padding:.12rem .5rem; }
+
+/* GRID / CALLOUT / TABLE (shared) */
+.grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1.3rem; margin:1.4rem 0; }
+.card{ background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:1.4rem; box-shadow:var(--shadow-md); }
+.card h4{ color:var(--ink); margin:0 0 .55rem; font-family:var(--serif); font-weight:700; font-size:1.08rem; }
+.card p{ font-size:.92rem; color:var(--ink-2); }
+.card .big{ font-family:var(--sans); font-weight:700; font-size:1.5rem; color:var(--slate); }
+.callout{ padding:1.3rem 1.5rem; margin:1.4rem 0; border-radius:12px; background:#F1F6F5; border:1px solid var(--border); border-top:4px solid var(--teal); box-shadow:var(--shadow-sm); }
+.callout .ct{ font-family:var(--sans); font-weight:600; text-transform:uppercase; letter-spacing:.08em; font-size:.8rem; color:#1f6e5c; margin-bottom:.5rem; }
+.callout p{ font-size:.92rem; margin:.3rem 0; }
+.regions{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1.1rem; margin:1.3rem 0; }
+.region{ border:1px solid var(--border); border-radius:12px; padding:1.1rem 1.2rem; background:#FBFAF5; }
+.region h4{ font-family:var(--sans); font-size:.82rem; text-transform:uppercase; letter-spacing:.05em; color:var(--slate-2); margin:0 0 .5rem; }
+.region .cty{ display:flex; flex-wrap:wrap; gap:.35rem; }
+.region .cty span{ font-family:var(--sans); font-size:.8rem; background:var(--paper-2); color:var(--ink-2); border-radius:999px; padding:.2rem .7rem; }
+.loading{ font-family:var(--sans); font-size:.88rem; color:var(--ink-3); padding:.6rem 0; }
+.muted{ font-size:.84rem; color:var(--ink-3); }
+.btnrow{ margin-top:1rem; }
+.btn-inl{ display:inline-block; font-family:var(--sans); font-weight:600; font-size:.84rem; color:#fff; background:var(--slate-2); padding:.55rem 1.1rem; border-radius:999px; text-decoration:none; }
+.btn-inl:hover{ background:var(--slate); }
+
+footer{ background:var(--slate); color:#DDECEA; text-align:center; padding:2.6rem 2rem; margin-top:2.6rem; line-height:1.8; }
+footer a{ color:#7FD3C0; text-decoration:none; } footer .foot-rule{ width:60px; height:3px; background:var(--teal); margin:1.2rem auto; border:0; border-radius:2px; }
+
+@media (max-width:768px){
+ header.page-head{ padding:2rem 1.3rem; } header.page-head h1{ font-size:2.1rem; }
+ nav.secnav ul{ flex-direction:column; } .container{ padding:1.3rem; } section{ padding:1.4rem; }
+ .bar{ grid-template-columns:120px 1fr 40px; } .flow-step{ border-right:1px solid var(--border)!important; }
+}
+</style>
+<style>
+.drip-topbar{position:sticky;top:0;z-index:9999;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;
+ background:#1f523a;border-bottom:1px solid rgba(245,242,232,.16);padding:11px 24px;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;}
+.drip-topbar .db-brand{display:flex;flex-direction:column;align-items:flex-start;gap:2px;text-decoration:none;}
+.drip-topbar .db-dm{font-weight:800;font-size:23px;letter-spacing:.04em;color:#F5F2E8;line-height:1;}
+.drip-topbar .db-dm span{color:#F8B133;}
+.drip-topbar .db-sub{font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;color:rgba(245,242,232,.6);}
+.drip-topbar .db-nav{display:flex;align-items:center;gap:4px;flex-wrap:wrap;justify-content:flex-end;}
+.drip-topbar .db-nav a{font-size:13px;font-weight:500;color:rgba(245,242,232,.86);text-decoration:none;padding:7px 11px;border-radius:999px;white-space:nowrap;transition:.14s;}
+.drip-topbar .db-nav a:hover{background:rgba(245,242,232,.12);color:#fff;}
+.drip-topbar .db-nav a.db-home{background:rgba(245,242,232,.12);color:#fff;}
+.drip-topbar .db-nav a.db-cta{background:#F8B133;color:#3a2408;font-weight:600;}
+.drip-topbar .db-nav a.db-cta:hover{background:#ffc658;}
+.drip-topbar .db-nav a.is-active{background:#33B193;color:#06231d;font-weight:600;}
+@media(max-width:780px){.drip-topbar .db-sub{display:none;}.drip-topbar{padding:9px 16px;}.drip-topbar .db-nav a{padding:6px 9px;font-size:12px;}}
+</style>
+<link rel="stylesheet" href="drip-harmonize.css">
+</head>
+<body>
+<div class="drip-topbar">
+  <a class="db-brand" href="DRIP.html"><span class="db-dm">DRIP<span>.</span></span><span class="db-sub">Drylands Restoration Initiatives Platform</span></a>
+  <nav class="db-nav">
+    <a class="db-home" href="DRIP.html">⌂ Home</a>
+    <a href="DRIP.html#story">About</a>
+    <a href="DRIP Map.html">Map</a>
+    <a href="DRIP.html#library">Library</a>
+    <a class="is-active" href="MARVEL.html">MARVEL</a>
+    <a href="Water.html">Water</a>
+    <a href="DRIP.html#transparency">Transparency and Data Policy</a>
+    <a class="db-cta" href="DRIP.html#partner">Become a partner</a>
+  </nav>
+</div>
+
+<header class="page-head">
+ <div class="header-inner">
+  <img class="brand-logo" src="assets/logo-color.png" alt="DSL-IP – Drylands Sustainable Landscapes Impact Programme">
+  <p class="eyebrow">The DRIP Dashboard · MRV + MEL</p>
+  <h1>MAR<span>VEL</span></h1>
+  <p class="lede">The Programme's results-and-learning layer in one place – <strong>Monitoring, Assessment, Reporting, Verification, Evaluation and Learning</strong>. MARVEL pulls together the knowledge products, projects, best practices, financing, indicators and global environmental benefits of the Drylands Sustainable Landscapes Impact Program.</p>
+  <div class="acronym">
+   <span><b>M</b>onitoring</span><span><b>A</b>ssessment</span><span><b>R</b>eporting</span><span><b>V</b>erification</span><span><b>E</b>valuation</span><span><b>L</b>earning</span>
+  </div>
+  <div class="hero-kpis">
+   <div class="hk"><div class="v" id="hk-products">41</div><div class="l">Knowledge products</div></div>
+   <div class="hk"><div class="v">11</div><div class="l">Child projects</div></div>
+   <div class="hk"><div class="v">46.3M</div><div class="l">tCO₂e to mitigate</div></div>
+   <div class="hk"><div class="v">13.1M</div><div class="l">ha to restore</div></div>
+   <div class="hk"><div class="v">$635M</div><div class="l">Finance mobilized</div></div>
+  </div>
+ </div>
+</header>
+<nav class="secnav">
+ <ul>
+  <li><a href="#overview">Overview</a></li>
+  <li><a href="#knowledge">Knowledge</a></li>
+  <li><a href="#projects">Projects</a></li>
+  <li><a href="#practices">Best practices</a></li>
+  <li><a href="#financing">Financing</a></li>
+  <li><a href="#indicators">Indicators and GEBs</a></li>
+  <li><a href="#newsroom">Newsroom</a></li>
+ </ul>
+</nav>
+
+<div class="container">
+
+<section id="overview">
+ <h2><span class="kicker">At a glance</span>The Programme, measured</h2>
+ <p class="lead">MARVEL is DRIP's monitoring and learning dashboard – a single, living view of what the Programme holds, does and delivers. The headline figures are below; each panel drills down into the data behind it.</p>
+ <div class="kpis" style="margin-top:1.4rem;">
+  <div class="kpi t-water"><div class="kv" id="kpi-products">41</div><div class="kl"><a href="archive.html">Knowledge products</a></div><div class="ks">catalogued in the living index</div></div>
+  <div class="kpi t-forest"><div class="kv">11</div><div class="kl"><a href="DRIP Map.html">Child projects</a></div><div class="ks">across the world's drylands</div></div>
+  <div class="kpi t-clay"><div class="kv" id="kpi-practices">–</div><div class="kl"><a href="DRIP.html#library">Best-practice guides</a></div><div class="ks">manuals &amp; SLM one-pagers</div></div>
+  <div class="kpi t-amber"><div class="kv">46.3M</div><div class="kl">tCO₂e mitigation</div><div class="ks">GEF-7 core target</div></div>
+  <div class="kpi t-forest"><div class="kv">13.1M</div><div class="kl">hectares</div><div class="ks">restored / under improved mgmt</div></div>
+  <div class="kpi t-gold"><div class="kv">$635M</div><div class="kl">finance mobilized</div><div class="ks">1:5.6 leverage on GEF seed</div></div>
+ </div>
+
+ <h3>What MARVEL is</h3>
+ <p>MARVEL joins the two faces of results work: <strong>MRV</strong> – Monitoring, Reporting and Verification of environmental results – and <strong>MEL</strong> – Monitoring, Evaluation and Learning that feeds lessons back into delivery. Together they turn the Programme's activity into evidence, accountability and improvement.</p>
+ <div class="flow">
+  <div class="flow-step"><div class="fs-l">M</div><div class="fs-t">Monitoring</div><p>Track results from the community up to GEF reporting.</p></div>
+  <div class="flow-step"><div class="fs-l">A</div><div class="fs-t">Assessment</div><p>Establish the baseline and measure change (ILAM).</p></div>
+  <div class="flow-step"><div class="fs-l">R</div><div class="fs-t">Reporting</div><p>PIRs and core-indicator reporting against targets.</p></div>
+  <div class="flow-step"><div class="fs-l">V</div><div class="fs-t">Verification</div><p>Validate data quality and the environmental benefits claimed.</p></div>
+  <div class="flow-step"><div class="fs-l">E</div><div class="fs-t">Evaluation</div><p>Judge what worked, where and why.</p></div>
+  <div class="flow-step"><div class="fs-l">L</div><div class="fs-t">Learning</div><p>Feed lessons back through the Regional Exchange Mechanism.</p></div>
+ </div>
+ <div class="btnrow"><a class="btn-inl" href="dsl-ip-monitoring/DSL-IP Monitoring System.html">Open the Monitoring System →</a></div>
+</section>
+
+<section id="knowledge">
+ <h2><span class="kicker">Knowledge products</span>The living catalogue</h2>
+ <p>Every framework, module, tool, case, story, policy and reference the Programme captures lives in one canonical index. These figures are read <strong>live</strong> from that catalogue.</p>
+ <div class="kpis" style="margin:1.2rem 0;">
+  <div class="kpi t-water"><div class="kv" id="kc-total">41</div><div class="kl">total products</div></div>
+  <div class="kpi t-forest"><div class="kv" id="kc-validated">–</div><div class="kl">validated</div></div>
+  <div class="kpi t-amber"><div class="kv" id="kc-pending">–</div><div class="kl">pending review</div></div>
+  <div class="kpi t-clay"><div class="kv" id="kc-types">–</div><div class="kl">product types</div></div>
+ </div>
+ <h3>By type</h3>
+ <div class="bars" id="bars-type"><div class="loading">Loading from the catalogue…</div></div>
+ <h3>By DRIP pillar</h3>
+ <div class="bars" id="bars-pillar"><div class="loading">Loading from the catalogue…</div></div>
+ <h3>Recently added and updated</h3>
+ <div class="feed" id="feed-recent"><div class="loading">Loading from the catalogue…</div></div>
+ <div class="btnrow"><a class="btn-inl" href="archive.html">Open the full Archive &amp; Index →</a></div>
+</section>
+
+<section id="projects">
+ <h2><span class="kicker">Projects</span>Eleven child projects, one programme</h2>
+ <p>The DSL-IP delivers through <strong>eleven country (child) projects</strong> coordinated by a Global Coordination Project. They span the dryland forests and rangelands of southern and eastern Africa, the Sahel and the Central Asian steppe.</p>
+ <div class="regions">
+  <div class="region"><h4>Southern Africa · miombo &amp; mopane</h4><div class="cty"><span>Angola</span><span>Botswana</span><span>Malawi</span><span>Mozambique</span><span>Namibia</span><span>Tanzania</span><span>Zimbabwe</span></div></div>
+  <div class="region"><h4>East Africa</h4><div class="cty"><span>Kenya</span></div></div>
+  <div class="region"><h4>Sahel / West Africa</h4><div class="cty"><span>Burkina Faso</span></div></div>
+  <div class="region"><h4>Central Asia · steppe</h4><div class="cty"><span>Kazakhstan</span></div></div>
+ </div>
+ <p class="muted">Countries shown are those documented across this platform; the Programme's official figure is eleven child projects plus the Global Coordination Project. Explore the project network on the <a class="inl" href="DRIP Map.html">DRIP Map</a> and the <a class="inl" href="DSL-IP Constellation Dashboard.html">Constellation</a>.</p>
+ <div class="callout">
+  <div class="ct">A biome in focus</div>
+  <p>Most of the southern-African projects sit in the <a class="inl" href="Miombo and Mopane Woodlands.html">miombo &amp; mopane woodlands</a> – the African companion to Brazil's <a class="inl" href="Caatinga Biome.html">Caatinga</a>, and the heartland of the dryland-forests agenda.</p>
+ </div>
+</section>
+
+<section id="practices">
+ <h2><span class="kicker">Best practices</span>Field guides and technologies</h2>
+ <p>The Programme's practical know-how is packaged as short, print-ready guides and a catalogue of named technologies and approaches – ready to use and to exchange South-South.</p>
+ <div class="grid">
+  <div class="card"><h4>DRIP Manual Series</h4><p><span class="big" id="bp-manuals">–</span> 2–3 page good-practice manuals on sustainable dryland forest management, with WOCAT-format annexes. <a class="inl" href="DRIP Manual Series Template.html">See the series →</a></p></div>
+  <div class="card"><h4>Caatinga SLM technologies</h4><p><span class="big" id="bp-slm">–</span> individual technologies and approaches – silvopastoral systems, sustainable wood energy, native value chains. <a class="inl" href="Caatinga Biome.html#management">Explore →</a></p></div>
+  <div class="card"><h4>SLPF and the pillars</h4><p>The <a class="inl" href="SLPF Sustainable Landscape Production Framework.html">Sustainable Landscape Production Framework</a> – Farmer Field Schools, seed banks and green value chains – assessed through <a class="inl" href="ILAM Integrated Landscape Assessment Methodology.html">ILAM</a>.</p></div>
+ </div>
+</section>
+
+<section id="financing">
+ <h2><span class="kicker">Financing</span>From a GEF seed to mobilized investment</h2>
+ <p>The Programme's pooled, One-FAO financial architecture turns a modest GEF grant into large-scale, leveraged investment in the drylands.</p>
+ <div class="kpis" style="margin:1.2rem 0;">
+  <div class="kpi t-forest"><div class="kv">$96M</div><div class="kl">GEF-7 seed</div><div class="ks">the catalytic grant</div></div>
+  <div class="kpi t-gold"><div class="kv">$635M</div><div class="kl">total mobilized</div><div class="ks">incl. co-financing</div></div>
+  <div class="kpi t-water"><div class="kv">1 : 5.6</div><div class="kl">leverage ratio</div><div class="ks">co-financing per GEF dollar</div></div>
+ </div>
+ <p>This is the foundation the <a class="inl" href="DFSA Campaign.html">Dryland Forest Support Accelerator (DFSA)</a> is designed to scale. See the full model in the <a class="inl" href="DSL-IP Financial Architecture.html">Financial Architecture</a>.</p>
+ <div class="btnrow"><a class="btn-inl" href="resources/DSL-IP-Mobilized-Finance.pdf" target="_blank" rel="noopener">Mobilized-finance brief (PDF) →</a></div>
+</section>
+
+<section id="indicators">
+ <h2><span class="kicker">Indicators and GEBs</span>Global Environmental Benefits</h2>
+ <p>The Programme reports against the <strong>GEF-7 Core Indicators</strong>. Its headline global environmental benefit targets, across the eleven countries, are:</p>
+ <div class="grid">
+  <div class="card"><h4>Climate change mitigation</h4><p><span class="big">46.3M</span> tonnes CO₂e of greenhouse-gas emissions mitigated <span class="muted">(GEF-7 CI-6)</span>.</p></div>
+  <div class="card"><h4>Land restored and managed</h4><p><span class="big">13.1M</span> hectares of land restored or brought under improved management <span class="muted">(GEF-7 CI-3 / CI-4)</span>.</p></div>
+  <div class="card"><h4>Reach</h4><p><span class="big">11</span> countries, with results flowing from communities up to GEF reporting through the shared monitoring system.</p></div>
+ </div>
+ <div class="callout">
+  <div class="ct">How the numbers are assured</div>
+  <p>Targets are tracked through the participatory <a class="inl" href="dsl-ip-monitoring/DSL-IP Monitoring System.html">Monitoring System</a> (the MRV engine), baselined with <a class="inl" href="ILAM Integrated Landscape Assessment Methodology.html">ILAM</a>, and reported in annual PIRs – the Verification step before benefits are claimed.</p>
+ </div>
+ <div class="btnrow"><a class="btn-inl" href="resources/DSL-IP-Global-Environmental-Benefits.pdf" target="_blank" rel="noopener">Global Environmental Benefits brief (PDF) →</a></div>
+</section>
+
+<section id="newsroom">
+ <h2><span class="kicker">Newsroom</span>What's new on the platform</h2>
+ <p>The latest additions and milestones – the live feed below is drawn from the most recently added and updated catalogue entries.</p>
+ <h3>Highlights</h3>
+ <div class="feed">
+  <a class="fcard" href="COFO Working Group on Dryland Forests.html"><div class="fmeta"><span class="badge">Governance</span><span class="date">2025</span></div><h4>COFO Working Group · 4th Session, Ulaanbaatar</h4><p>The inter-governmental expert group that governs FAO's dryland work convenes; the body that called DRIP into being in 2019.</p></a>
+  <a class="fcard" href="Miombo and Mopane Woodlands.html"><div class="fmeta"><span class="badge">Knowledge</span><span class="date">New</span></div><h4>The Miombo &amp; Mopane Woodlands profile</h4><p>Africa's great dry forest – a live biodiversity dashboard and the biome where six DSL-IP projects work.</p></a>
+  <a class="fcard" href="DFSA Campaign.html"><div class="fmeta"><span class="badge">Finance</span><span class="date">COP30</span></div><h4>Dryland Forest Support Accelerator (DFSA)</h4><p>From Belém to Antalya – the case for a dedicated FAO support accelerator for the forests climate finance forgot.</p></a>
+ </div>
+ <h3>Latest from the catalogue</h3>
+ <div class="feed" id="feed-news"><div class="loading">Loading from the catalogue…</div></div>
+</section>
+
+</div>
+<footer>
+ <p><strong>MARVEL</strong> – the DRIP dashboard · Monitoring · Assessment · Reporting · Verification · Evaluation · Learning</p>
+ <hr class="foot-rule">
+ <p>A monitoring &amp; learning view of the Drylands Sustainable Landscapes Impact Program · figures are programme targets and live catalogue counts · <a href="DRIP.html">back to DRIP</a></p>
+</footer>
+
+<script src="drip-archive.js"></script>
+<script src="drip-home.js"></script>
+<script>
+(function(){
+  var A = (window.DRIP_ARCHIVE||[]).slice();
+  var META = window.DRIP_ARCHIVE_META||{types:{}};
+  var PILLAR = { coordination:'Coordination & Exchange', assessment:'Assessment & Evidence', production:'Sustainable Production',
+    gender:'Gender & Inclusion', monitoring:'Monitoring & Learning', knowledge:'Knowledge & Outreach', finance:'Finance & Governance' };
+  var $ = function(id){ return document.getElementById(id); };
+  var set = function(id,v){ var e=$(id); if(e) e.textContent=v; };
+  if(!A.length){ ['feed-recent','feed-news','bars-type','bars-pillar'].forEach(function(id){ var e=$(id); if(e) e.innerHTML='<div class="loading">Catalogue unavailable.</div>'; }); return; }
+
+  /* KPIs */
+  set('kpi-products', A.length); set('hk-products', A.length); set('kc-total', A.length);
+  var validated = A.filter(function(e){return e.status==='validated';}).length;
+  set('kc-validated', validated); set('kc-pending', A.length-validated);
+  var bp = A.filter(function(e){ return (e.tags||[]).some(function(t){ return /manual|1-pager|good practice|field guide/i.test(t); }); }).length;
+  set('kpi-practices', bp);
+  set('bp-manuals', A.filter(function(e){ return /^manual-|drip-manual/.test(e.id); }).length);
+  set('bp-slm', A.filter(function(e){ return /^slm-/.test(e.id); }).length);
+
+  /* counts helper */
+  function tally(key){ var c={}; A.forEach(function(e){ var v=e[key]; (Array.isArray(v)?v:[v]).forEach(function(x){ if(x) c[x]=(c[x]||0)+1; }); }); return c; }
+  function renderBars(id, counts, labels){
+    var rows = Object.keys(counts).map(function(k){ return {k:k, n:counts[k], label:(labels&&labels[k])||k}; }).sort(function(a,b){ return b.n-a.n; });
+    var max = rows.length?rows[0].n:1, box=$(id);
+    box.innerHTML = rows.map(function(r){
+      return '<div class="bar"><span class="bl">'+r.label+'</span><span class="bt"><span class="bf" data-w="'+(r.n/max*100).toFixed(1)+'"></span></span><span class="bv">'+r.n+'</span></div>';
+    }).join('');
+    requestAnimationFrame(function(){ Array.prototype.forEach.call(box.querySelectorAll('.bf'), function(f){ f.style.width=f.getAttribute('data-w')+'%'; }); });
+  }
+  var typeCounts = tally('type');
+  set('kc-types', Object.keys(typeCounts).length);
+  renderBars('bars-type', typeCounts, META.types);
+  renderBars('bars-pillar', tally('pillars'), PILLAR);
+
+  /* recent feed + newsroom */
+  function dt(e){ return e.updated||e.added||''; }
+  var recent = A.slice().sort(function(a,b){ return (dt(b)).localeCompare(dt(a)); });
+  function card(e){
+    var t = (META.types[e.type]||e.type||'').toString();
+    var pills = (e.pillars||[]).slice(0,3).map(function(p){ return '<span class="pill">'+((PILLAR[p]||p).split(' ')[0])+'</span>'; }).join('');
+    var ext = /^https?:/.test(e.url||'') || /\.pdf$/i.test(e.url||'');
+    return '<a class="fcard" href="'+(e.url||'#')+'"'+(ext?' target="_blank" rel="noopener"':'')+'>'+
+      '<div class="fmeta"><span class="badge">'+t+'</span><span class="date">'+(dt(e)||'')+'</span></div>'+
+      '<h4>'+(e.title||'')+'</h4><p>'+((e.summary||'').slice(0,150))+((e.summary||'').length>150?'…':'')+'</p>'+
+      '<div class="pills">'+pills+'</div></a>';
+  }
+  $('feed-recent').innerHTML = recent.slice(0,8).map(card).join('');
+  $('feed-news').innerHTML   = recent.slice(0,6).map(card).join('');
+})();
+</script>
+</body>
+</html>

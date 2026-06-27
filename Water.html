@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Water for every farm · DRIP</title>
+<link rel="stylesheet" href="drip-topbar.css" />
+<style>
+  :root{
+    --cream:#F5F2E8; --ink:#241F1B; --ink-2:#6B5E54; --ink-on-dark:#FBF8EF;
+    --water:#3F8FCB; --water-deep:#2C6A9C;
+    --font-display:"Oswald","Segoe UI",system-ui,sans-serif;
+    --font-body:"Merriweather",Georgia,serif;
+  }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  body{ font-family:var(--font-body); color:var(--ink); background:var(--cream); -webkit-font-smoothing:antialiased; }
+  .page{ max-width:1180px; margin:0 auto; padding:0 32px; }
+
+  .hero{ position:relative; overflow:hidden; color:var(--ink-on-dark);
+    background:linear-gradient(135deg,#2C6A9C 0%,#3F8FCB 55%,#6FB1DC 100%); }
+  .hero .page{ min-height:62vh; display:flex; flex-direction:column; justify-content:center; padding:72px 32px; }
+  .hero .eyebrow{ font-family:var(--font-display); text-transform:uppercase; letter-spacing:.2em;
+    font-weight:600; font-size:13px; color:rgba(251,248,239,.9); display:inline-flex; align-items:center; gap:12px; }
+  .hero .eyebrow::before{ content:""; width:30px; height:2px; background:currentColor; display:inline-block; }
+  .hero h1{ font-family:var(--font-display); text-transform:uppercase; font-weight:700; line-height:1.05;
+    font-size:clamp(40px,6vw,84px); letter-spacing:.005em; margin-top:18px; text-shadow:0 2px 24px rgba(0,0,0,.18); }
+  .hero p.lede{ font-size:clamp(17px,2vw,21px); line-height:1.55; font-weight:300;
+    color:rgba(251,248,239,.94); max-width:48ch; margin-top:20px; }
+</style>
+</head>
+<body>
+
+<div class="drip-topbar">
+  <a class="db-brand" href="DRIP.html"><span class="db-dm">DRIP<span>.</span></span><span class="db-sub">Drylands Restoration Initiatives Platform</span></a>
+  <nav class="db-nav">
+    <a class="db-home" href="DRIP.html">⌂ Home</a>
+    <a href="DRIP.html#story">About</a>
+    <a href="DRIP Map.html">Map</a>
+    <a href="DRIP.html#library">Library</a>
+    <a href="MARVEL.html">MARVEL</a>
+    <a href="Water.html">Water</a>
+    <a href="DRIP.html#transparency">Transparency and Data Policy</a>
+    <a class="db-cta" href="DRIP.html#partner">Become a partner</a>
+  </nav>
+</div>
+
+<header class="hero">
+  <div class="page">
+    <span class="eyebrow">Drylands Restoration Initiatives Platform</span>
+    <h1>Water for every farm</h1>
+    <p class="lede">Securing water for dryland farming families &ndash; the foundation of resilient land, livelihoods and restoration.</p>
+  </div>
+</header>
+
+</body>
+</html>

@@ -1,4 +1,4 @@
-# DRIP — Dryland Research &amp; Information Platform (test site)
+# DRIP — Drylands Restoration Initiatives Platform (test site)
 
 A static site. The home page is **`index.html`** (the DRIP hub); it links out to the
 Constellation, the frameworks (ILAM, SLPF, REM), the Financial Architecture, the
@@ -30,7 +30,7 @@ Monitoring system, the Publication & funding plan, and the knowledge stories.
 - Filenames contain spaces; GitHub Pages serves these (URL-encoded as `%20`). Links
   already match, so they resolve. If you prefer clean URLs, rename files to hyphens
   and update the links in `index.html`.
-- The Constellation, Monitoring, When Women Lead and DFSM pages are self-contained
+- The Constellation, Monitoring, When Women Lead and DFSA pages are self-contained
   single-file builds. The other pages load shared `fonts/`, `assets/` and
   `colors_and_type.css`, plus Google Fonts / Lucide from their CDNs (online).
 - Before any audience beyond an internal test: replace `your-contact@example.org`

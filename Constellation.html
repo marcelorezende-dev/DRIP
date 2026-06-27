@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>The Constellation — DRIP</title>
+<title>The Constellation – DRIP</title>
 <style>
 :root{--terracotta:#CF715D;--forest:#477E59;--forest-deep:#356046;--cream:#F5F2E8;--amber:#F8B133;--teal:#33B193;
  --soil:#2C2A24;--ink:#2b2723;--muted:#6b6258;--line:#e2dccc;--paper2:#efe9da;}
@@ -60,7 +60,7 @@ h2{font-family:Georgia,serif;color:var(--ink);font-size:25px;margin:8px 0 6px;}
  background:#1f523a;border-bottom:1px solid rgba(245,242,232,.16);padding:11px 24px;
  font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased;}
 .drip-topbar *{box-sizing:border-box;}
-.drip-topbar .db-brand{display:flex;align-items:center;gap:11px;text-decoration:none;}
+.drip-topbar .db-brand{display:flex;flex-direction:column;align-items:flex-start;gap:2px;text-decoration:none;}
 .drip-topbar .db-dm{font-weight:800;font-size:23px;letter-spacing:.04em;color:#F5F2E8;line-height:1;}
 .drip-topbar .db-dm span{color:#F8B133;}
 .drip-topbar .db-sub{font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;color:rgba(245,242,232,.6);}
@@ -72,15 +72,18 @@ h2{font-family:Georgia,serif;color:var(--ink);font-size:25px;margin:8px 0 6px;}
 .drip-topbar .db-nav a.db-cta:hover{background:#ffc658;}
 @media(max-width:780px){.drip-topbar .db-sub{display:none;}.drip-topbar{padding:9px 16px;}.drip-topbar .db-nav a{padding:6px 9px;font-size:12px;}}
 </style>
+<link rel="stylesheet" href="drip-harmonize.css">
 </head><body>
 <div class="drip-topbar">
-  <a class="db-brand" href="DRIP.html"><span class="db-dm">DRIP<span>.</span></span><span class="db-sub">Dryland Research &amp; Information Platform</span></a>
+  <a class="db-brand" href="DRIP.html"><span class="db-dm">DRIP<span>.</span></span><span class="db-sub">Drylands Restoration Initiatives Platform</span></a>
   <nav class="db-nav">
     <a class="db-home" href="DRIP.html">⌂ Home</a>
     <a href="DRIP.html#story">About</a>
     <a href="DRIP Map.html">Map</a>
-    <a href="DRIP.html#pillars-sec">Research</a>
-    <a href="DRIP.html#transparency">Transparency &amp; Data Policy</a>
+    <a href="DRIP.html#library">Library</a>
+    <a href="MARVEL.html">MARVEL</a>
+    <a href="Water.html">Water</a>
+    <a href="DRIP.html#transparency">Transparency and Data Policy</a>
     <a class="db-cta" href="DRIP.html#partner">Become a partner</a>
   </nav>
 </div>
@@ -95,7 +98,7 @@ h2{font-family:Georgia,serif;color:var(--ink);font-size:25px;margin:8px 0 6px;}
     </svg>
     <div class="kick">DRIP · Coordination &amp; Exchange</div>
     <h1>The Constellation</h1>
-    <p>The whole Programme as a living, interactive 3D network — its coordination core, frameworks, country projects, partners and themes, all connected. The navigational backbone of DRIP, and the connective tissue of its knowledge exchange.</p>
+    <p>The whole Programme as a living, interactive 3D network – its coordination core, frameworks, country projects, partners and themes, all connected. The navigational backbone of DRIP, and the connective tissue of its knowledge exchange.</p>
     <div class="btns">
       <a class="btn primary" href="DSL-IP Constellation Dashboard.html">▶ Enter the interactive tool</a>
       <a class="btn ghost" href="DRIP.html">← Back to DRIP home</a>
@@ -108,12 +111,12 @@ h2{font-family:Georgia,serif;color:var(--ink);font-size:25px;margin:8px 0 6px;}
     <div class="sec" id="about">
       <div class="eyebrow">What it is</div>
       <h2>One system, many lenses</h2>
-      <p class="lead">The Constellation maps the Drylands Sustainable Landscapes Impact Program as a network you can explore — drag to orbit, click a node to open it, and trace how coordination, knowledge and monitoring data move between the parts. It belongs to the platform's <strong>Coordination &amp; Exchange</strong> pillar: the place where the whole Programme is aligned, pooled and connected.</p>
+      <p class="lead">The Constellation maps the Drylands Sustainable Landscapes Impact Program as a network you can explore – drag to orbit, click a node to open it, and trace how coordination, knowledge and monitoring data move between the parts. It belongs to the platform's <strong>Coordination &amp; Exchange</strong> pillar: the place where the whole Programme is aligned, pooled and connected.</p>
       <div class="lenses">
-        <div class="lens"><span class="d" style="color:#5ba9de;background:#5ba9de"></span><h4>Programme</h4><p>The whole Programme at a glance — core, functions, the two REMs and the eleven child projects.</p></div>
+        <div class="lens"><span class="d" style="color:#5ba9de;background:#5ba9de"></span><h4>Programme</h4><p>The whole Programme at a glance – core, functions, the two REMs and the eleven child projects.</p></div>
         <div class="lens"><span class="d" style="color:#36b3a6;background:#36b3a6"></span><h4>Regional Exchange</h4><p>The REM as the bridge between global coordination and country delivery.</p></div>
-        <div class="lens"><span class="d" style="color:#6fb04a;background:#6fb04a"></span><h4>Project</h4><p>A single child project end to end — Malawi from ministries down to farmers.</p></div>
-        <div class="lens"><span class="d" style="color:#edab73;background:#edab73"></span><h4>Information flow</h4><p>How knowledge and monitoring data move — with a packet router that times any journey.</p></div>
+        <div class="lens"><span class="d" style="color:#6fb04a;background:#6fb04a"></span><h4>Project</h4><p>A single child project end to end – Malawi from ministries down to farmers.</p></div>
+        <div class="lens"><span class="d" style="color:#edab73;background:#edab73"></span><h4>Information flow</h4><p>How knowledge and monitoring data move – with a packet router that times any journey.</p></div>
         <div class="lens"><span class="d" style="color:#b08fe0;background:#b08fe0"></span><h4>Merged network</h4><p>Everything in one network, with shared nodes acting as bridges.</p></div>
         <div class="lens"><span class="d" style="color:#f2b33d;background:#f2b33d"></span><h4>Builder</h4><p>Add nodes, connect and delete them, validate, and export your own network.</p></div>
       </div>

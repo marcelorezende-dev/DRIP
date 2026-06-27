@@ -56,7 +56,7 @@
  h3{ font-family:var(--serif); font-weight:700; color:var(--forest); font-size:1.45rem; line-height:1.25; margin:1.8rem 0 1rem; }
  h4{ font-family:var(--serif); font-weight:700; color:var(--clay-deep); font-size:1.18rem; margin:1rem 0 .5rem; }
 
- /* CALLOUTS — proper brand cards (full border + top accent + Oswald kicker) */
+ /* CALLOUTS – proper brand cards (full border + top accent + Oswald kicker) */
  .callout{ padding:1.5rem 1.6rem; margin:1.6rem 0; border-radius:12px; background:var(--surface);
  border:1px solid var(--border); border-top:4px solid var(--ink-3); box-shadow:var(--shadow-sm); }
  .callout.concept{ background:#FBF9F2; border-top-color:var(--clay); }
@@ -164,6 +164,10 @@
  .reference-item{ margin:1rem 0; padding-left:2rem; text-indent:-2rem; line-height:1.6; color:var(--ink-2); }
  .reference-item a{ color:var(--clay); text-decoration:none; }
  .reference-item a:hover{ text-decoration:underline; }
+ .apa-refs{ list-style:none; padding:0; margin:.3rem 0 0; }
+ .apa-refs li{ padding-left:1.6em; text-indent:-1.6em; margin:0 0 .55rem; color:var(--ink-2); }
+ .apa-refs a{ color:var(--clay); text-decoration:none; word-break:break-word; }
+ .apa-refs a:hover{ text-decoration:underline; }
 
  @media (max-width:768px){
  header{ padding:2.2rem 1.3rem; } header h1{ font-size:2rem; }
@@ -179,7 +183,7 @@
  background:#1f523a;border-bottom:1px solid rgba(245,242,232,.16);padding:11px 24px;
  font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased;}
 .drip-topbar *{box-sizing:border-box;}
-.drip-topbar .db-brand{display:flex;align-items:center;gap:11px;text-decoration:none;}
+.drip-topbar .db-brand{display:flex;flex-direction:column;align-items:flex-start;gap:2px;text-decoration:none;}
 .drip-topbar .db-dm{font-weight:800;font-size:23px;letter-spacing:.04em;color:#F5F2E8;line-height:1;}
 .drip-topbar .db-dm span{color:#F8B133;}
 .drip-topbar .db-sub{font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;color:rgba(245,242,232,.6);}
@@ -191,16 +195,19 @@
 .drip-topbar .db-nav a.db-cta:hover{background:#ffc658;}
 @media(max-width:780px){.drip-topbar .db-sub{display:none;}.drip-topbar{padding:9px 16px;}.drip-topbar .db-nav a{padding:6px 9px;font-size:12px;}}
 </style>
+<link rel="stylesheet" href="drip-harmonize.css">
 </head>
 <body>
 <div class="drip-topbar">
-  <a class="db-brand" href="DRIP.html"><span class="db-dm">DRIP<span>.</span></span><span class="db-sub">Dryland Research &amp; Information Platform</span></a>
+  <a class="db-brand" href="DRIP.html"><span class="db-dm">DRIP<span>.</span></span><span class="db-sub">Drylands Restoration Initiatives Platform</span></a>
   <nav class="db-nav">
     <a class="db-home" href="DRIP.html">⌂ Home</a>
     <a href="DRIP.html#story">About</a>
     <a href="DRIP Map.html">Map</a>
-    <a href="DRIP.html#pillars-sec">Research</a>
-    <a href="DRIP.html#transparency">Transparency &amp; Data Policy</a>
+    <a href="DRIP.html#library">Library</a>
+    <a href="MARVEL.html">MARVEL</a>
+    <a href="Water.html">Water</a>
+    <a href="DRIP.html#transparency">Transparency and Data Policy</a>
     <a class="db-cta" href="DRIP.html#partner">Become a partner</a>
   </nav>
 </div>
@@ -225,7 +232,6 @@
             <li><a href="#financial">Financial Analysis</a></li>
             <li><a href="#components">Components</a></li>
             <li><a href="#implementation">Implementation</a></li>
-            <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
@@ -234,15 +240,15 @@
 
         <!-- EXECUTIVE SUMMARY -->
         <section id="summary">
-            <h2>Executive Summary: The Sisteminha-IFES Integration</h2>
+            <h2>Executive summary: the Sisteminha-IFES integration</h2>
 
             <div class="callout concept">
                 <div class="callout-title">Integration Concept</div>
-                <p><strong>IFES</strong> (proven pigeon pea-maize intercropping in Malawi) + <strong>Sisteminha</strong> (holistic integrated system) = <strong>Powerful synergy</strong> addressing ALL DSL-IP priorities: food security, water, soil health, income, and climate resilience.</p>
+                <p><strong>IFES</strong> (proven pigeon pea-maize intercropping in Malawi) + <strong>Sisteminha</strong> (holistic integrated system) = <strong>Powerful synergy</strong> addressing ALL DSL-IP priorities under the FAO-led, GEF-7 Dryland Sustainable Landscapes Impact Program (Global Environment Facility, n.d.): food security, water, soil health, income, and climate resilience.</p>
             </div>
 
-            <h3>Malawi Context - Key Challenges</h3>
-            <p>Survey data from Timvane & Umphawi Toto shows critical challenges <a href="#ref2" class="reference-link">[2]</a> <a href="#ref3" class="reference-link">[3]</a>:</p>
+            <h3>Malawi context - key challenges</h3>
+            <p>Survey data from Timvane and Umphawi Toto shows critical challenges <a href="#ref2" class="reference-link">[2]</a> <a href="#ref3" class="reference-link">[3]</a>:</p>
 
             <table>
                 <tr>
@@ -280,7 +286,7 @@
 
         <!-- SLPF ALIGNMENT SECTION -->
         <section id="slpf-alignment">
-            <h2>Sisteminha-IFES Alignment with SLPF Guiding Principles</h2>
+            <h2>Sisteminha-IFES alignment with SLPF guiding principles</h2>
 
             <div class="callout slpf">
                 <div class="callout-title">Sustainable Landscape Production Framework (SLPF)</div>
@@ -288,19 +294,19 @@
                 <p style="margin-top: 1rem;"><strong>Sisteminha-IFES embodies SLPF's three key guiding principles:</strong> <a href="#ref1" class="reference-link">[1]</a></p>
             </div>
 
-            <h3>The Three SLPF Guiding Principles & Sisteminha-IFES Alignment</h3>
+            <h3>The three SLPF guiding principles and Sisteminha-IFES alignment</h3>
 
             <div class="alignment-grid">
                 <!-- PRINCIPLE 1: PEER LEARNING -->
                 <div class="alignment-card">
                     <div class="slpf-label">SLPF PRINCIPLE #1</div>
-                    <h4>Peer Learning</h4>
+                    <h4>Peer learning</h4>
                     <p><strong>SLPF Approach:</strong> Farmer Field Schools (FFS) create platforms for peer-to-peer knowledge exchange, hands-on training, and farmer-to-farmer learning.</p>
                     <div class="arrow">↓</div>
                     <div class="sisteminha-feature">
                         <strong>Sisteminha-IFES Implementation:</strong>
                         <ul style="margin: 0.5rem 0 0 1rem; font-size: 0.9rem;">
-                            <li>Monthly Farmer Field Schools in Timvane & Umphawi Toto</li>
+                            <li>Monthly Farmer Field Schools in Timvane and Umphawi Toto</li>
                             <li>Demonstration farms showcase all system components</li>
                             <li>Lead farmers trained to mentor 5-10 peers</li>
                             <li>Seasonal workshops on component management</li>
@@ -312,16 +318,16 @@
                 <!-- PRINCIPLE 2: INCOME GENERATION & LIVELIHOODS -->
                 <div class="alignment-card">
                     <div class="slpf-label">SLPF PRINCIPLE #2</div>
-                    <h4>Income Generation & Livelihoods</h4>
-                    <p><strong>SLPF Approach:</strong> The Forest & Farm Facility (FFF) develops green value chains and integrates farmers into inclusive, sustainable markets — turning production into reliable income and stronger livelihoods.</p>
+                    <h4>Income generation and livelihoods</h4>
+                    <p><strong>SLPF Approach:</strong> The Forest & Farm Facility (FFF) develops green value chains and integrates farmers into inclusive, sustainable markets – turning production into reliable income and stronger livelihoods.</p>
                     <div class="arrow">↓</div>
                     <div class="sisteminha-feature">
                         <strong>Sisteminha-IFES Implementation:</strong>
                         <ul style="margin: 0.5rem 0 0 1rem; font-size: 0.9rem;">
                             <li>Pigeon pea → WFP school feeding (stable market)</li>
                             <li>Pigeon pea → dhal processing (value addition) + export to India/UK ($0.60-1.00/kg)</li>
-                            <li>Fish & eggs → direct community sales</li>
-                            <li>Producer cooperatives for collective marketing & direct buyer agreements</li>
+                            <li>Fish and eggs → direct community sales</li>
+                            <li>Producer cooperatives for collective marketing and direct buyer agreements</li>
                             <li>$260-410/year cash income across 5+ diversified sources</li>
                             <li>12-18 month payback period</li>
                         </ul>
@@ -331,7 +337,7 @@
                 <!-- PRINCIPLE 3: LDN POSITIVE -->
                 <div class="alignment-card">
                     <div class="slpf-label">SLPF PRINCIPLE #3</div>
-                    <h4>Land Degradation Neutrality (LDN) Positive</h4>
+                    <h4>Land Degradation Neutrality (LDN) positive</h4>
                     <p><strong>SLPF Approach:</strong> All interventions prevent, reduce, and reverse land degradation while maintaining ecosystem services.</p>
                     <div class="arrow">↓</div>
                     <div class="sisteminha-feature">
@@ -348,7 +354,7 @@
                 </div>
             </div>
 
-            <h3>SLPF Pillars Integration in Sisteminha-IFES</h3>
+            <h3>SLPF pillars integration in Sisteminha-IFES</h3>
 
             <table class="comparison-table">
                 <tr>
@@ -373,7 +379,7 @@
                 </tr>
             </table>
 
-            <h3>SLPF's Innovative Scalability Approach: FFPOs as Levers of Change</h3>
+            <h3>SLPF's innovative scalability approach: FFPOs as levers of change</h3>
 
             <div class="callout definition">
                 <div class="callout-title">Forest & Farm Producer Organizations (FFPOs) = Levers of Change</div>
@@ -402,7 +408,7 @@
                 <p style="margin-top: 1rem;"><strong>Result:</strong> FFPOs become embedded institutions that continue delivering SLM, seed banking, value chain services, and farmer training long after project closure.</p>
             </div>
 
-            <h3 style="margin-top: 2rem;">Sisteminha-IFES Operationalizes SLPF's FFPOs Scalability Model</h3>
+            <h3 style="margin-top: 2rem;">Sisteminha-IFES operationalizes SLPF's FFPOs scalability model</h3>
 
             <table style="margin-top: 1.5rem;">
                 <tr>
@@ -435,7 +441,7 @@
                 </tr>
             </table>
 
-            <h3 style="margin-top: 2rem;">Visual Framework: FFPOs as Central Institutional Lever</h3>
+            <h3 style="margin-top: 2rem;">Visual framework: FFPOs as central institutional lever</h3>
 
             <svg viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg" style="width: 100%; max-width: 600px; margin: 2rem auto; display: block; background-color: #FBF9F2; border-radius: 12px; padding: 1rem;">
                 
@@ -536,7 +542,7 @@
                 <div class="callout-title">How Sisteminha-IFES Operationalizes This Framework</div>
                 <p><strong>Farmer Field Schools (FFS)</strong> <a href="#ref10" class="reference-link">[10]</a>:</p>
                 <ul style="margin: 0.5rem 0 1rem 1rem; font-size: 0.95rem;">
-                    <li>Monthly gatherings in Timvane & Umphawi Toto</li>
+                    <li>Monthly gatherings in Timvane and Umphawi Toto</li>
                     <li>Peer-to-peer learning on all Sisteminha components</li>
                     <li>Lead farmers train 5-10 neighboring farmers</li>
                 </ul>
@@ -545,11 +551,11 @@
                 <ul style="margin: 0.5rem 0 1rem 1rem; font-size: 0.95rem;">
                     <li>Preserve pigeon pea, maize, vegetable varieties</li>
                     <li>Store nitrogen-fixing tree seeds</li>
-                    <li>Ensure women & marginalized groups access to seed</li>
+                    <li>Ensure women and marginalized groups access to seed</li>
                     <li>Enable community autonomy from external inputs</li>
                 </ul>
 
-                <p><strong>Business Development &amp; Market Access</strong> <a href="#ref9" class="reference-link">[9]</a>:</p>
+                <p><strong>Business Development and Market Access</strong> <a href="#ref9" class="reference-link">[9]</a>:</p>
                 <ul style="margin: 0.5rem 0 1rem 1rem; font-size: 0.95rem;">
                     <li>Organize producer groups for collective marketing</li>
                     <li>Link to WFP school feeding program (stable market)</li>
@@ -569,7 +575,7 @@
                 <p><strong>Result: All Three DSL-IP Criteria Achieved</strong></p>
                 <ul style="margin: 0.5rem 0 0 1rem; font-size: 0.95rem;">
                     <li>✓ <strong>LDN Positive:</strong> Composting (+0.5-1% organic matter), N-fixation, agroforestry, rainwater harvesting</li>
-                    <li>✓ <strong>Livelihoods &amp; Gender:</strong> Women in FFS, CSB leadership, equal benefit distribution through FFPOs</li>
+                    <li>✓ <strong>Livelihoods and Gender:</strong> Women in FFS, CSB leadership, equal benefit distribution through FFPOs</li>
                     <li>✓ <strong>Income Generating:</strong> $260-410/year cash income + $850-1,265/year food value = $1,050-1,575 net annual benefit</li>
                 </ul>
             </div>
@@ -579,7 +585,7 @@
                     <h4 style="color: var(--forest); margin-top: 0; padding-bottom: 0.5rem; border-bottom: 1px solid var(--hairline);">During Project (Years 1-3)</h4>
                     <p style="font-size: 0.95rem;"><strong>Project funds</strong> FFPO capacity building and Sisteminha-IFES setup</p>
                     <p style="font-size: 0.95rem;">FFPOs serve as <strong>implementing partners</strong> for field activities</p>
-                    <p style="font-size: 0.95rem;">Technical staff provide hands-on training & mentoring</p>
+                    <p style="font-size: 0.95rem;">Technical staff provide hands-on training and mentoring</p>
                 </div>
                 <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem;">
                     <h4 style="color: var(--forest); margin-top: 0; padding-bottom: 0.5rem; border-bottom: 1px solid var(--hairline);">Project Transition (Year 3-4)</h4>
@@ -599,7 +605,7 @@
                 <div class="callout-title">SYNERGY: How Sisteminha-IFES Operationalizes SLPF</div>
                 <p><strong>Community Seed Banks</strong> + <strong>Forest & Farm Facility</strong> + <strong>Farmer Field Schools</strong> + <strong>FFPOs as Institutional Lever</strong> = <strong>Sustainable Landscape Transformation</strong></p>
                 <ul style="margin-top: 1rem;">
-                    <li><span class="tick">✓</span> <strong>CSB</strong> ensures farmers access quality seed for crops & trees without external dependence</li>
+                    <li><span class="tick">✓</span> <strong>CSB</strong> ensures farmers access quality seed for crops and trees without external dependence</li>
                     <li><span class="tick">✓</span> <strong>FFF</strong> creates economic incentives making sustainable practices viable long-term</li>
                     <li><span class="tick">✓</span> <strong>FFS</strong> builds farmer capacity to implement and adapt practices to local conditions</li>
                     <li><span class="tick">✓</span> <strong>FFPOs</strong> become the institutional mechanism ensuring practices persist and scale beyond project</li>
@@ -641,13 +647,13 @@
             <div class="callout concept">
                 <div class="callout-title">WHAT IS SISTEMINHA?</div>
                 <p><strong>Sisteminha</strong> = "little system" in Portuguese <a href="#ref6" class="reference-link">[6]</a></p>
-                <p>A <strong>HOLISTIC INTEGRATED FOOD PRODUCTION SYSTEM</strong> <a href="#ref6" class="reference-link">[6]</a> combining:</p>
+                <p>A <strong>HOLISTIC INTEGRATED FOOD PRODUCTION SYSTEM</strong> <a href="#ref6" class="reference-link">[6]</a> developed by Embrapa in Brazil and now adapted in several African countries (Embrapa, 2019), combining:</p>
                 <ul>
                     <li>✓ Aquaculture (fish in tank)</li>
                     <li>✓ Vegetable gardens</li>
                     <li>✓ Poultry production</li>
                     <li>✓ Livestock (rabbits, goats)</li>
-                    <li>✓ Composting & soil improvement</li>
+                    <li>✓ Composting and soil improvement</li>
                     <li>✓ Agroforestry (tree integration)</li>
                 </ul>
                 <p><strong>All components work TOGETHER in a CLOSED-LOOP nutrient cycle.</strong></p>
@@ -659,7 +665,7 @@
                 <p>Minimal external inputs; the system sustains itself. Opposite of linear systems where nutrients are removed and lost.</p>
             </div>
 
-            <h3>How Sisteminha Works - The Cycle</h3>
+            <h3>How Sisteminha works - the cycle</h3>
             <ol>
                 <li><strong>FISH TANK (5,000L)</strong> - Fish eat feed → produce waste in water</li>
                 <li><strong>GARDEN IRRIGATION</strong> - Fish tank water flows to vegetables (no fertilizer needed)</li>
@@ -683,7 +689,7 @@
 
             <div class="callout concept">
                 <div class="callout-title">WHAT IS IFES?</div>
-                <p><strong>IFES</strong> = Integrated Food and Energy Systems <a href="#ref13" class="reference-link">[13]</a></p>
+                <p><strong>IFES</strong> = Integrated Food and Energy Systems <a href="#ref13" class="reference-link">[13]</a> &ndash; producing food and energy on the same land or from the same products and residues (FAO, 2011)</p>
                 <p>In Malawi, IFES specifically means:</p>
                 <ul>
                     <li>✓ <strong>PIGEON PEA intercropped with MAIZE</strong> <a href="#ref14" class="reference-link">[14]</a></li>
@@ -692,11 +698,11 @@
                     <li>✓ Pigeon pea leaves = animal fodder</li>
                     <li>✓ Nitrogen fixation = soil fertility improvement</li>
                 </ul>
-                <p><span class="bold-green">This is ALREADY PROVEN in Timvane & Umphawi Toto! <a href="#ref2" class="reference-link">[2]</a></span></p>
+                <p><span class="bold-green">This is ALREADY PROVEN in Timvane and Umphawi Toto! <a href="#ref2" class="reference-link">[2]</a></span></p>
             </div>
 
             <div class="callout definition">
-                <div class="callout-title">KEY SLM TERM: Pigeon Pea & Nitrogen Fixation</div>
+                <div class="callout-title">KEY SLM TERM: Pigeon Pea and Nitrogen Fixation</div>
                 <p>Pigeon pea is a <strong>drought-tolerant legume</strong> that FIXES atmospheric nitrogen through bacteria in root nodules.</p>
                 <p><strong>Benefits:</strong></p>
                 <ul>
@@ -709,7 +715,7 @@
                 <p>This is <strong>SUSTAINABLE LAND MANAGEMENT</strong> because farmers reduce fertilizer costs AND improve soil health simultaneously.</p>
             </div>
 
-            <h3>Production Timeline (Malawi)</h3>
+            <h3>Production timeline (Malawi)</h3>
             
             <div class="expandable">
                 <div class="expandable-header">
@@ -768,9 +774,9 @@
 
         <!-- FINANCIAL ANALYSIS -->
         <section id="financial">
-            <h2>Financial Analysis</h2>
+            <h2>Financial analysis</h2>
 
-            <h3>Investment & Returns</h3>
+            <h3>Investment and returns</h3>
             
             <div class="stats-grid">
                 <div class="stat-box">
@@ -795,7 +801,7 @@
                 </div>
             </div>
 
-            <h3>Investment Breakdown</h3>
+            <h3>Investment breakdown</h3>
             <table>
                 <tr>
                     <th>Component</th>
@@ -841,7 +847,7 @@
 
             <div class="callout warning">
                 <div class="callout-title">WHY RAINWATER HARVESTING IS EXPENSIVE (But Worth It!)</div>
-                <p><strong>THE PROBLEM:</strong> Malawi receives 600-1,200mm rain, but <span class="bold-brown">90% falls Nov-Mar</span> <a href="#ref15" class="reference-link">[15]</a>. The other 6 months (May-Oct) = <span class="bold-brown">ZERO RAIN</span> = <span class="bold-brown">DRY SEASON = HUNGER SEASON</span></p>
+                <p><strong>THE PROBLEM:</strong> Malawi receives 600-1,200mm rain, but <span class="bold-brown">90 percent falls Nov-Mar</span> <a href="#ref15" class="reference-link">[15]</a>. The other 6 months (May-Oct) = <span class="bold-brown">ZERO RAIN</span> = <span class="bold-brown">DRY SEASON = HUNGER SEASON</span></p>
                 <p><strong>WITHOUT rainwater storage:</strong></p>
                 <ul>
                     <li><span class="cross">✗</span> System only works Nov-Apr (4 months)</li>
@@ -857,10 +863,10 @@
                     <li><span class="tick">✓</span> Income 12 months/year</li>
                     <li><span class="tick">✓</span> Food security extended 6 months</li>
                 </ul>
-                <p><strong>The $660-1,050 investment IN WATER INFRASTRUCTURE SOLVES THE ENTIRE DRY SEASON PROBLEM.</strong></p>
+                <p><strong>The USD 660-1,050 investment IN WATER INFRASTRUCTURE SOLVES THE ENTIRE DRY SEASON PROBLEM.</strong></p>
             </div>
 
-            <h3>Payback Period</h3>
+            <h3>Payback period</h3>
             <div class="callout success">
                 <div class="callout-title">RETURN ON INVESTMENT</div>
                 <p><strong>$1,050-1,575 ÷ $1,055-1,635 = 60-100% ROI in Year 1</strong></p>
@@ -871,7 +877,7 @@
 
         <!-- COMPONENTS -->
         <section id="components">
-            <h2>System Components</h2>
+            <h2>System components</h2>
 
             <div class="tabs">
                 <button class="tab-button active" onclick="openTab(event, 'tab-pigeon')">Pigeon Pea</button>
@@ -883,7 +889,7 @@
             </div>
 
             <div id="tab-pigeon" class="tab-content active">
-                <h3>Component 1: Pigeon Pea-Maize Intercrop (60-80 m²)</h3>
+                <h3>Component 1: pigeon pea-maize intercrop (60-80 m²)</h3>
                 <div class="callout concept">
                     <div class="callout-title">PIGEON PEA-MAIZE INTERCROP</div>
                     <p><strong>Planting:</strong> November (onset of rains)<br>
@@ -896,14 +902,14 @@
                         <li>Pigeon pea stems: 400-500 kg (dried, for fuel)</li>
                         <li>Fodder from pigeon pea leaves: Continuous</li>
                     </ul>
-                    <p><strong>Key benefit:</strong> Pigeon pea nitrogen-fixes → reduces maize fertilizer need by 20-30%</p>
+                    <p><strong>Key benefit:</strong> Pigeon pea nitrogen-fixes → reduces maize fertilizer need by 20-30 percent</p>
                 </div>
             </div>
 
             <div id="tab-fish" class="tab-content">
-                <h3>Component 2: Fish Tank (5,000L)</h3>
+                <h3>Component 2: fish tank (5,000L)</h3>
                 <div class="callout concept">
-                    <div class="callout-title">FISH TANK FOR WATER & PROTEIN</div>
+                    <div class="callout-title">FISH TANK FOR WATER and PROTEIN</div>
                     <p><strong>Tank size:</strong> 5,000 liters (2m radius, 0.8m deep) <a href="#ref6" class="reference-link">[6]</a><br>
                     <strong>Fish type:</strong> Nile tilapia (hardy, fast-growing)<br>
                     <strong>Stocking:</strong> 75 fingerlings per cycle <a href="#ref6" class="reference-link">[6]</a></p>
@@ -920,7 +926,7 @@
             </div>
 
             <div id="tab-garden" class="tab-content">
-                <h3>Component 3: Vegetable Garden (40-50 m²)</h3>
+                <h3>Component 3: vegetable garden (40-50 m²)</h3>
                 <div class="callout concept">
                     <div class="callout-title">YEAR-ROUND VEGETABLES</div>
                     <p><strong>Rainy season (Nov-Apr):</strong> Diverse vegetables</p>
@@ -941,7 +947,7 @@
             </div>
 
             <div id="tab-animals" class="tab-content">
-                <h3>Component 4: Livestock</h3>
+                <h3>Component 4: livestock</h3>
                 <div class="callout concept">
                     <div class="callout-title">INTEGRATED ANIMAL PRODUCTION</div>
                     <p><strong>Poultry:</strong> 20 hens → 7,300 eggs/year → $100-150 income<br>
@@ -958,7 +964,7 @@
             </div>
 
             <div id="tab-compost" class="tab-content">
-                <h3>Component 5: Composting</h3>
+                <h3>Component 5: composting</h3>
                 <div class="callout concept">
                     <div class="callout-title">ENHANCED COMPOSTING SYSTEM</div>
                     <p><strong>3-CHAMBER COMPOST BIN:</strong></p>
@@ -984,7 +990,7 @@
             </div>
 
             <div id="tab-water" class="tab-content">
-                <h3>Component 6: Rainwater Harvesting</h3>
+                <h3>Component 6: rainwater harvesting</h3>
                 <div class="callout concept">
                     <div class="callout-title">RAINWATER HARVESTING (KEY FOR DRY SEASON)</div>
                     <p><strong>Catchment:</strong> Household roof gutters + structure roofs<br>
@@ -1007,7 +1013,7 @@
 
         <!-- IMPLEMENTATION -->
         <section id="implementation">
-            <h2>Implementation Pathway</h2>
+            <h2>Implementation pathway</h2>
 
             <div class="tabs">
                 <button class="tab-button active" onclick="openTab(event, 'tab-phase1')">Phase 1: Pilot</button>
@@ -1016,13 +1022,13 @@
             </div>
 
             <div id="tab-phase1" class="tab-content active">
-                <h3>Phase 1: Pilot (Months 1-12)</h3>
-                <p><strong>Location:</strong> Timvane & Umphawi Toto</p>
+                <h3>Phase 1: pilot (months 1-12)</h3>
+                <p><strong>Location:</strong> Timvane and Umphawi Toto</p>
                 <p><strong>Households:</strong> 10-15 per site (20-30 total)</p>
 
                 <div class="timeline mt-3">
                     <div class="timeline-item">
-                        <div class="timeline-month">Months 1-2: Community Awareness & Design</div>
+                        <div class="timeline-month">Months 1-2: Community awareness and design</div>
                         <div class="timeline-description">
                             Community meetings introducing Sisteminha-IFES integration • Show benefits with photos/videos • Site assessments • Participatory household design
                         </div>
@@ -1040,7 +1046,7 @@
                         </div>
                     </div>
                     <div class="timeline-item">
-                        <div class="timeline-month">Months 7-8: Animals & Agroforestry</div>
+                        <div class="timeline-month">Months 7-8: Animals and agroforestry</div>
                         <div class="timeline-description">
                             Poultry coop setup • Rabbit/goat infrastructure • Tree planting (nitrogen-fixers)
                         </div>
@@ -1052,7 +1058,7 @@
                         </div>
                     </div>
                     <div class="timeline-item">
-                        <div class="timeline-month">Months 11-12: Training & Integration</div>
+                        <div class="timeline-month">Months 11-12: Training and integration</div>
                         <div class="timeline-description">
                             Farmer Field School (all components) • Daily routines training • System integration workshop
                         </div>
@@ -1061,7 +1067,7 @@
             </div>
 
             <div id="tab-phase2" class="tab-content">
-                <h3>Phase 2: Expansion (Year 2)</h3>
+                <h3>Phase 2: expansion (year 2)</h3>
                 <p><strong>Scale to 50-100+ households</strong></p>
                 <p><strong>Key activities:</strong></p>
                 <ul>
@@ -1074,7 +1080,7 @@
             </div>
 
             <div id="tab-phase3" class="tab-content">
-                <h3>Phase 3: Mainstreaming (Year 3+)</h3>
+                <h3>Phase 3: mainstreaming (year 3+)</h3>
                 <p><strong>Scale to 500+ households</strong></p>
                 <p><strong>Key activities:</strong></p>
                 <ul>
@@ -1087,9 +1093,9 @@
 
         <!-- EXPECTED OUTCOMES -->
         <section>
-            <h2>Expected Outcomes (12-24 Months)</h2>
+            <h2>Expected outcomes (12-24 months)</h2>
 
-            <h3>12-Month Indicators</h3>
+            <h3>12-month indicators</h3>
             <table>
                 <tr>
                     <th>Area</th>
@@ -1117,7 +1123,7 @@
                 </tr>
             </table>
 
-            <h3>24-Month Outcomes</h3>
+            <h3>24-month outcomes</h3>
             <div class="callout success">
                 <div class="callout-title">DSL-IP IMPACT (24 Months)</div>
                 <p><strong>Climate Resilience:</strong></p>
@@ -1142,7 +1148,7 @@
 
         <!-- REFERENCES -->
         <section>
-            <h2>References & Sources</h2>
+            <h2>References and sources</h2>
 
             <div class="references-section">
                 <p style="margin-bottom: 1.5rem;"><strong>Click on reference numbers [1], [2], etc. in the text above to jump to full citation details below.</strong></p>
@@ -1243,7 +1249,17 @@
                 </div>
             </div>
 
-            <h3 style="margin-top: 2rem;">Recommended Additional Reading</h3>
+            <h3 style="margin-top: 2rem;">Verified external references (APA 7th ed.)</h3>
+            <p style="margin-bottom: 1rem; font-size: .92rem; color: var(--ink-3);">Externally published sources for the core concepts cited in APA style above. The numbered citations [1]&ndash;[20] include unpublished DSL-IP field assessments and internal technical documents; site-specific figures for Timvane &amp; Umphawi Toto and the financial estimates are drawn from those internal sources and are not externally published.</p>
+            <div class="references-section">
+                <ol class="apa-refs">
+                    <li>Embrapa. (2019, June 24). <em>Embrapa's Sisteminha advances in Brazil and reaches seven countries</em>. Brazilian Agricultural Research Corporation. <a href="https://www.embrapa.br/en/busca-de-noticias/-/noticia/44368930/embrapas-sisteminha-advances-in-brazil-and-reaches-seven-countries" target="_blank" rel="noopener">https://www.embrapa.br/en/busca-de-noticias/-/noticia/44368930/</a></li>
+                    <li>FAO. (2011). <em>Making integrated food-energy systems work for people and climate: An overview</em>. Food and Agriculture Organization of the United Nations. <a href="https://www.fao.org/4/i2044e/i2044e.pdf" target="_blank" rel="noopener">https://www.fao.org/4/i2044e/i2044e.pdf</a></li>
+                    <li>Global Environment Facility. (n.d.). <em>Sustainable Forest Management Impact Program on Dryland Sustainable Landscapes</em>. Retrieved June 24, 2026, from <a href="https://www.thegef.org/projects-operations/projects/10206" target="_blank" rel="noopener">https://www.thegef.org/projects-operations/projects/10206</a></li>
+                </ol>
+            </div>
+
+            <h3 style="margin-top: 2rem;">Recommended additional reading</h3>
             <ul>
                 <li><strong>SLPF Complete Framework:</strong> <a href="https://www.fao.org/documents" target="_blank" style="color: var(--forest);">FAO DSL-IP Working Papers</a></li>
                 <li><strong>Sisteminha Technology Specifications:</strong> <a href="https://www.sisteminhaembrapa.org" target="_blank" style="color: var(--forest);">Sisteminha Embrapa Official Portal</a></li>
@@ -1252,9 +1268,9 @@
                 <li><strong>Sustainable Land Management Database:</strong> <a href="https://qcat.wocat.net" target="_blank" style="color: var(--forest);">WOCAT Global Database</a></li>
             </ul>
         </section>
-            <h2>Contact & Resources</h2>
+            <h2>Contact and resources</h2>
 
-            <h3>For More Information</h3>
+            <h3>For more information</h3>
             <ul>
                 <li><strong>Embrapa (Sisteminha):</strong> <a href="mailto:meio-norte.imprensa@embrapa.br">meio-norte.imprensa@embrapa.br</a> | <a href="https://www.sisteminhaembrapa.org" target="_blank">Sisteminha Portal [6]</a></li>
                 <li><strong>WOCAT Database:</strong> <a href="https://qcat.wocat.net" target="_blank">www.wocat.net [12]</a></li>
@@ -1262,10 +1278,10 @@
                 <li><strong>Land Degradation Neutrality:</strong> <a href="https://www.unccd.int" target="_blank">UNCCD Official Website [8]</a></li>
             </ul>
 
-            <h3>Available Documents</h3>
+            <h3>Available documents</h3>
             <ul>
                 <li><strong>Miombo-Mopane Sisteminha Adaptation</strong> (40+ pages WOCAT format) - Global technical framework</li>
-                <li><strong>Extension Officer Field Guide</strong> (25+ pages) - Training & implementation</li>
+                <li><strong>Extension Officer Field Guide</strong> (25+ pages) - Training and implementation</li>
                 <li><strong>Sisteminha-IFES Malawi Integration</strong> (60+ pages) - Comprehensive guide</li>
                 <li><strong>2026 SLPF Working Paper</strong> - DSL-IP Sustainable Landscape Production Framework</li>
             </ul>
@@ -1275,7 +1291,7 @@
                 <p><strong>All technical documentation complete</strong></p>
                 <p><strong>Aligned with SLPF guiding principles</strong></p>
                 <p><strong>Malawi context integrated</strong></p>
-                <p><strong>Timvane & Umphawi Toto data incorporated</strong></p>
+                <p><strong>Timvane and Umphawi Toto data incorporated</strong></p>
                 <p><strong>Extension officer training materials ready</strong></p>
                 <p><strong>Phase 1 pilot ready to start immediately</strong></p>
             </div>
