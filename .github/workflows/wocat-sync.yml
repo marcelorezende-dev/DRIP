@@ -1,0 +1,49 @@
+name: WOCAT sync
+
+# Rebuilds wocat-data.js from the WOCAT / QCAT API v2 and commits it if changed.
+# The API token lives ONLY as a repo secret (WOCAT_API_TOKEN) — never in the repo
+# and never in the browser. See scripts/README-wocat.md to create the token/secret.
+
+on:
+  workflow_dispatch:        # run on demand from the Actions tab
+  schedule:
+    - cron: '0 4 * * 1'     # every Monday 04:00 UTC
+
+permissions:
+  contents: write           # allow the job to commit the refreshed data
+
+concurrency:
+  group: wocat-sync
+  cancel-in-progress: true
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Fetch WOCAT data
+        env:
+          WOCAT_API_TOKEN: ${{ secrets.WOCAT_API_TOKEN }}
+        run: |
+          if [ -z "$WOCAT_API_TOKEN" ]; then
+            echo "::error::WOCAT_API_TOKEN secret is not set. Add it under Settings → Secrets and variables → Actions. See scripts/README-wocat.md."
+            exit 1
+          fi
+          node scripts/fetch-wocat.mjs
+
+      - name: Commit if changed
+        run: |
+          if git diff --quiet -- wocat-data.js; then
+            echo "No changes in wocat-data.js."
+          else
+            git config user.name  "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add wocat-data.js
+            git commit -m "Sync WOCAT SLM library data"
+            git push
+          fi

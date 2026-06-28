@@ -113,20 +113,20 @@
   .lg-head i{ width:18px; height:18px; color:var(--clay); }
   .lg-head h3{ font-family:var(--font-sans); font-weight:600; text-transform:uppercase; font-size:13px; letter-spacing:.1em; color:var(--ink); margin:0; }
   .lg-head .ln{ flex:1; height:1px; background:var(--hairline); }
-  .cards{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+  .cards{ display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
   .lcard{ display:flex; flex-direction:column; text-decoration:none; color:inherit; background:var(--surface);
-    border:1px solid var(--border); border-radius:var(--r-lg); padding:22px 22px 18px; box-shadow:var(--shadow-sm);
+    border:1px solid var(--border); border-radius:var(--r-lg); padding:17px 18px 15px; box-shadow:var(--shadow-sm);
     transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease; position:relative; overflow:hidden; }
   .lcard:hover{ transform:translateY(-3px); box-shadow:var(--shadow-md); border-color:var(--forest-soft); }
-  .lcard .ic{ width:42px; height:42px; border-radius:var(--r-md); display:flex; align-items:center; justify-content:center;
-    background:var(--sage); color:var(--forest-deep); margin-bottom:14px; }
-  .lcard .ic i{ width:21px; height:21px; }
+  .lcard .ic{ width:36px; height:36px; border-radius:var(--r-md); display:flex; align-items:center; justify-content:center;
+    background:var(--sage); color:var(--forest-deep); margin-bottom:11px; }
+  .lcard .ic i{ width:18px; height:18px; }
   .lcard.tool .ic{ background:rgba(63,143,203,.14); color:var(--water); }
   .lcard.story .ic{ background:var(--blush); color:var(--clay-deep); }
-  .lcard h4{ font-family:var(--font-serif); font-weight:700; font-size:19px; margin:0 0 4px; line-height:1.2; }
-  .lcard .meta{ font-family:var(--font-sans); font-weight:600; font-size:11px; text-transform:uppercase; letter-spacing:.08em; color:var(--ink-3); margin-bottom:9px; }
-  .lcard p{ font-family:var(--font-body); font-size:13.5px; line-height:1.55; color:var(--ink-2); margin:0 0 14px; flex:1; }
-  .lcard .open{ font-family:var(--font-sans); font-weight:600; font-size:12.5px; color:var(--forest); display:flex; align-items:center; gap:5px; }
+  .lcard h4{ font-family:var(--font-serif); font-weight:700; font-size:16.5px; margin:0 0 4px; line-height:1.2; }
+  .lcard .meta{ font-family:var(--font-sans); font-weight:600; font-size:10.5px; text-transform:uppercase; letter-spacing:.08em; color:var(--ink-3); margin-bottom:8px; }
+  .lcard p{ font-family:var(--font-body); font-size:12.5px; line-height:1.5; color:var(--ink-2); margin:0 0 12px; flex:1; }
+  .lcard .open{ font-family:var(--font-sans); font-weight:600; font-size:12px; color:var(--forest); display:flex; align-items:center; gap:5px; }
   .lcard.tool .open{ color:var(--water); } .lcard.story .open{ color:var(--clay-deep); }
   .lcard .open i{ width:14px; height:14px; transition:transform .18s ease; }
   .lcard:hover .open i{ transform:translateX(3px); }
@@ -298,8 +298,23 @@
   .subhead{ font-family:var(--font-serif); font-weight:800; font-size:21px; color:var(--ink); margin:0 0 12px; }
   .story-prose p{ font-family:var(--font-body); font-size:15px; line-height:1.7; color:var(--ink-2); margin:0 0 14px; max-width:76ch; }
   .story-prose p:last-child{ margin-bottom:0; }
+  .story-prose a{ color:var(--forest-deep); font-weight:600; text-decoration:none; border-bottom:1px solid var(--forest-soft); }
+  .story-prose a:hover{ border-bottom-color:var(--forest-deep); }
+  /* connection / cross-reference callout */
+  .xref{ display:flex; gap:18px; align-items:flex-start; background:#F1F6F5; border:1px solid var(--border);
+    border-left:4px solid var(--forest); border-radius:16px; padding:22px 24px; margin:30px 0 4px; }
+  .xref .xic{ width:46px; height:46px; flex:none; border-radius:12px; display:flex; align-items:center; justify-content:center;
+    background:rgba(71,126,89,.12); color:var(--forest-deep); }
+  .xref .xic i{ width:22px; height:22px; }
+  .xref .xk{ font-family:var(--font-sans); font-weight:600; text-transform:uppercase; letter-spacing:.13em; font-size:11px; color:var(--forest-deep); margin-bottom:7px; }
+  .xref h4{ font-family:var(--font-serif); font-weight:800; font-size:19px; color:var(--ink); margin:0 0 9px; line-height:1.25; }
+  .xref p{ font-family:var(--font-body); font-size:14.5px; line-height:1.62; color:var(--ink-2); margin:0 0 13px; max-width:78ch; }
+  .xref .xgo{ display:inline-flex; align-items:center; gap:7px; font-family:var(--font-sans); font-weight:600; font-size:13px; color:var(--forest-deep); text-decoration:none; }
+  .xref .xgo:hover{ text-decoration:underline; }
+  .xref .xgo i{ width:15px; height:15px; }
+  @media(max-width:600px){ .xref{ flex-direction:column; gap:13px; padding:18px 18px; } }
   .lineage{ position:relative; display:grid; grid-template-columns:repeat(5,1fr); gap:0; margin:26px 0 4px; }
-  .lineage::before{ content:''; position:absolute; top:6px; left:10%; right:10%; height:2px; background:var(--hairline); }
+  .lineage::before{ content:''; position:absolute; top:6px; left:7px; right:calc(20% - 7px); height:2px; background:var(--hairline); }
   .lineage .mil{ padding:0 12px 0 0; }
   .lineage .dot{ width:14px; height:14px; border-radius:50%; background:var(--forest-soft);
     box-shadow:0 0 0 4px var(--surface); margin-bottom:12px; }
@@ -463,8 +478,18 @@
 
     <div class="story-prose">
       <p class="subhead">From a monitoring tool to a knowledge platform</p>
-      <p>DRIP is not a new idea. It grew from the <b>Rome Promise on Monitoring and Assessment of Drylands</b> (2015–2016) and was first implemented by FAO in 2016 as an interactive web portal – the <b>Dryland Restoration Initiative Platform</b>, a monitoring and reporting tool helping practitioners compile, analyse and share lessons from dryland restoration. In 2019 it was brought before FAO’s <b>COFO Working Group on Dryland Forests and Agrosilvopastoral Systems</b>, with a mandate to grow into a comprehensive, easy-to-use tool linked to the Land Degradation Neutrality (LDN) framework and FAO’s Sustainable Forest Management Toolbox.</p>
+      <p>DRIP is not a new idea. It grew from the <b>Rome Promise on Monitoring and Assessment of Drylands</b> (2015–2016) and was first implemented by FAO in 2016 as an interactive web portal – the <b>Dryland Restoration Initiative Platform</b>, a monitoring and reporting tool helping practitioners compile, analyse and share lessons from dryland restoration. In 2019 it was brought before FAO’s <b>COFO Working Group on Dryland Forests and Agrosilvopastoral Systems</b>, with a mandate to grow into a comprehensive, easy-to-use tool linked to the Land Degradation Neutrality (LDN) framework and FAO’s <a href="https://www.fao.org/sustainable-forest-management-toolbox/en" target="_blank" rel="noopener">Sustainable Forest Management Toolbox</a>.</p>
       <p>In the seven years since it was conceptualized, the <b>UN Decade on Ecosystem Restoration</b> reshaped the field: FAO’s restoration-monitoring function was consolidated into the global <b>FERM platform</b> (Framework for Ecosystem Restoration Monitoring). DRIP’s original reporting role found a durable home there – freeing DRIP to become what the drylands community still lacked: a dedicated <b>knowledge and research platform</b>, focused not on logging projects but on <b>accelerating sustainable management and restoration</b> across drylands.</p>
+    </div>
+
+    <div class="xref">
+      <span class="xic"><i data-lucide="link-2"></i></span>
+      <div>
+        <div class="xk">Connected to FAO · thematically linked</div>
+        <h4>Drylands-tailored, linked to the FAO SFM Toolbox</h4>
+        <p>DRIP is a <b>knowledge hub thematically linked to FAO’s Sustainable Forest Management (SFM) Toolbox</b>. Where the SFM Toolbox gathers the global guidance, modules and tools for managing forests sustainably, DRIP distinguishes itself by <b>tailoring that management and those practices to the specific realities of the drylands</b> – the dry forests, agrosilvopastoral systems and restoration challenges of the world’s arid and semi-arid lands. It is the drylands lens on the SFM Toolbox, and a route back into it.</p>
+        <a class="xgo" href="https://www.fao.org/sustainable-forest-management-toolbox/en" target="_blank" rel="noopener">Open the FAO SFM Toolbox <i data-lucide="arrow-up-right"></i></a>
+      </div>
     </div>
 
     <div class="lineage">
@@ -699,13 +724,6 @@
           <p>Sustainable, organic extractivism of carnaúba, licuri, caroá and umbu &ndash; making a standing forest pay.</p>
           <span class="open">Open the manual <i data-lucide="arrow-right"></i></span>
         </a>
-        <a class="lcard" href="DRIP Manual Series Template.html">
-          <span class="ic"><i data-lucide="file-plus-2"></i></span>
-          <div class="meta">Template &middot; authoring</div>
-          <h4>Create a manual</h4>
-          <p>The reusable, print-ready 2&ndash;3 page template for the series &ndash; clone it, fill the placeholders, export to PDF.</p>
-          <span class="open">Open the template <i data-lucide="arrow-right"></i></span>
-        </a>
         <a class="lcard" href="DRIP Manual 01 - Annex - WOCAT SLM Technology.html">
           <span class="badge">WOCAT</span>
           <span class="ic"><i data-lucide="clipboard-list"></i></span>
@@ -819,6 +837,82 @@
           <div class="meta">Value chain · umbu</div>
           <h4>Umbu</h4>
           <p>Gather and process the fruit of the umbuzeiro – turning a sertão icon into a growing local economy.</p>
+          <span class="open">Open the 1-pager <i data-lucide="arrow-right"></i></span>
+        </a>
+      </div>
+    </div>
+
+    <div class="libgroup">
+      <div class="lg-head"><i data-lucide="trees"></i><h3>Miombo &amp; Mopane SLM technologies and approaches</h3><span class="ln"></span></div>
+      <div class="cards">
+        <a class="lcard" href="Miombo SLM - IFES.html">
+          <span class="ic"><i data-lucide="flame"></i></span>
+          <div class="meta">Integrated system · Malawi</div>
+          <h4>IFES</h4>
+          <p>Pigeon pea–maize intercropping with fuel-efficient stoves and biogas – food, fertility and household energy from one plot.</p>
+          <span class="open">Open the 1-pager <i data-lucide="arrow-right"></i></span>
+        </a>
+        <a class="lcard" href="Miombo SLM - Beekeeping.html">
+          <span class="ic"><i data-lucide="hexagon"></i></span>
+          <div class="meta">Value chain · Tanzania</div>
+          <h4>Miombo honey</h4>
+          <p>Bark- and box-hive honey from the Tabora belt – a non-wood forest product that pays for keeping the trees.</p>
+          <span class="open">Open the 1-pager <i data-lucide="arrow-right"></i></span>
+        </a>
+        <a class="lcard" href="Miombo SLM - FSC Charcoal.html">
+          <span class="ic"><i data-lucide="axe"></i></span>
+          <div class="meta">Wood energy · Namibia</div>
+          <h4>FSC charcoal</h4>
+          <p>FSC-certified charcoal from bush-encroaching species – restoring rangeland while creating a legal, premium wood-energy chain.</p>
+          <span class="open">Open the 1-pager <i data-lucide="arrow-right"></i></span>
+        </a>
+        <a class="lcard" href="Miombo SLM - Baobab and Marula.html">
+          <span class="ic"><i data-lucide="trees"></i></span>
+          <div class="meta">Value chain · Zimbabwe</div>
+          <h4>Baobab &amp; marula</h4>
+          <p>Fruit, oil and kernels from iconic standing trees, processed into high-value, certifiable products.</p>
+          <span class="open">Open the 1-pager <i data-lucide="arrow-right"></i></span>
+        </a>
+        <a class="lcard" href="Miombo SLM - Traditional Grains.html">
+          <span class="ic"><i data-lucide="wheat"></i></span>
+          <div class="meta">NUS · drought-hardy crops</div>
+          <h4>Traditional grains &amp; pulses</h4>
+          <p>Bambara groundnut, Morama bean, millets and pigeon pea – resilient indigenous crops that anchor food security on poor rains.</p>
+          <span class="open">Open the 1-pager <i data-lucide="arrow-right"></i></span>
+        </a>
+        <a class="lcard" href="Miombo SLM - Mopane Worm.html">
+          <span class="ic"><i data-lucide="bug"></i></span>
+          <div class="meta">NWFP · women-led harvest</div>
+          <h4>Mopane worm</h4>
+          <p>Seasonal protein and cash from the mopane worm, wild mushrooms and medicinal trees – gathered within community limits.</p>
+          <span class="open">Open the 1-pager <i data-lucide="arrow-right"></i></span>
+        </a>
+        <a class="lcard" href="Miombo SLM - Ecotourism.html">
+          <span class="ic"><i data-lucide="tent"></i></span>
+          <div class="meta">Value chain · Botswana</div>
+          <h4>Eco-tourism</h4>
+          <p>Community-based tourism that makes an intact woodland and its wildlife worth more standing than cleared.</p>
+          <span class="open">Open the 1-pager <i data-lucide="arrow-right"></i></span>
+        </a>
+        <a class="lcard" href="Miombo SLM - Community Forest Management.html">
+          <span class="ic"><i data-lucide="users"></i></span>
+          <div class="meta">Approach · Tanzania</div>
+          <h4>Community forest management</h4>
+          <p>Village-held rights and revenue to harvest, sell and protect the woodland – keeping millions of hectares of miombo standing.</p>
+          <span class="open">Open the 1-pager <i data-lucide="arrow-right"></i></span>
+        </a>
+        <a class="lcard" href="Miombo SLM - Rangeland Management.html">
+          <span class="ic"><i data-lucide="fence"></i></span>
+          <div class="meta">Agro-sylvo-pastoral · rangeland</div>
+          <h4>Rangeland management</h4>
+          <p>Rotational grazing, drought-resilient seed systems and integrated trees–grazing–crops that let the woodland recover.</p>
+          <span class="open">Open the 1-pager <i data-lucide="arrow-right"></i></span>
+        </a>
+        <a class="lcard" href="Miombo SLM - Protected Areas.html">
+          <span class="ic"><i data-lucide="shield"></i></span>
+          <div class="meta">Approach · Mozambique</div>
+          <h4>Protected areas &amp; buffers</h4>
+          <p>A protected core with sustainable use in the buffer – conservation-compatible livelihoods and transboundary corridors.</p>
           <span class="open">Open the 1-pager <i data-lucide="arrow-right"></i></span>
         </a>
       </div>
@@ -1118,13 +1212,22 @@
     'Caatinga Biome.html':'knowledge',
     'MARVEL.html':'monitoring',
     'Miombo and Mopane Woodlands.html':'knowledge',
+    'Miombo SLM - IFES.html':'production',
+    'Miombo SLM - Beekeeping.html':'production',
+    'Miombo SLM - FSC Charcoal.html':'production',
+    'Miombo SLM - Baobab and Marula.html':'production',
+    'Miombo SLM - Traditional Grains.html':'production',
+    'Miombo SLM - Mopane Worm.html':'production',
+    'Miombo SLM - Ecotourism.html':'production',
+    'Miombo SLM - Community Forest Management.html':'production',
+    'Miombo SLM - Rangeland Management.html':'production',
+    'Miombo SLM - Protected Areas.html':'production',
     'Caatinga Biome.html#management':'production',
     'resources/caatinga/Caatinga-Manejo-Pastoril-Sustentavel-Araujo-Filho-MMA.pdf':'production',
     'resources/caatinga/Boas-Praticas-Extrativismo-Sustentavel-Carnauba-MAPA.pdf':'production',
     'DRIP Manual 01 - Caatinga Fodder.html':'production',
     'DRIP Manual 02 - Caatinga Wood Energy.html':'production',
     'DRIP Manual 03 - Caatinga Value Chains.html':'production',
-    'DRIP Manual Series Template.html':'knowledge',
     'DRIP Manual 01 - Annex - WOCAT SLM Technology.html':'production',
     'DRIP Manual 01 - Annex - WOCAT SLM Approach.html':'production',
     'DRIP Manual 02 - Annex - WOCAT SLM Technology.html':'production',

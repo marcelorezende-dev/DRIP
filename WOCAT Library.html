@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>WOCAT SLM Library · DRIP</title>
+<link rel="stylesheet" href="colors_and_type.css" />
+<link rel="stylesheet" href="drip-pages.css" />
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+  :root{ --pa:#477E59; --pa-deep:#2f5d42; --pa-soft:#8FB59B; --pa-wash:rgba(71,126,89,.07); }
+  /* data-source notice */
+  .notice{ display:flex; gap:12px; align-items:flex-start; background:rgba(248,177,51,.12); border:1px solid rgba(232,177,51,.45);
+    border-radius:var(--r-md); padding:13px 16px; margin:0 0 18px; font-family:var(--font-sans); font-size:13px; color:#7a571a; }
+  .notice i{ width:18px; height:18px; flex:none; margin-top:1px; }
+  .notice.live{ background:rgba(51,177,147,.10); border-color:rgba(51,177,147,.4); color:#1d6f5a; }
+  .notice b{ color:inherit; }
+  /* search + controls (mirrors the Archive) */
+  .controls{ display:flex; gap:12px; flex-wrap:wrap; align-items:center; margin-bottom:18px; }
+  .search2{ position:relative; flex:1; min-width:240px; }
+  .search2 i{ position:absolute; left:13px; top:50%; transform:translateY(-50%); width:16px; height:16px; color:var(--ink-3); }
+  .search2 input{ width:100%; box-sizing:border-box; font-family:var(--font-sans); font-size:14px; padding:11px 14px 11px 38px;
+    border:1px solid var(--border-strong); border-radius:var(--r-pill); background:var(--surface); color:var(--ink); outline:none; }
+  .search2 input:focus{ border-color:var(--pa); }
+  .sortsel{ font-family:var(--font-sans); font-size:13px; padding:10px 14px; border:1px solid var(--border-strong);
+    border-radius:var(--r-pill); background:var(--surface); color:var(--ink); cursor:pointer; }
+  .facetgroups{ display:flex; flex-direction:column; gap:12px; margin-bottom:22px; }
+  .fg{ display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+  .fg .fglab{ font-family:var(--font-sans); font-weight:600; font-size:11px; text-transform:uppercase; letter-spacing:.1em; color:var(--ink-3); width:88px; flex:none; }
+  .ft{ font-family:var(--font-sans); font-weight:600; font-size:12px; padding:5px 12px; border-radius:var(--r-pill);
+    border:1.4px solid var(--border-strong); background:transparent; color:var(--ink-2); cursor:pointer; transition:.14s; display:inline-flex; align-items:center; gap:6px; }
+  .ft:hover{ color:var(--ink); } .ft .sw{ width:8px; height:8px; border-radius:50%; }
+  .ft.on{ color:#fff; border-color:transparent; }
+  .clearf{ font-family:var(--font-sans); font-size:12px; color:var(--clay-deep); background:none; border:none; cursor:pointer; text-decoration:underline; }
+  /* results */
+  .reslist{ display:grid; grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); gap:13px; }
+  .rescount{ font-family:var(--font-sans); font-size:12.5px; color:var(--ink-3); margin-bottom:12px; }
+  .item{ position:relative; display:flex; flex-direction:column; text-decoration:none; color:inherit; background:var(--surface); border:1px solid var(--border);
+    border-radius:var(--r-lg); padding:18px 20px 15px 22px; box-shadow:var(--shadow-sm); transition:.16s; overflow:hidden; }
+  .item:hover{ transform:translateY(-2px); box-shadow:var(--shadow-md); border-color:var(--pa-soft); }
+  .item .bar{ position:absolute; left:0; top:0; bottom:0; width:5px; }
+  .item h3{ font-family:var(--font-serif); font-weight:700; font-size:16.5px; margin:0 0 6px; line-height:1.22; }
+  .item .sum{ font-family:var(--font-body); font-size:13px; line-height:1.5; color:var(--ink-2); margin:0 0 11px; flex:1; }
+  .badges{ display:flex; flex-wrap:wrap; gap:6px; align-items:center; }
+  .bdg{ font-family:var(--font-sans); font-weight:600; font-size:10.5px; letter-spacing:.02em; padding:3px 9px; border-radius:var(--r-pill);
+    display:inline-flex; align-items:center; gap:5px; }
+  .bdg.type{ background:var(--paper-2); color:var(--ink-2); border:1px solid var(--border); }
+  .bdg.fill{ color:#fff; }
+  .bdg.line{ background:transparent; border:1.3px solid var(--border-strong); color:var(--ink-2); }
+  .bdg .sw{ width:7px; height:7px; border-radius:50%; }
+  .meas{ display:inline-flex; gap:3px; }
+  .meas b{ font-family:var(--font-sans); font-size:10.5px; font-weight:700; color:#fff; width:17px; height:17px; border-radius:5px;
+    display:inline-flex; align-items:center; justify-content:center; }
+  .item .meta2{ display:flex; align-items:center; gap:12px; margin-top:11px; padding-top:10px; border-top:1px solid var(--hairline);
+    font-family:var(--font-sans); font-size:11px; color:var(--ink-3); flex-wrap:wrap; }
+  .item .open2{ font-family:var(--font-sans); font-weight:600; font-size:11.5px; color:var(--pa); display:inline-flex; align-items:center; gap:4px; margin-left:auto; }
+  .item .open2 i{ width:13px; height:13px; }
+  @media(max-width:560px){ .reslist{ grid-template-columns:1fr; } }
+</style>
+  <link rel="icon" type="image/png" href="assets/globe.png">
+  <link rel="stylesheet" href="drip-topbar.css">
+</head>
+<body>
+<div class="drip-topbar">
+  <a class="db-brand" href="DRIP.html"><span class="db-dm">DRIP<span>.</span></span><span class="db-sub">Drylands Restoration Initiatives Platform</span></a>
+  <nav class="db-nav">
+    <a class="db-home" href="DRIP.html"><svg class="db-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Home</span></a>
+    <a href="DRIP.html#story"><svg class="db-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg><span>About</span></a>
+    <a href="DRIP Map.html"><svg class="db-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0z"/><path d="M15 5.764v15"/><path d="M9 3.236v15"/></svg><span>Map</span></a>
+    <a href="DRIP.html#library"><svg class="db-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m16 6 4 14"/><path d="M12 6v14"/><path d="M8 8v12"/><path d="M4 4v16"/></svg><span>Library</span></a>
+    <a href="MARVEL.html"><svg class="db-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></svg><span>MARVEL</span></a>
+    <a href="Water.html"><svg class="db-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C4 11.1 3 13 3 15a7 7 0 0 0 7 7z"/></svg><span>Water</span></a>
+    <a href="DRIP.html#transparency"><svg class="db-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg><span>Transparency and Data Policy</span></a>
+    <div class="langsw" id="langsw" role="group" aria-label="Choose a language">
+      <svg class="langsw-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></svg>
+      <button type="button" class="flag flag-en is-on" data-lang="en" title="English" aria-label="English"></button>
+      <button type="button" class="flag flag-es" data-lang="es" title="Español" aria-label="Español"></button>
+      <button type="button" class="flag flag-fr" data-lang="fr" title="Français" aria-label="Français"></button>
+      <button type="button" class="flag flag-ru" data-lang="ru" title="Русский" aria-label="Русский"></button>
+      <button type="button" class="flag flag-ar" data-lang="ar" title="العربية" aria-label="العربية"></button>
+      <button type="button" class="flag flag-zh" data-lang="zh" title="中文" aria-label="中文"></button>
+    </div>
+  </nav>
+</div>
+
+<nav class="topnav">
+  <div class="page">
+    <a class="home" href="DRIP.html"><span class="dm">DRIP<span class="dot">.</span></span><small>Drylands Restoration Initiatives Platform</small></a>
+    <div class="crumbs"><a href="DRIP.html">DRIP</a><span class="sep">/</span><span class="here">WOCAT SLM Library</span></div>
+  </div>
+</nav>
+
+<header class="phero">
+  <div class="grain"></div>
+  <div class="page">
+    <div class="tagline">Connected to the global SLM standard</div>
+    <div class="ttl"><span class="pic"><i data-lucide="globe-2"></i></span><h1>WOCAT SLM Library</h1></div>
+    <p class="lead">Sustainable land-management <b>technologies</b> and <b>approaches</b> from the <b>WOCAT</b> Global SLM Database — pre-filtered to drylands and re-cast in DRIP’s own classification: by biome, by farm-skill-tree cluster and by the WOCAT measures, groups, land use and degradation each one addresses.</p>
+    <div class="kpis" id="kpis"></div>
+  </div>
+</header>
+
+<section>
+  <div class="page">
+    <div class="sec-head"><span class="sec-num">01</span><h2 class="sec-title">Browse the library</h2></div>
+    <div class="notice" id="notice"></div>
+    <p class="prose" style="max-width:74ch;">Each card is a real WOCAT questionnaire, summarised and tagged the DRIP way. Open any card to read the full documentation on the WOCAT database. Classification follows the <a href="DRIP Typologies and Classifications.html">DRIP Typologies &amp; Classifications</a> (global WOCAT standard + DRIP conventions).</p>
+    <div class="controls">
+      <div class="search2"><i data-lucide="search"></i><input id="q" type="text" placeholder="Search titles, summaries, countries, groups…" autocomplete="off" /></div>
+      <select class="sortsel" id="sort">
+        <option value="updated">Sort · recently updated</option>
+        <option value="az">Sort · A–Z</option>
+        <option value="country">Sort · country</option>
+      </select>
+    </div>
+    <div class="facetgroups" id="facets"></div>
+    <div class="rescount" id="rescount"></div>
+    <div class="reslist" id="results"></div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="page">
+    <p>DRIP · WOCAT SLM Library — sustainable land-management technologies and approaches from the <a href="https://qcat.wocat.net" target="_blank" rel="noopener">WOCAT Global SLM Database</a>, pre-filtered to drylands and re-classified for DRIP. WOCAT is the World Overview of Conservation Approaches and Technologies. Data is a build-time snapshot; open each card for the live, authoritative record on WOCAT. A project of the DSL-IP.</p>
+  </div>
+</footer>
+
+<script src="wocat-data.js"></script>
+<script>
+/* ---- DRIP classification vocab (mirrors Typologies & Classifications) ---- */
+const BIOMES = {
+  'Caatinga':      { c:'#CF715D' },
+  'Miombo–Mopane': { c:'#477E59' },
+  'Global':        { c:'#9A8C7E' }
+};
+const CLUSTERS = {
+  'Water harvesting':      { c:'#3F8FCB' },
+  'Soil & fertility':      { c:'#754C29' },
+  'Trees & agroforestry':  { c:'#477E59' },
+  'Crops & cropping':      { c:'#9A7327' },
+  'Livestock & fodder':    { c:'#CF715D' }
+};
+const MEASURES = { A:{ n:'Agronomic', c:'#E8C13C' }, V:{ n:'Vegetative', c:'#477E59' }, S:{ n:'Structural', c:'#CF715D' }, M:{ n:'Management', c:'#3F8FCB' } };
+const QTYPE = { technology:'Technology', approach:'Approach' };
+
+const DATA = (window.WOCAT_DATA && window.WOCAT_DATA.items) || [];
+const DMETA = (window.WOCAT_DATA && window.WOCAT_DATA.meta) || {};
+
+const state = { q:'', sort:'updated', facets:{ qtype:new Set(), biome:new Set(), cluster:new Set(), measure:new Set(), landuse:new Set(), country:new Set() } };
+const fmtDate = s => { if(!s) return '–'; const d=new Date(s); return isNaN(d)?s:d.toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'}); };
+const uniqSorted = arr => [...new Set(arr)].sort((a,b)=>a.localeCompare(b));
+
+/* ---- KPIs ---- */
+function renderKpis(){
+  const tech = DATA.filter(d=>d.qtype==='technology').length;
+  const appr = DATA.filter(d=>d.qtype==='approach').length;
+  const countries = new Set(DATA.flatMap(d=>d.country||[])).size;
+  const last = DATA.map(d=>d.updated).filter(Boolean).sort().slice(-1)[0] || DMETA.generated;
+  document.getElementById('kpis').innerHTML =
+    `<span class="kpi"><i data-lucide="layers"></i><span>Technologies</span><b>${tech}</b></span>`+
+    `<span class="kpi"><i data-lucide="users"></i><span>Approaches</span><b>${appr}</b></span>`+
+    `<span class="kpi"><i data-lucide="map-pin"></i><span>Countries</span><b>${countries}</b></span>`+
+    `<span class="kpi"><i data-lucide="refresh-cw"></i><span>Synced</span><b>${fmtDate(DMETA.generated)}</b></span>`;
+}
+
+/* ---- data-source notice ---- */
+function renderNotice(){
+  const n = document.getElementById('notice');
+  if(DMETA.sample){
+    n.className = 'notice';
+    n.innerHTML = `<i data-lucide="flask-conical"></i><div><b>Sample data.</b> These ${DATA.length} entries are a placeholder so the library is browsable now. The live WOCAT sync runs once an API token is added (see <code>scripts/README-wocat.md</code>) — it will replace this file with the full dryland snapshot.</div>`;
+  } else {
+    n.className = 'notice live';
+    n.innerHTML = `<i data-lucide="badge-check"></i><div><b>Live snapshot</b> from the WOCAT Global SLM Database · ${DATA.length} dryland records · synced ${fmtDate(DMETA.generated)}. Open any card for the authoritative record on WOCAT.</div>`;
+  }
+}
+
+/* ---- facets (built from the data, with known colours where defined) ---- */
+function facetDefs(){
+  return [
+    { key:'qtype',   lab:'Type',      items:Object.keys(QTYPE).filter(k=>DATA.some(d=>d.qtype===k)).map(k=>({id:k,n:QTYPE[k]})) },
+    { key:'biome',   lab:'Biome',     items:uniqSorted(DATA.map(d=>d.biome).filter(Boolean)).map(n=>({id:n,n,c:(BIOMES[n]||{}).c})) },
+    { key:'cluster', lab:'Cluster',   items:uniqSorted(DATA.map(d=>d.cluster).filter(Boolean)).map(n=>({id:n,n,c:(CLUSTERS[n]||{}).c})) },
+    { key:'measure', lab:'Measure',   items:['A','V','S','M'].filter(m=>DATA.some(d=>(d.measures||[]).includes(m))).map(m=>({id:m,n:`${m} · ${MEASURES[m].n}`,c:MEASURES[m].c})) },
+    { key:'landuse', lab:'Land use',  items:uniqSorted(DATA.flatMap(d=>d.landuse||[])).map(n=>({id:n,n})) },
+    { key:'country', lab:'Country',   items:uniqSorted(DATA.flatMap(d=>d.country||[])).map(n=>({id:n,n})) }
+  ];
+}
+function valuesFor(d,key){
+  if(key==='measure') return d.measures||[];
+  if(key==='landuse') return d.landuse||[];
+  if(key==='country') return d.country||[];
+  return [d[key]];
+}
+function renderFacets(){
+  const groups = facetDefs();
+  const count = (key,id) => DATA.filter(d=>valuesFor(d,key).includes(id)).length;
+  const fb = document.getElementById('facets');
+  fb.innerHTML = groups.map(g=>{
+    const chips = g.items.map(it=>{
+      const n = count(g.key,it.id); if(!n) return '';
+      const on = state.facets[g.key].has(it.id);
+      const sw = it.c ? `<span class="sw" style="background:${it.c}"></span>` : '';
+      return `<button class="ft${on?' on':''}" data-grp="${g.key}" data-val="${esc(it.id)}" style="${on&&it.c?`background:${it.c};`:''}">${sw}${esc(it.n)} <span style="opacity:.6">${n}</span></button>`;
+    }).join('');
+    return chips ? `<div class="fg"><span class="fglab">${g.lab}</span>${chips}</div>` : '';
+  }).join('') + `<div class="fg"><span class="fglab"></span><button class="clearf" id="clearFacets">Clear all filters</button></div>`;
+  fb.querySelectorAll('.ft').forEach(b=> b.addEventListener('click',()=>{
+    const s=state.facets[b.dataset.grp]; const v=b.dataset.val; s.has(v)?s.delete(v):s.add(v); renderAll();
+  }));
+  document.getElementById('clearFacets').addEventListener('click',()=>{ Object.values(state.facets).forEach(s=>s.clear()); state.q=''; document.getElementById('q').value=''; renderAll(); });
+}
+
+/* ---- filtering + sort ---- */
+function matches(d){
+  if(state.q){ const q=state.q.toLowerCase();
+    const hay=(d.title+' '+d.summary+' '+(d.country||[]).join(' ')+' '+(d.groups||[]).join(' ')+' '+(d.landuse||[]).join(' ')).toLowerCase();
+    if(!hay.includes(q)) return false; }
+  const f=state.facets;
+  for(const key of Object.keys(f)){
+    if(f[key].size && !valuesFor(d,key).some(v=>f[key].has(v))) return false;
+  }
+  return true;
+}
+function sortItems(arr){
+  if(state.sort==='az') return arr.sort((a,b)=>a.title.localeCompare(b.title));
+  if(state.sort==='country') return arr.sort((a,b)=>((a.country||[])[0]||'').localeCompare((b.country||[])[0]||'') || a.title.localeCompare(b.title));
+  return arr.sort((a,b)=>(b.updated||'').localeCompare(a.updated||''));
+}
+
+/* ---- cards ---- */
+const esc = s => String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+function renderResults(){
+  const list = sortItems(DATA.filter(matches));
+  document.getElementById('rescount').textContent = `${list.length} record${list.length===1?'':'s'}${list.length!==DATA.length?` of ${DATA.length}`:''}`;
+  document.getElementById('results').innerHTML = list.map(d=>{
+    const barC = (CLUSTERS[d.cluster]||BIOMES[d.biome]||{c:'#9A8C7E'}).c;
+    const biomeC = (BIOMES[d.biome]||{}).c || '#9A8C7E';
+    const clusterC = (CLUSTERS[d.cluster]||{}).c;
+    const meas = (d.measures||[]).map(m=>`<b style="background:${MEASURES[m].c}" title="${MEASURES[m].n}">${m}</b>`).join('');
+    const groups = (d.groups||[]).slice(0,2).map(g=>`<span class="bdg line">${esc(g)}</span>`).join('');
+    const landuse = (d.landuse||[]).slice(0,2).map(l=>`<span class="bdg type">${esc(l)}</span>`).join('');
+    return `<a class="item" href="${esc(d.url||'#')}" target="_blank" rel="noopener">
+      <span class="bar" style="background:${barC}"></span>
+      <div class="badges" style="margin-bottom:8px;">
+        <span class="bdg type">${QTYPE[d.qtype]||d.qtype}</span>
+        <span class="bdg fill" style="background:${biomeC}">${esc(d.biome||'Global')}</span>
+        ${d.cluster?`<span class="bdg fill" style="background:${clusterC}">${esc(d.cluster)}</span>`:''}
+        ${meas?`<span class="meas">${meas}</span>`:''}
+      </div>
+      <h3>${esc(d.title)}</h3>
+      <p class="sum">${esc(d.summary||'')}</p>
+      <div class="badges">${groups}${landuse}</div>
+      <div class="meta2">
+        <span><i data-lucide="map-pin" style="width:12px;height:12px;vertical-align:-2px;"></i> ${esc((d.country||[]).join(', ')||'–')}</span>
+        <span>${esc(d.code||'')}</span>
+        <span class="open2">WOCAT <i data-lucide="arrow-up-right"></i></span>
+      </div>
+    </a>`;
+  }).join('') || `<p class="prose" style="color:var(--ink-3)">No records match these filters.</p>`;
+}
+
+function renderAll(){ renderFacets(); renderResults(); renderKpis(); if(window.lucide) lucide.createIcons(); }
+
+document.getElementById('q').addEventListener('input',e=>{ state.q=e.target.value; renderResults(); if(window.lucide) lucide.createIcons(); });
+document.getElementById('sort').addEventListener('change',e=>{ state.sort=e.target.value; renderResults(); if(window.lucide) lucide.createIcons(); });
+
+renderNotice(); renderAll();
+</script>
+  <script src="drip-i18n.js"></script>
+</body>
+</html>

@@ -240,12 +240,6 @@ window.DRIP_ARCHIVE = [
     summary:'MAPA good-practice guides for sustainable, organic harvesting of the Caatinga’s native value chains – carnaúba wax, licuri palm and caroá fibre – the sociobiodiversity enterprises that make a standing dry forest worth more than a cleared one.',
     tags:['Caatinga','extractivism','NTFP','value chains','carnaúba','licuri','caroá','organic','MAPA','sociobiodiversity'], added:'2026-06-23', updated:'2026-06-23' },
 
-  { id:'drip-manual-series', fao:'other-doc', title:'DRIP Manual Series – template & format', type:'tool', pillars:['knowledge','production'],
-    source:'direct', origin:'DRIP – Knowledge & Outreach', status:'pending',
-    url:'DRIP Manual Series Template.html',
-    summary:'A reusable, print-ready template for 2–3 page good-practice manuals on sustainable dryland forest management. Modelled on the MAPA Caderno de Boas Práticas; clone, fill the placeholders and export to PDF.',
-    tags:['manual','template','good practices','dryland forest','SLM','field guide','print'], added:'2026-06-23', updated:'2026-06-23' },
-
   { id:'manual-01-caatinga-fodder', fao:'manual', title:'Manual 01 – Managing the Caatinga for fodder', type:'reference', pillars:['production'],
     source:'direct', origin:'DRIP Manual Series', status:'pending',
     url:'DRIP Manual 01 - Caatinga Fodder.html',
@@ -354,9 +348,84 @@ window.DRIP_ARCHIVE = [
     summary:'Agro-extractivism of the umbu fruit – pulp, jam and juice. Gather and process the fruit of the umbuzeiro – turning a sertão icon into a growing local economy.',
     tags:['Caatinga','SLM','value chain','1-pager','Umbu'], added:'2026-06-23', updated:'2026-06-23' },
 
+  /* Miombo & Mopane SLM / SFM technologies and value chains – the DSL-IP
+     programme of work in the ecoregion (one country, one core theme).
+     Drawn from "Managing the miombo–mopane sustainably" in the biome profile. */
+  { id:'miombo-slm-ifes', fao:'manual', title:'Miombo SLM – IFES (Integrated Energy & Food Systems)', type:'reference', pillars:['production'],
+    source:'reference', origin:'DRIP – Miombo & Mopane SLM catalogue', status:'pending',
+    url:'Miombo SLM - IFES.html',
+    summary:'Malawi’s core theme – closing the loop between food, soil and household energy on one plot. Pigeon pea–maize intercropping for food, fodder and fertility, paired with fuel-efficient stoves and biogas that cut the woodfuel drawn from the woodland.',
+    tags:['Miombo','SLM','IFES','Malawi','intercropping','pigeon pea','clean cooking','value chain','1-pager'], added:'2026-06-28', updated:'2026-06-28' },
+
+  { id:'miombo-slm-beekeeping', fao:'factsheet', title:'Miombo SLM – Sustainable beekeeping & miombo honey', type:'reference', pillars:['production'],
+    source:'reference', origin:'DRIP – Miombo & Mopane SLM catalogue', status:'pending',
+    url:'Miombo SLM - Beekeeping.html',
+    summary:'Tanzania’s core theme – a non-wood forest product that pays for keeping the trees. Bark- and box-hive honey from the Tabora and Zambian honey belts turns flowering woodland into a standing-forest income; the more trees, the more honey.',
+    tags:['Miombo','SLM','honey','beekeeping','Tanzania','NWFP','Tabora','value chain','1-pager'], added:'2026-06-28', updated:'2026-06-28' },
+
+  { id:'miombo-slm-wood-energy', fao:'manual', title:'Miombo SLM – FSC charcoal from invasive bush', type:'reference', pillars:['production'],
+    source:'reference', origin:'DRIP – Miombo & Mopane SLM catalogue', status:'pending',
+    url:'Miombo SLM - FSC Charcoal.html',
+    summary:'Namibia’s core theme – turning encroaching invasive bush into a certified product. FSC-certified charcoal from bush-encroaching species restores rangeland and creates a legal, premium wood-energy value chain, with licensed rotation supply, improved kilns and clean cookstoves.',
+    tags:['Mopane','SLM','SFM','charcoal','wood energy','FSC','Namibia','bush encroachment','value chain','1-pager'], added:'2026-06-28', updated:'2026-06-28' },
+
+  { id:'miombo-slm-baobab-marula', fao:'factsheet', title:'Miombo SLM – Baobab & marula value chains', type:'reference', pillars:['production'],
+    source:'reference', origin:'DRIP – Miombo & Mopane SLM catalogue', status:'pending',
+    url:'Miombo SLM - Baobab and Marula.html',
+    summary:'Zimbabwe’s core theme – high-value products from iconic standing trees. Fruit, oil and kernels from baobab (Adansonia) and marula (Sclerocarya) processed into certifiable products that reward keeping the big trees in the landscape.',
+    tags:['Miombo','SLM','baobab','marula','Zimbabwe','NWFP','Adansonia','Sclerocarya','value chain','1-pager'], added:'2026-06-28', updated:'2026-06-28' },
+
+  { id:'miombo-slm-traditional-grains', fao:'factsheet', title:'Miombo SLM – Traditional grains & pulses (NUS)', type:'reference', pillars:['production'],
+    source:'reference', origin:'DRIP – Miombo & Mopane SLM catalogue', status:'pending',
+    url:'Miombo SLM - Traditional Grains.html',
+    summary:'Drought-hardy indigenous crops at the heart of several country themes (Angola, Botswana, Zimbabwe, Namibia). Bambara groundnut, Morama bean, finger and pearl millet, pigeon pea, hyacinth and African yam bean – neglected and underutilized species that anchor food security on poor rains and little water.',
+    tags:['Miombo','SLM','NUS','traditional grains','pulses','Bambara groundnut','millet','Morama bean','food security','1-pager'], added:'2026-06-28', updated:'2026-06-28' },
+
+  { id:'miombo-slm-mopane-worm', fao:'factsheet', title:'Miombo SLM – Mopane worm & wild harvests', type:'reference', pillars:['production','gender'],
+    source:'reference', origin:'DRIP – Miombo & Mopane SLM catalogue', status:'pending',
+    url:'Miombo SLM - Mopane Worm.html',
+    summary:'Seasonal protein and cash from the standing woodland – the mopane worm (Gonimbrasia belina), wild mushrooms and medicinal trees, gathered and traded largely by women, and harvested within community limits to keep it sustainable.',
+    tags:['Mopane','SLM','mopane worm','wild harvest','NWFP','gender','mushrooms','value chain','1-pager'], added:'2026-06-28', updated:'2026-06-28' },
+
+  { id:'miombo-slm-ecotourism', fao:'factsheet', title:'Miombo SLM – Sustainable eco-tourism', type:'reference', pillars:['production'],
+    source:'reference', origin:'DRIP – Miombo & Mopane SLM catalogue', status:'pending',
+    url:'Miombo SLM - Ecotourism.html',
+    summary:'Botswana’s core theme – income from the living woodland and its wildlife. Community-based eco-tourism that makes an intact landscape worth more standing, paired with neglected and underutilized species (Morama bean, Bambara, Kwengwe).',
+    tags:['Mopane','SLM','eco-tourism','Botswana','wildlife','community-based','value chain','1-pager'], added:'2026-06-28', updated:'2026-06-28' },
+
+  { id:'miombo-slm-cbfm', fao:'manual', title:'Miombo SLM – Community-based forest management (CBFM)', type:'reference', pillars:['production'],
+    source:'reference', origin:'DRIP – Miombo & Mopane SLM catalogue', status:'pending',
+    url:'Miombo SLM - Community Forest Management.html',
+    summary:'Tanzania’s flagship governance model – villages hold the rights and revenue to harvest, sell and protect their woodland. Participatory / Community-Based Forest Management keeps millions of hectares of miombo standing and is a natural reference for South–South exchange.',
+    tags:['Miombo','SLM','SFM','CBFM','PFM','Tanzania','community forestry','governance','approach','1-pager'], added:'2026-06-28', updated:'2026-06-28' },
+
+  { id:'miombo-slm-rangeland', fao:'manual', title:'Miombo SLM – Rangeland & agro-sylvo-pastoral management', type:'reference', pillars:['production'],
+    source:'reference', origin:'DRIP – Miombo & Mopane SLM catalogue', status:'pending',
+    url:'Miombo SLM - Rangeland Management.html',
+    summary:'Working the woodland with livestock without grazing it bare. Rotational grazing and rest, drought-tolerant seed systems and agro-sylvo-pastoral value chains that integrate trees, grazing and crops – shared with the Programme’s drylands cross-learning groups.',
+    tags:['Miombo','SLM','rangeland','grazing','agro-sylvo-pastoral','drought','seed systems','approach','1-pager'], added:'2026-06-28', updated:'2026-06-28' },
+
+  { id:'miombo-slm-protected-areas', fao:'manual', title:'Miombo SLM – Protected areas & buffer-zone management', type:'reference', pillars:['production'],
+    source:'reference', origin:'DRIP – Miombo & Mopane SLM catalogue', status:'pending',
+    url:'Miombo SLM - Protected Areas.html',
+    summary:'Mozambique’s core theme – pairing a protected core with sustainable use in the buffer. Conservation-compatible livelihoods around reserves, transboundary corridors, and community fire and harvest rules across one of Africa’s great large-mammal regions.',
+    tags:['Mopane','SLM','protected areas','buffer zone','Mozambique','connectivity','corridors','conservation','approach','1-pager'], added:'2026-06-28', updated:'2026-06-28' },
+
   { id:'marvel-dashboard', fao:'platform', title:'MARVEL – the DRIP dashboard (MRV + MEL)', type:'tool', pillars:['monitoring','knowledge'],
     source:'direct', origin:'DRIP – Monitoring & Learning', status:'pending',
     url:'MARVEL.html',
     summary:'The Programme’s monitoring-and-learning dashboard – Monitoring, Assessment, Reporting, Verification, Evaluation and Learning. A single live view of knowledge products, projects, best practices, financing, indicators and global environmental benefits, read live from this catalogue.',
-    tags:['MARVEL','MRV','MEL','dashboard','monitoring','GEB','indicators','knowledge products','finance'], added:'2026-06-24', updated:'2026-06-24' }
+    tags:['MARVEL','MRV','MEL','dashboard','monitoring','GEB','indicators','knowledge products','finance'], added:'2026-06-24', updated:'2026-06-24' },
+
+  { id:'wocat-slm-library', fao:'platform', title:'WOCAT SLM Library', type:'tool', pillars:['production','assessment','knowledge'],
+    source:'hub', origin:'WOCAT Global SLM Database (qcat.wocat.net) · QCAT API v2', status:'pending',
+    url:'WOCAT Library.html',
+    summary:'A live connection to the WOCAT Global SLM Database – sustainable land-management technologies and approaches pulled via the QCAT API, pre-filtered to drylands and re-cast in DRIP’s own classification (biome, farm-skill-tree cluster, WOCAT measures / groups / land use / degradation). A build-time snapshot, refreshed on a schedule.',
+    tags:['WOCAT','SLM','technologies','approaches','database','API','drylands','classification','knowledge hub'], added:'2026-06-28', updated:'2026-06-28' },
+
+  { id:'fao-sfm-toolbox', fao:'platform', title:'FAO Sustainable Forest Management (SFM) Toolbox', type:'tool', pillars:['production','knowledge'],
+    source:'hub', origin:'FAO Forestry · fao.org/sustainable-forest-management-toolbox', status:'validated',
+    url:'https://www.fao.org/sustainable-forest-management-toolbox/en',
+    summary:'FAO’s global toolbox of guidance, modules and tools for managing forests sustainably. DRIP is thematically linked to it as the drylands knowledge hub – tailoring SFM management and practices to the specific dryland context: the dry forests, agrosilvopastoral systems and restoration challenges of the world’s arid and semi-arid lands.',
+    tags:['SFM','sustainable forest management','FAO','toolbox','drylands','knowledge hub','forest management','linked'], added:'2026-06-28', updated:'2026-06-28' }
 ];

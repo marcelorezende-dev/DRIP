@@ -57,7 +57,7 @@ body{ font-family:var(--serif); line-height:1.6; color:var(--ink-2); background:
 .masthead{ background:var(--accent-deep); color:var(--ink-on-dark); padding:1.7rem 2.1rem 1.5rem; position:relative; }
 .masthead .mh-top{ display:flex; align-items:center; justify-content:space-between; gap:1rem; margin-bottom:1.1rem; }
 .masthead .series{ font-family:var(--sans); font-weight:700; text-transform:uppercase; letter-spacing:.22em; font-size:.74rem; color:rgba(251,248,239,.82); }
-.masthead .brand-logo{ height:30px; width:auto; filter:brightness(0) invert(1); opacity:.9; }
+.masthead .brand-logo{ height:44px; width:auto; filter:brightness(0) invert(1); opacity:.9; }
 .masthead .mh-main{ display:flex; align-items:flex-start; gap:1.2rem; }
 .masthead .mh-num{ font-family:var(--display); font-weight:700; font-size:3.4rem; line-height:.82; color:#fff;
  border:3px solid rgba(255,255,255,.55); border-radius:12px; padding:.35rem .55rem .15rem; min-width:1.9em; text-align:center; }
