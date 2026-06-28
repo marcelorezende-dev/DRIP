@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DRIP — Typologies &amp; Classifications</title>
+<link rel="icon" type="image/png" href="assets/globe.png">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap');
+@font-face{ font-family:"DermawanRough"; src:url("fonts/DermawanRough-Condensed.otf") format("opentype"); font-weight:400 700; font-display:swap; }
+@font-face{ font-family:"Poppins"; font-weight:400; src:url("fonts/Poppins-400.ttf") format("truetype"); font-display:swap; }
+@font-face{ font-family:"Poppins"; font-weight:500; src:url("fonts/Poppins-500.ttf") format("truetype"); font-display:swap; }
+@font-face{ font-family:"Poppins"; font-weight:600; src:url("fonts/Poppins-600.ttf") format("truetype"); font-display:swap; }
+@font-face{ font-family:"Poppins"; font-weight:700; src:url("fonts/Poppins-700.ttf") format("truetype"); font-display:swap; }
+*{ margin:0; padding:0; box-sizing:border-box; }
+:root{ --clay:#CF715D; --clay-deep:#B4543F; --forest:#477E59; --forest-deep:#356046; --forest-soft:#8FB59B;
+ --cream:#F5F2E8; --paper-2:#ECE7D7; --surface:#FFFFFF; --ink:#241F1B; --ink-2:#6B5E54; --ink-3:#9A8C7E;
+ --amber:#F8B133; --gold:#E8C13C; --gold-deep:#9A7327; --teal:#33B193; --bark:#754C29; --water:#3E7CB1; --slate:#244C54;
+ --border:rgba(36,31,27,.14); --hairline:rgba(36,31,27,.08); --shadow:0 4px 10px rgba(36,31,27,.06),0 10px 24px rgba(36,31,27,.05);
+ --serif:"Merriweather",Georgia,serif; --display:"DermawanRough","Oswald",sans-serif; --sans:"Poppins",system-ui,-apple-system,"Segoe UI",sans-serif; }
+body{ font-family:var(--serif); color:var(--ink-2); background:var(--cream); line-height:1.6; -webkit-font-smoothing:antialiased; }
+.doc{ max-width:1000px; margin:0 auto; padding:28px 26px 60px; }
+.printbar{ display:flex; justify-content:flex-end; gap:10px; margin:14px 0 0; }
+.printbar a,.printbar button{ font-family:var(--sans); font-weight:600; font-size:13px; cursor:pointer; text-decoration:none;
+ border-radius:999px; padding:8px 16px; border:1px solid var(--border); background:var(--surface); color:var(--slate); display:inline-flex; align-items:center; gap:7px; }
+.printbar .pdf{ background:var(--forest); color:#fff; border-color:var(--forest); }
+.masthead{ background:linear-gradient(135deg,var(--forest-deep),var(--forest)); color:#F5F2E8; border-radius:16px;
+ padding:30px 34px; margin-top:14px; position:relative; overflow:hidden; box-shadow:var(--shadow); }
+.masthead .eyebrow{ font-family:var(--sans); text-transform:uppercase; letter-spacing:.18em; font-size:.72rem; color:var(--amber); font-weight:600; }
+.masthead h1{ font-family:var(--display); font-weight:700; text-transform:uppercase; letter-spacing:.01em; font-size:2.7rem; line-height:1.02; margin:.35rem 0 .5rem; color:#fff; }
+.masthead p{ font-size:1.02rem; color:rgba(245,242,232,.92); max-width:64ch; }
+.masthead .meta{ font-family:var(--sans); font-size:.78rem; letter-spacing:.03em; color:rgba(245,242,232,.7); margin-top:14px; display:flex; gap:16px; flex-wrap:wrap; }
+.lede{ font-size:1.05rem; color:var(--ink); margin:22px 2px 6px; max-width:74ch; }
+section.b{ background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:20px 24px; margin-top:16px; box-shadow:var(--shadow); break-inside:avoid; }
+h2{ font-family:var(--serif); font-weight:900; color:var(--ink); font-size:1.32rem; line-height:1.15; margin-bottom:4px; display:flex; align-items:baseline; gap:10px; }
+h2 .n{ font-family:var(--sans); font-weight:700; font-size:.8rem; color:#fff; background:var(--forest); border-radius:7px; padding:3px 9px; }
+.sub{ font-family:var(--sans); font-size:.82rem; color:var(--ink-3); margin-bottom:14px; }
+.src{ font-family:var(--sans); font-size:.72rem; color:var(--ink-3); margin-top:12px; }
+.grid2{ display:grid; grid-template-columns:1fr 1fr; gap:14px 26px; }
+table{ width:100%; border-collapse:collapse; font-size:.92rem; }
+table td{ padding:7px 8px; border-bottom:1px solid var(--hairline); vertical-align:top; }
+td.k{ font-family:var(--sans); font-weight:600; color:var(--slate); white-space:nowrap; width:34%; }
+td.ac{ font-family:var(--sans); font-weight:700; color:var(--forest-deep); white-space:nowrap; width:30%; }
+.lbl{ font-family:var(--sans); font-weight:600; font-size:.7rem; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-3); margin:14px 0 8px; }
+.chips{ display:flex; flex-wrap:wrap; gap:6px; }
+.chip{ font-family:var(--sans); font-size:.78rem; color:var(--ink-2); background:var(--cream); border:1px solid var(--border); border-radius:999px; padding:4px 11px; }
+.chip.deg{ color:var(--clay-deep); border-color:rgba(207,113,93,.4); background:rgba(207,113,93,.07); }
+.chip.pillar{ color:var(--forest-deep); border-color:var(--forest-soft); background:rgba(71,126,89,.08); font-weight:600; }
+.chip.rank{ background:rgba(248,177,51,.14); border-color:rgba(248,177,51,.5); color:var(--gold-deep); font-weight:600; }
+.meas{ display:flex; gap:11px; align-items:flex-start; margin-bottom:9px; }
+.meas-let{ width:30px; height:30px; flex:none; border-radius:7px; display:flex; align-items:center; justify-content:center; font-family:var(--sans); font-weight:700; font-size:1rem; }
+.meas-txt{ font-size:.9rem; color:var(--ink-2); } .meas-txt b{ display:block; color:var(--ink); font-family:var(--sans); font-size:.86rem; }
+.cl{ display:flex; gap:11px; align-items:stretch; margin-bottom:9px; }
+.cl-bar{ width:5px; flex:none; border-radius:3px; background:var(--c); }
+.cl-b b{ font-family:var(--serif); color:var(--ink); font-size:.98rem; } .cl-n{ font-family:var(--sans); font-size:.72rem; color:var(--ink-3); }
+.cl-blurb{ display:block; font-size:.86rem; color:var(--ink-2); }
+.marvel{ display:flex; flex-wrap:wrap; gap:8px; margin:4px 0 2px; }
+.marvel span{ font-family:var(--sans); font-weight:600; font-size:.82rem; color:var(--slate); background:var(--paper-2); border-radius:8px; padding:6px 12px; }
+.marvel span b{ color:var(--teal); }
+.colophon{ margin-top:22px; padding:18px 22px; border-radius:12px; background:var(--surface); border:1px solid var(--border); border-top:4px solid var(--amber); font-family:var(--sans); font-size:.8rem; color:var(--ink-2); }
+.colophon b{ color:var(--ink); }
+a.inl{ color:var(--forest-deep); }
+@media (max-width:680px){ .grid2{ grid-template-columns:1fr; } .masthead h1{ font-size:2rem; } }
+@media print{
+ @page{ size:A4; margin:11mm; }
+ html,body{ background:#fff; font-size:10.4pt; line-height:1.42; }
+ .drip-topbar,.printbar{ display:none !important; }
+ .doc{ padding:0; max-width:none; }
+ .masthead{ padding:18px 22px; border-radius:10px; margin-top:0; }
+ .masthead h1{ font-size:2rem; } .lede{ margin:12px 2px 4px; font-size:1rem; }
+ section.b{ box-shadow:none; padding:13px 16px; margin-top:10px; border-radius:9px; break-inside:auto; }
+ .colophon{ box-shadow:none; margin-top:12px; } .lbl{ margin:9px 0 5px; }
+ h2,.meas,.cl,.masthead,tr{ break-inside:avoid; }
+}
+</style>
+  <link rel="stylesheet" href="drip-topbar.css">
+</head>
+<body>
+<div class="drip-topbar">
+  <a class="db-brand" href="DRIP.html"><span class="db-dm">DRIP<span>.</span></span><span class="db-sub">Drylands Restoration Initiatives Platform</span></a>
+  <nav class="db-nav">
+    <a class="db-home" href="DRIP.html"><svg class="db-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Home</span></a>
+    <a href="DRIP.html#story"><svg class="db-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg><span>About</span></a>
+    <a href="DRIP Map.html"><svg class="db-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0z"/><path d="M15 5.764v15"/><path d="M9 3.236v15"/></svg><span>Map</span></a>
+    <a href="DRIP.html#library"><svg class="db-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m16 6 4 14"/><path d="M12 6v14"/><path d="M8 8v12"/><path d="M4 4v16"/></svg><span>Library</span></a>
+    <a href="MARVEL.html"><svg class="db-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></svg><span>MARVEL</span></a>
+    <a href="Water.html"><svg class="db-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C4 11.1 3 13 3 15a7 7 0 0 0 7 7z"/></svg><span>Water</span></a>
+    <a href="DRIP.html#transparency"><svg class="db-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg><span>Transparency and Data Policy</span></a>
+    <div class="langsw" id="langsw" role="group" aria-label="Choose a language">
+      <svg class="langsw-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></svg>
+      <button type="button" class="flag flag-en is-on" data-lang="en" title="English" aria-label="English"></button>
+      <button type="button" class="flag flag-es" data-lang="es" title="Español" aria-label="Español"></button>
+      <button type="button" class="flag flag-fr" data-lang="fr" title="Français" aria-label="Français"></button>
+      <button type="button" class="flag flag-ru" data-lang="ru" title="Русский" aria-label="Русский"></button>
+      <button type="button" class="flag flag-ar" data-lang="ar" title="العربية" aria-label="العربية"></button>
+      <button type="button" class="flag flag-zh" data-lang="zh" title="中文" aria-label="中文"></button>
+    </div>
+  </nav>
+</div>
+<div class="doc">
+<div class="printbar">
+  <a class="pdf" href="resources/DRIP-Typologies-and-Classifications.pdf" target="_blank" rel="noopener">⬇ Download PDF</a>
+  <button type="button" onclick="window.print()">⎙ Print</button>
+</div>
+<header class="masthead">
+  <p class="eyebrow">DRIP · Reference 1-pager</p>
+  <h1>Typologies &amp; Classifications</h1>
+  <p>The controlled vocabularies behind the DRIP platform — how it organises content, farm practices, results and language so everything is named, grouped and findable the same way.</p>
+  <div class="meta"><span>v1.0 · 28 June 2026</span><span>FAO · GEF — DSL-IP</span><span>Aligned with the WOCAT global standard</span></div>
+</header>
+<p class="lede">DRIP uses nine interlocking classification systems. Three are <b>global standards</b> (WOCAT measures, technology groups and approaches; GEF-7 Core Indicators). The rest are <b>DRIP/DSL-IP conventions</b> that structure the library, the farm skill tree and the programme’s results framework.</p>
+<section class="b"><h2><span class="n">1</span> Content typology — the library</h2><p class="sub">Every item in the knowledge library is one of six resource types, each also tagged with a level and a biome.</p><table><tr><td class="k">Biome primer</td><td>Sets the ecological scene for a dryland biome (Caatinga, Miombo–Mopane).</td></tr><tr><td class="k">Manual</td><td>Printable good-practice manual — the DRIP Manual Series.</td></tr><tr><td class="k">Practice</td><td>A named SLM/SFM technology or approach, WOCAT-classified.</td></tr><tr><td class="k">Module</td><td>Self-paced knowledge & learning module.</td></tr><tr><td class="k">Framework</td><td>A method or framework that structures the work (ILAM, SLPF, REM…).</td></tr><tr><td class="k">Tool</td><td>Interactive tool or live dashboard (EarthMap, MARVEL, PolOpT).</td></tr></table><p class="lbl">Difficulty level</p><div class="chips"><span class="chip">Intro</span><span class="chip">Intermediate</span><span class="chip">Advanced</span></div><p class="lbl">Biome tag</p><div class="chips"><span class="chip">Caatinga</span><span class="chip">Miombo–Mopane</span><span class="chip">Global</span></div></section>
+<section class="b"><h2><span class="n">2</span> Practice clustering — the farm skill tree</h2><p class="sub">32 sustainable land-management practices grouped into 5 thematic clusters, connected by prerequisites (tiers) and earned through GPS-verified photo evidence.</p><div class="cl" style="--c:var(--water)"><span class="cl-bar"></span><div class="cl-b"><b>Water harvesting</b> <span class="cl-n">8 practices</span><span class="cl-blurb">Catch and store every drop of rain.</span></div></div><div class="cl" style="--c:var(--bark)"><span class="cl-bar"></span><div class="cl-b"><b>Soil &amp; fertility</b> <span class="cl-n">8 practices</span><span class="cl-blurb">Build deep, living, fertile soil.</span></div></div><div class="cl" style="--c:var(--forest)"><span class="cl-bar"></span><div class="cl-b"><b>Trees &amp; agroforestry</b> <span class="cl-n">6 practices</span><span class="cl-blurb">Bring trees back into the farm.</span></div></div><div class="cl" style="--c:var(--gold-deep)"><span class="cl-bar"></span><div class="cl-b"><b>Crops &amp; cropping</b> <span class="cl-n">6 practices</span><span class="cl-blurb">Grow more, with less risk.</span></div></div><div class="cl" style="--c:var(--clay)"><span class="cl-bar"></span><div class="cl-b"><b>Livestock &amp; fodder</b> <span class="cl-n">4 practices</span><span class="cl-blurb">Feed the herd through the dry season.</span></div></div><p class="lbl">Mastery ranks (by share of XP earned)</p><div class="chips"><span class="chip rank">Seedling</span><span class="chip rank">Field Hand</span><span class="chip rank">Practitioner</span><span class="chip rank">Specialist</span><span class="chip rank">Land Steward</span><span class="chip rank">Master Restorer</span></div><p class="src">Difficulty mirrors the library levels (Intro · Intermediate · Advanced). Each practice also carries the full WOCAT classification below.</p></section>
+<section class="b"><h2><span class="n">3</span> WOCAT SLM-Technologies classification</h2><p class="sub">The global standard for documenting <i>what</i> a practice is. Source: WOCAT — World Overview of Conservation Approaches and Technologies (wocat.net).</p><p class="lbl">Measures (A · V · S · M)</p><div class="meas"><span class="meas-let" style="background:var(--gold);color:#3a2408">A</span><span class="meas-txt"><b>Agronomic</b>Soil-surface, short-term — mulching, intercropping, manuring, contour cultivation.</span></div><div class="meas"><span class="meas-let" style="background:var(--forest);color:#fff">V</span><span class="meas-txt"><b>Vegetative</b>Perennial plants in alignment — trees, hedges, grass strips, windbreaks.</span></div><div class="meas"><span class="meas-let" style="background:var(--clay);color:#fff">S</span><span class="meas-txt"><b>Structural</b>Constructions that change the slope profile — terraces, bunds, dams, ponds.</span></div><div class="meas"><span class="meas-let" style="background:var(--water);color:#fff">M</span><span class="meas-txt"><b>Management</b>Change of land use/management — rotation, area closure, grazing control, improved varieties.</span></div><p class="lbl">Technology groups (26)</p><div class="chips"><span class="chip">Agroforestry</span><span class="chip">Area closure (stop use, support restoration)</span><span class="chip">Beekeeping, fishfarming etc.</span><span class="chip">Cross-slope measure</span><span class="chip">Ecosystem-based disaster risk reduction</span><span class="chip">Energy efficiency</span><span class="chip">Forest plantation management</span><span class="chip">Groundwater management</span><span class="chip">Home gardens</span><span class="chip">Improved ground/vegetation cover</span><span class="chip">Improved plant varieties, animal breeds</span><span class="chip">Integrated crop–livestock management</span><span class="chip">Integrated pest and disease management</span><span class="chip">Integrated soil fertility management</span><span class="chip">Irrigation management</span><span class="chip">Minimal soil disturbance</span><span class="chip">Natural and semi-natural forest management</span><span class="chip">Pastoralism and grazing land management</span><span class="chip">Post-harvest measures</span><span class="chip">Rotational system (rotation, fallows, shifting cultivation)</span><span class="chip">Surface water management</span><span class="chip">Waste / waste-water management</span><span class="chip">Water diversion and drainage</span><span class="chip">Water harvesting</span><span class="chip">Wetland protection/management</span><span class="chip">Windbreak / shelterbelt</span></div><p class="lbl">Land-use types (7)</p><div class="chips"><span class="chip">Cropland</span><span class="chip">Grazing land</span><span class="chip">Forest / woodlands</span><span class="chip">Mixed</span><span class="chip">Settlements / infrastructure</span><span class="chip">Waterways, water bodies, wetlands</span><span class="chip">Unproductive land</span></div><p class="lbl">Land degradation addressed (6)</p><div class="chips"><span class="chip deg">Soil erosion by water</span><span class="chip deg">Soil erosion by wind</span><span class="chip deg">Chemical soil deterioration</span><span class="chip deg">Physical soil deterioration</span><span class="chip deg">Biological degradation</span><span class="chip deg">Water degradation</span></div></section>
+<section class="b"><h2><span class="n">4</span> WOCAT SLM-Approaches classification</h2><p class="sub">The companion standard for documenting <i>how</i> a practice is introduced and supported — eight documentation dimensions (see the DRIP Manual WOCAT annexes).</p><div class="chips"><span class="chip">General information</span><span class="chip">Description of the Approach</span><span class="chip">Aims &amp; enabling / hindering conditions</span><span class="chip">Methods, actors and roles</span><span class="chip">Capacity building and activities</span><span class="chip">Financing &amp; external material support</span><span class="chip">Impact analysis &amp; concluding statements</span><span class="chip">References</span></div></section>
+<section class="b"><h2><span class="n">5</span> Programme frameworks</h2><div class="grid2"><div><p class="lbl">DSL-IP pillars (7)</p><div class="chips"><span class="chip pillar">Coordination &amp; Exchange</span><span class="chip pillar">Assessment &amp; Evidence</span><span class="chip pillar">Sustainable Production</span><span class="chip pillar">Gender &amp; Inclusion</span><span class="chip pillar">Monitoring &amp; Learning</span><span class="chip pillar">Knowledge &amp; Outreach</span><span class="chip pillar">Finance &amp; Governance</span></div><p class="lbl">MARVEL — the results layer</p><div class="marvel"><span><b>M</b>onitoring</span><span><b>A</b>ssessment</span><span><b>R</b>eporting</span><span><b>V</b>erification</span><span><b>E</b>valuation</span><span><b>L</b>earning</span></div><p class="src">MRV (results) + MEL (learning).</p></div><div><p class="lbl">GEF-7 Core Indicators</p><table><tr><td class="k">CI-3</td><td>Area of land restored</td></tr><tr><td class="k">CI-4</td><td>Area of landscapes under improved practices</td></tr><tr><td class="k">CI-6</td><td>Greenhouse-gas emissions mitigated (tCO₂e)</td></tr></table><p class="lbl">Assessment method</p><p style="font-size:.9rem">ILAM — Integrated Landscape Assessment Methodology: wall-to-wall land-condition screening (productivity, fire, land cover) via FAO EarthMap, feeding the baseline.</p></div></div></section>
+<section class="b"><h2><span class="n">6</span> Biomes in focus</h2><table><tr><td class="k">Caatinga</td><td>Brazil’s semi-arid seasonally-dry tropical forest — the platform’s reference biome.</td></tr><tr><td class="k">Miombo &amp; Mopane</td><td>Southern Africa’s great dry woodlands, where most DSL-IP child projects work.</td></tr><tr><td class="k">Global</td><td>Cross-cutting, biome-independent material.</td></tr></table></section>
+<section class="b"><h2><span class="n">7</span> Acronyms &amp; glossary</h2><p class="sub">The programme’s working vocabulary, expanded.</p><table><tr><td class="ac">DRIP</td><td>Drylands Restoration Initiatives Platform</td></tr><tr><td class="ac">DSL-IP</td><td>Dryland Sustainable Landscapes Impact Program</td></tr><tr><td class="ac">FAO</td><td>Food and Agriculture Organization of the United Nations</td></tr><tr><td class="ac">GEF</td><td>Global Environment Facility</td></tr><tr><td class="ac">SLM / SFM</td><td>Sustainable Land Management / Sustainable Forest Management</td></tr><tr><td class="ac">WOCAT</td><td>World Overview of Conservation Approaches and Technologies</td></tr><tr><td class="ac">A / V / S / M</td><td>Agronomic / Vegetative / Structural / Management (WOCAT measures)</td></tr><tr><td class="ac">ILAM</td><td>Integrated Landscape Assessment Methodology</td></tr><tr><td class="ac">SLPF</td><td>Sustainable Landscape Production Framework</td></tr><tr><td class="ac">FFS</td><td>Farmer Field Schools</td></tr><tr><td class="ac">FFF</td><td>Forest and Farm Facility</td></tr><tr><td class="ac">FFPO</td><td>Forest and Farm Producer Organisations</td></tr><tr><td class="ac">CSB</td><td>Community Seed Banks</td></tr><tr><td class="ac">REM</td><td>Regional Exchange Mechanism</td></tr><tr><td class="ac">MARVEL</td><td>Monitoring, Assessment, Reporting, Verification, Evaluation and Learning</td></tr><tr><td class="ac">MRV / MEL</td><td>Monitoring, Reporting &amp; Verification / Monitoring, Evaluation &amp; Learning</td></tr><tr><td class="ac">GEB</td><td>Global Environmental Benefits</td></tr><tr><td class="ac">CI</td><td>GEF-7 Core Indicator</td></tr><tr><td class="ac">EX-ACT</td><td>Ex-Ante Carbon-balance Tool (FAO)</td></tr><tr><td class="ac">NEXT</td><td>FAO carbon-balance tool extending EX-ACT</td></tr><tr><td class="ac">NDVI</td><td>Normalized Difference Vegetation Index</td></tr><tr><td class="ac">LADA</td><td>Land Degradation Assessment in Drylands</td></tr><tr><td class="ac">FMNR</td><td>Farmer-Managed Natural Regeneration</td></tr><tr><td class="ac">SNA</td><td>Social Network Analysis</td></tr><tr><td class="ac">DFSA</td><td>Dryland Forest Support Accelerator</td></tr><tr><td class="ac">PolOpT</td><td>Policy Optimization Tool</td></tr><tr><td class="ac">COFO</td><td>Committee on Forestry (FAO)</td></tr><tr><td class="ac">UNCCD</td><td>UN Convention to Combat Desertification</td></tr></table></section>
+<div class="colophon"><b>About this reference.</b> Compiled for the DRIP platform from the live classification systems used across the knowledge library, the farm skill tree and the DSL-IP results framework. Global standards follow <a class="inl" href="https://wocat.net/en/database/slm-practices-technologies-and-approaches/classifications-technologies/" target="_blank" rel="noopener">WOCAT</a> and the GEF-7 Core Indicators. v1.0 · 28 June 2026 · FAO / GEF — Dryland Sustainable Landscapes Impact Program.</div>
+</div>
+  <script src="drip-i18n.js"></script>
+</body>
+</html>

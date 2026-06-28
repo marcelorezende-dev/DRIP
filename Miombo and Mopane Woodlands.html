@@ -182,41 +182,35 @@ footer .foot-rule{ width:60px; height:3px; background:var(--gold); margin:1.4rem
  .credits-list{ columns:1; }
 }
 </style>
-<style>
-.drip-topbar{position:sticky;top:0;z-index:9999;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;
- background:#1f523a;border-bottom:1px solid rgba(245,242,232,.16);padding:11px 24px;
- font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased;}
-.drip-topbar *{box-sizing:border-box;}
-.drip-topbar .db-brand{display:flex;flex-direction:column;align-items:flex-start;gap:2px;text-decoration:none;}
-.drip-topbar .db-dm{font-weight:800;font-size:23px;letter-spacing:.04em;color:#F5F2E8;line-height:1;}
-.drip-topbar .db-dm span{color:#F8B133;}
-.drip-topbar .db-sub{font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;color:rgba(245,242,232,.6);}
-.drip-topbar .db-nav{display:flex;align-items:center;gap:4px;flex-wrap:wrap;justify-content:flex-end;}
-.drip-topbar .db-nav a{font-size:13px;font-weight:500;color:rgba(245,242,232,.86);text-decoration:none;padding:7px 11px;border-radius:999px;white-space:nowrap;transition:.14s;}
-.drip-topbar .db-nav a:hover{background:rgba(245,242,232,.12);color:#fff;}
-.drip-topbar .db-nav a.db-home{background:rgba(245,242,232,.12);color:#fff;}
-.drip-topbar .db-nav a.db-cta{background:#F8B133;color:#3a2408;font-weight:600;}
-.drip-topbar .db-nav a.db-cta:hover{background:#ffc658;}
-@media(max-width:780px){.drip-topbar .db-sub{display:none;}.drip-topbar{padding:9px 16px;}.drip-topbar .db-nav a{padding:6px 9px;font-size:12px;}}
-</style>
+
 <style>
 .apa-refs{list-style:none;margin:.3rem 0 0;padding:0;}
 .apa-refs li{padding-left:1.6em;text-indent:-1.6em;margin:0 0 .55rem;}
 </style>
 <link rel="stylesheet" href="drip-harmonize.css">
+  <link rel="icon" type="image/png" href="assets/globe.png">
+  <link rel="stylesheet" href="drip-topbar.css">
 </head>
 <body>
 <div class="drip-topbar">
   <a class="db-brand" href="DRIP.html"><span class="db-dm">DRIP<span>.</span></span><span class="db-sub">Drylands Restoration Initiatives Platform</span></a>
   <nav class="db-nav">
-    <a class="db-home" href="DRIP.html">⌂ Home</a>
-    <a href="DRIP.html#story">About</a>
-    <a href="DRIP Map.html">Map</a>
-    <a href="DRIP.html#library">Library</a>
-    <a href="MARVEL.html">MARVEL</a>
-    <a href="Water.html">Water</a>
-    <a href="DRIP.html#transparency">Transparency and Data Policy</a>
-    <a class="db-cta" href="DRIP.html#partner">Become a partner</a>
+    <a class="db-home" href="DRIP.html"><svg class="db-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Home</span></a>
+    <a href="DRIP.html#story"><svg class="db-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg><span>About</span></a>
+    <a href="DRIP Map.html"><svg class="db-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0z"/><path d="M15 5.764v15"/><path d="M9 3.236v15"/></svg><span>Map</span></a>
+    <a href="DRIP.html#library"><svg class="db-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m16 6 4 14"/><path d="M12 6v14"/><path d="M8 8v12"/><path d="M4 4v16"/></svg><span>Library</span></a>
+    <a href="MARVEL.html"><svg class="db-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></svg><span>MARVEL</span></a>
+    <a href="Water.html"><svg class="db-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C4 11.1 3 13 3 15a7 7 0 0 0 7 7z"/></svg><span>Water</span></a>
+    <a href="DRIP.html#transparency"><svg class="db-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg><span>Transparency and Data Policy</span></a>
+    <div class="langsw" id="langsw" role="group" aria-label="Choose a language">
+      <svg class="langsw-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></svg>
+      <button type="button" class="flag flag-en is-on" data-lang="en" title="English" aria-label="English"></button>
+      <button type="button" class="flag flag-es" data-lang="es" title="Español" aria-label="Español"></button>
+      <button type="button" class="flag flag-fr" data-lang="fr" title="Français" aria-label="Français"></button>
+      <button type="button" class="flag flag-ru" data-lang="ru" title="Русский" aria-label="Русский"></button>
+      <button type="button" class="flag flag-ar" data-lang="ar" title="العربية" aria-label="العربية"></button>
+      <button type="button" class="flag flag-zh" data-lang="zh" title="中文" aria-label="中文"></button>
+    </div>
   </nav>
 </div>
 <header data-screen-label="Header">
@@ -236,7 +230,8 @@ footer .foot-rule{ width:60px; height:3px; background:var(--gold); margin:1.4rem
   <li><a href="#biodiversity">Live data</a></li>
   <li><a href="#people">People</a></li>
   <li><a href="#pressures">Pressures</a></li>
-  <li><a href="#restoration">Management</a></li>
+  <li><a href="#restoration">Restoration</a></li>
+  <li><a href="#management">SLM technologies &amp; approaches</a></li>
   <li><a href="#matters">Why it matters</a></li>
   <li><a href="#sources">Sources</a></li>
  </ul>
@@ -415,6 +410,93 @@ footer .foot-rule{ width:60px; height:3px; background:var(--gold); margin:1.4rem
  </div>
 </section>
 
+<section id="management" data-screen-label="SLM technologies">
+ <h2><span class="kicker">Technologies and approaches</span>Managing the miombo&ndash;mopane sustainably</h2>
+ <p class="lead">Where the <a class="inl" href="#restoration">restoration toolkit</a> above is the regional state of the art, this catalogue is the <strong>DSL-IP's own programme of work</strong> in the ecoregion &ndash; the SLM and SFM technologies and value-chain approaches it is championing, country by country. It is drawn directly from the Programme's <strong>core themes</strong>: under the <em>&ldquo;one country, one core theme&rdquo;</em> model, each champion country develops a single theme &ndash; identified through <a class="inl" href="ILAM Integrated Landscape Assessment Methodology.html">ILAM</a> evidence and integrated through the <a class="inl" href="SLPF Sustainable Landscape Production Framework.html">SLPF</a> pillars &ndash; and shares it across a cross-learning group of peers through the <a class="inl" href="REM Regional Exchange Mechanism.html">Regional Exchange Mechanism</a>.</p>
+
+ <div class="callout definition">
+  <div class="callout-title">The founding principle &ndash; one country, one core theme</div>
+  <p>Rather than dispersing effort, each country champions a single, nationally significant theme that is <strong>regionally transferable across the miombo&ndash;mopane</strong>. Together they answer southern Africa's three shared challenges &ndash; <strong>declining productivity under rising pressure on the dryland forest, weak integrated extension, and limited market access and sustainable finance</strong>. Each turns the <em>standing</em> woodland and its drought-hardy crops into income, so the forest is worth more managed than cleared.</p>
+ </div>
+
+ <h3>The country core themes</h3>
+ <p>The southern-African (miombo&ndash;mopane) cluster of the DSL-IP, with each country's championed theme and the income opportunity behind it.</p>
+ <table>
+  <thead><tr><th style="width:22%;">Country champion</th><th>Core theme &ndash; SLM / SFM</th><th>Value chain / income opportunity</th></tr></thead>
+  <tbody>
+   <tr><td><strong>Malawi</strong></td><td>Integrated Energy and Food Systems (IFES)</td><td>Pigeon pea &amp; maize intercropping; fuel-efficient stoves</td></tr>
+   <tr><td><strong>Tanzania</strong></td><td>SLM / SFM &ndash; Miombo honey; sustainable beekeeping</td><td>Bark- and box-hive honey; other NUS</td></tr>
+   <tr><td><strong>Namibia</strong></td><td>SLM / SFM &ndash; FSC charcoal from invasive bush; NUS</td><td>Certified charcoal; pearl millet</td></tr>
+   <tr><td><strong>Zimbabwe</strong></td><td>SFM &ndash; baobab / marula; SLM / NUS</td><td>Baobab &amp; marula products; Bambara groundnut, finger millet</td></tr>
+   <tr><td><strong>Botswana</strong></td><td>Sustainable tourism; SLM / NUS</td><td>Eco-tourism; Morama bean, Bambara, Kwengwe</td></tr>
+   <tr><td><strong>Angola</strong></td><td>SLM / NUS</td><td>Hyacinth bean, African yam bean, jinguenga</td></tr>
+   <tr><td><strong>Mozambique</strong></td><td>Protected areas &amp; buffer-zone management</td><td>Conservation-compatible livelihoods in buffer zones</td></tr>
+  </tbody>
+ </table>
+ <p class="table-caption">After the DSL-IP / REM country core-themes table (selected southern-African entries; some themes to be confirmed through MEL consultations). NUS = neglected and underutilized species; NWFP = non-wood forest products. Full table on the <a class="inl" href="REM Regional Exchange Mechanism.html">Regional Exchange Mechanism</a>.</p>
+
+ <h3>1 &middot; Integrated energy and food systems (IFES)</h3>
+ <p>Malawi's championed theme &ndash; closing the loop between food, soil and household energy on the same plot (the <a class="inl" href="Sisteminha-IFES-Malawi-DSL-IP.html">Sisteminha&ndash;IFES</a> model).</p>
+ <div class="grid">
+  <div class="card"><h4>Pigeon pea &ndash; maize intercropping</h4><p>A nitrogen-fixing legume grown with the staple cereal &ndash; <strong>food, fodder and fertility</strong> from one field, with a second harvest and better soil for the next season.</p></div>
+  <div class="card"><h4>Fuel-efficient stoves &amp; biogas</h4><p>Clean, efficient cooking and on-farm energy that <strong>cut the woodfuel</strong> a household draws from the woodland &ndash; the &ldquo;energy&rdquo; half of IFES.</p></div>
+  <div class="card"><h4>FFPO-led extension</h4><p>Delivered farmer-to-farmer through <a class="inl" href="SLPF Sustainable Landscape Production Framework.html">Farmer Field Schools and producer organisations</a>, so adoption endures past the project.</p></div>
+ </div>
+
+ <h3>2 &middot; Sustainable forest management for wood energy</h3>
+ <p>The region runs on <a class="inl" href="#people">miombo charcoal and firewood</a>; the issue is not whether the wood is cut but how. Namibia's theme turns a problem &ndash; <strong>encroaching invasive bush</strong> &ndash; into a certified product.</p>
+ <ul class="clean">
+  <li><strong>FSC-certified charcoal from invasive bush</strong> (Namibia) &ndash; harvesting bush-encroaching species under Forest Stewardship Council certification restores rangeland <em>and</em> creates a legal, premium value chain.</li>
+  <li><strong>Licensed, rotation-based wood supply</strong> with <strong>improved kilns and clean cookstoves</strong> &ndash; cutting the wood needed per bag and the pressure on standing woodland.</li>
+  <li><strong>Community-based forest management</strong> &ndash; Tanzania's village CBFM model (see <a class="inl" href="#restoration">Restoration</a>) gives communities the rights and revenue to keep the miombo standing.</li>
+ </ul>
+
+ <h3>3 &middot; Miombo honey and sustainable beekeeping</h3>
+ <p>Tanzania's championed theme &ndash; a classic <strong>non-wood forest product</strong> that pays for keeping the trees.</p>
+ <div class="grid">
+  <div class="card"><h4>Bark- and box-hive honey</h4><p>The honey belts of Tabora and the Zambian miombo turn flowering woodland into a <strong>standing-forest income</strong> &ndash; the more trees, the more honey.</p></div>
+  <div class="card"><h4>Apiaries as forest guardians</h4><p>Bee forage ties household income directly to canopy cover, aligning livelihoods with conservation and pollinating crops and wild trees alike.</p></div>
+ </div>
+
+ <h3>4 &middot; Neglected &amp; underutilized species (NUS) and native value chains</h3>
+ <p>Drought-hardy indigenous crops and wild products &ndash; the heart of several country themes &ndash; that diversify diets and income while needing little water (Angola, Botswana, Zimbabwe, Namibia).</p>
+ <div class="grid">
+  <div class="card"><h4>Drought-hardy grains &amp; pulses</h4><p><strong>Bambara groundnut, Morama bean, finger and pearl millet, pigeon pea, hyacinth and African yam bean</strong> &ndash; resilient species adapted to poor rains, anchoring food security in the dry woodland.</p></div>
+  <div class="card"><h4>Baobab and marula <span class="sci">Adansonia &middot; Sclerocarya</span></h4><p>Zimbabwe's SFM theme &ndash; fruit, oil and kernels from iconic standing trees, processed into high-value, certifiable products.</p></div>
+  <div class="card"><h4>Mopane worm and wild harvests</h4><p>The <a class="inl" href="#people">mopane worm</a>, wild mushrooms and medicinal trees &ndash; seasonal protein and cash, gathered and traded largely by women.</p></div>
+ </div>
+
+ <h3>5 &middot; Rangeland, grazing and drought management</h3>
+ <p>Working the woodland with livestock without grazing it bare &ndash; an agro-sylvo-pastoral approach shared with the Programme's drylands cross-learning groups.</p>
+ <ul class="clean">
+  <li><strong>Sustainable grazing and pasture management</strong> &ndash; rotation and rest that let the grass-and-browse layer recover, with the standing woodland as dry-season browse.</li>
+  <li><strong>Drought management and resilient seed systems</strong> &ndash; drought-tolerant varieties and community seed security to buffer the long, single dry season.</li>
+  <li><strong>Agro-sylvo-pastoral value chains</strong> &ndash; integrating trees, grazing and crops, transferable from the REM rangeland cross-learning cluster (Kenya, Burkina Faso).</li>
+ </ul>
+
+ <h3>6 &middot; Protected areas, buffer zones and connectivity</h3>
+ <p>Mozambique's championed theme &ndash; pairing a protected core with sustainable use in the buffer, the connective tissue of a working landscape.</p>
+ <ul class="clean">
+  <li><strong>Protected-area and buffer-zone management</strong> &ndash; conservation-compatible livelihoods around reserves, so people and wildlife share the woodland.</li>
+  <li><strong>Corridors and transboundary connectivity</strong> &ndash; linking fragments across borders in one of Africa's great large-mammal regions.</li>
+  <li><strong>Fire and harvest rules</strong> &ndash; early-season burning and community limits on the mopane-worm and fuelwood harvest (see <a class="inl" href="#restoration">Restoration</a>).</li>
+ </ul>
+
+ <h3>7 &middot; The enabling environment</h3>
+ <p>The cross-cutting approaches that let any technology scale and endure &ndash; the &ldquo;how&rdquo; behind every theme.</p>
+ <ul class="clean">
+  <li><strong>Integrated land-use planning</strong> &ndash; turning <a class="inl" href="ILAM Integrated Landscape Assessment Methodology.html">ILAM</a> evidence into village and national land-use plans for Land Degradation Neutrality.</li>
+  <li><strong>Gender-responsive approaches</strong> &ndash; the <a class="inl" href="Global Gender Action Plan.html">Global Gender Action Plan</a> and gender-responsive land-use planning, since women lead much of the woodland harvest.</li>
+  <li><strong>FFPOs and South&ndash;South exchange</strong> &ndash; producer organisations and the <a class="inl" href="REM Regional Exchange Mechanism.html">REM</a> cross-learning groups that move a proven theme from one country to its peers.</li>
+  <li><strong>WOCAT documentation and sustainable finance</strong> &ndash; good practices captured with the <a class="inl" href="https://wocat.net/en/database/slm-practices-technologies-and-approaches/classifications-technologies/" target="_blank" rel="noopener">WOCAT</a> standard, and scaled through the <a class="inl" href="DFSA Campaign.html">Dryland Forest Support Accelerator</a>.</li>
+ </ul>
+
+ <div class="callout concept">
+  <div class="callout-title">From core theme to regional impact</div>
+  <p>Each theme is a working answer to a shared problem &ndash; proven in one country and designed to travel. Captured with WOCAT, integrated through the SLPF and exchanged through the REM, the seven families above are how the DSL-IP turns the miombo&ndash;mopane from a woodland under pressure into a network of <strong>productive, sustainably managed landscapes</strong>.</p>
+ </div>
+</section>
+
 <section id="matters" data-screen-label="Why it matters">
  <h2><span class="kicker">The DRIP connection</span>Why the miombo and mopane matter here</h2>
  <p>Unlike the Caatinga, the miombo&ndash;mopane is not outside the Programme &ndash; it is <strong>where much of it works</strong>. Several of the eleven DSL-IP child projects sit squarely within this belt: <strong>Angola, Botswana, Malawi, Mozambique, Tanzania and Zimbabwe</strong>. The biome is, in every sense, the African heartland of the dryland-forests agenda.</p>
@@ -563,5 +645,6 @@ footer .foot-rule{ width:60px; height:3px; background:var(--gold); margin:1.4rem
   }).catch(function(){ sbox.innerHTML='<div class="inat-err">Couldn’t reach the live species feed. <a href="'+VIEW+'" target="_blank" rel="noopener">View on iNaturalist →</a></div>'; });
 })();
 </script>
+  <script src="drip-i18n.js"></script>
 </body>
 </html>

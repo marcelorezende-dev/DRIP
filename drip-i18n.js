@@ -728,7 +728,7 @@
 
   function buildRegistry() {
     leafReg = []; textReg = [];
-    var roots = document.querySelectorAll(".dripnav, .hero, .shell, #footer");
+    var roots = document.querySelectorAll(".drip-topbar, .dripnav, .hero, .shell, #footer");
     roots.forEach(function (r) { register(r); });
     built = true;
   }
@@ -797,6 +797,27 @@
     }
   }
 
+  // Pages other than the home page do not ship the translation-notice modal.
+  // Create it on the fly so showPopup() works everywhere the switcher appears.
+  function ensureModal() {
+    if (document.getElementById("trModal")) return;
+    if (!document.body) return;
+    var m = document.createElement("div");
+    m.className = "trmodal"; m.id = "trModal";
+    m.setAttribute("role", "dialog"); m.setAttribute("aria-modal", "true");
+    m.setAttribute("aria-label", "Automated translation notice");
+    m.innerHTML =
+      '<div class="trbox">' +
+      '<button class="trx" id="trClose" aria-label="Close">&times;</button>' +
+      '<span class="trglyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></svg></span>' +
+      '<div class="trkick" id="trKick">Automated translation</div>' +
+      '<h3 id="trTitle">This page has been translated automatically</h3>' +
+      '<p id="trBody">These translations were generated automatically and are currently under review. They may contain errors or inaccuracies; where in doubt, the original English text prevails.</p>' +
+      '<button class="trok" id="trOk">Got it</button>' +
+      '</div>';
+    document.body.appendChild(m);
+  }
+
   function init() {
     var sw = document.getElementById("langsw");
     if (sw) {
@@ -805,6 +826,7 @@
         setLang(b.dataset.lang, true);
       });
     }
+    ensureModal();
     var modal = document.getElementById("trModal");
     if (modal) {
       var close = function () { modal.classList.remove("show"); };
