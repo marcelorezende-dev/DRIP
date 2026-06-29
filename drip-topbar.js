@@ -19,6 +19,14 @@
    window.DRIP_ROOT = '../' before loading to override.
    ============================================================================ */
 (function () {
+  // Embedded in an iframe (e.g. the DRIP Network embed on MARVEL.html)? Skip the
+  // banner entirely — the surrounding page already supplies the chrome, and the
+  // embed should show only the app. (A cross-origin parent throws on access to
+  // window.top; that also means we're framed, so treat it as embedded.)
+  var embedded;
+  try { embedded = (window.self !== window.top); } catch (e) { embedded = true; }
+  if (embedded) return;
+
   var ROOT = (typeof window.DRIP_ROOT === 'string')
     ? window.DRIP_ROOT
     : (/\/dsl-ip-monitoring\//.test(location.pathname) ? '../' : '');
@@ -48,7 +56,6 @@
       '<a href="' + ROOT + 'DRIP Map.html">' + ic(ICONS.map) + '<span>Map</span></a>' +
       '<a href="' + H + '#library">' + ic(ICONS.library) + '<span>Library</span></a>' +
       '<a href="' + ROOT + 'MARVEL.html">' + ic(ICONS.marvel) + '<span>MARVEL</span></a>' +
-      '<a href="' + ROOT + 'Water.html">' + ic(ICONS.water) + '<span>Water</span></a>' +
       '<a href="' + H + '#transparency">' + ic(ICONS.shield) + '<span>Transparency and Data Policy</span></a>' +
       '<div class="langsw" id="langsw" role="group" aria-label="Choose a language">' +
       '<svg class="langsw-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></svg>' +

@@ -108,7 +108,7 @@ window.DRIP_ARCHIVE_META = {
 };
 
 window.DRIP_ARCHIVE = [
-  { id:'constellation', fao:'platform', title:'The Constellation', type:'tool', pillars:['knowledge'],
+  { id:'constellation', fao:'platform', title:'The DRIP Network', type:'tool', pillars:['knowledge'],
     source:'direct', origin:'DRIP / DSL-IP KM team', status:'pending',
     url:'DSL-IP Constellation Dashboard.html',
     summary:'The whole Programme as a living, interactive 3D map – five lenses plus a Builder. The navigational backbone of DRIP.',
