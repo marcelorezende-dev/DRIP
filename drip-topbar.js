@@ -54,7 +54,7 @@
       '<a class="db-home" href="' + H + '">' + ic(ICONS.home) + '<span>Home</span></a>' +
       '<a href="' + H + '#story">' + ic(ICONS.about) + '<span>About</span></a>' +
       '<a href="' + ROOT + 'DRIP Map.html">' + ic(ICONS.map) + '<span>Map</span></a>' +
-      '<a href="' + H + '#library">' + ic(ICONS.library) + '<span>Library</span></a>' +
+      '<a href="' + ROOT + 'Library.html">' + ic(ICONS.library) + '<span>Library</span></a>' +
       '<a href="' + ROOT + 'MARVEL.html">' + ic(ICONS.marvel) + '<span>MARVEL</span></a>' +
       '<a href="' + H + '#transparency">' + ic(ICONS.shield) + '<span>Transparency and Data Policy</span></a>' +
       '<div class="langsw" id="langsw" role="group" aria-label="Choose a language">' +
