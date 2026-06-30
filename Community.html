@@ -150,6 +150,31 @@ a.inl{ color:var(--slate-2); font-weight:600; text-decoration:none; } a.inl:hove
 .ac-edn{ font-family:var(--sans); font-size:.68rem; font-weight:700; color:#fff; border-radius:999px; padding:.14rem .55rem; }
 .roster-empty{ grid-column:1/-1; text-align:center; font-family:var(--sans); font-size:.9rem; color:var(--ink-3); padding:1.6rem; }
 
+/* DOCUMENTS / REPOSITORY */
+.repo-key{ display:flex; flex-wrap:wrap; gap:.5rem 1.1rem; align-items:center; margin:.6rem 0 1.2rem; font-family:var(--sans); font-size:.78rem; color:var(--ink-2); }
+.repo-key .k{ display:inline-flex; align-items:center; gap:.45rem; }
+.badge{ font-family:var(--sans); font-size:.64rem; font-weight:700; text-transform:uppercase; letter-spacing:.05em; padding:.16rem .55rem; border-radius:999px; white-space:nowrap; }
+.badge-pub{ background:#E2F0E9; color:#2E7D6B; border:1px solid #B6DED0; }
+.badge-req{ background:#FBE7DD; color:var(--clay-deep); border:1px solid var(--clay-soft); }
+.repo-group{ margin:1.5rem 0; }
+.repo-group > h3{ margin:0 0 .6rem; font-size:.95rem; color:var(--slate); font-family:var(--sans); font-weight:700; text-transform:uppercase; letter-spacing:.06em; border-bottom:1px solid var(--hairline); padding-bottom:.4rem; }
+.doc{ display:grid; grid-template-columns:auto 1fr auto; align-items:center; gap:.9rem; padding:.7rem .9rem; border:1px solid var(--border); border-radius:11px; background:#fff; box-shadow:var(--shadow-sm); margin-bottom:.5rem; }
+.doc-ic{ flex:none; width:34px; height:34px; border-radius:8px; display:flex; align-items:center; justify-content:center; background:var(--paper-2); color:var(--clay-deep); }
+.doc-ic svg{ width:18px; height:18px; }
+.doc-main{ min-width:0; }
+.doc-title{ font-family:var(--sans); font-weight:600; font-size:.92rem; color:var(--ink); line-height:1.25; }
+.doc-meta{ font-family:var(--sans); font-size:.74rem; color:var(--ink-3); margin-top:.12rem; }
+.doc-act{ display:flex; align-items:center; gap:.6rem; flex:none; }
+.doc-dl{ display:inline-flex; align-items:center; gap:.35rem; font-family:var(--sans); font-weight:600; font-size:.8rem; text-decoration:none; color:#fff; background:var(--slate-2); border-radius:9px; padding:.42rem .8rem; transition:background .15s; }
+.doc-dl:hover{ background:var(--slate); }
+.doc-dl svg{ width:15px; height:15px; }
+.doc.req{ background:#FDFBF7; }
+.doc.req .doc-ic{ color:var(--ink-3); }
+.doc-reqnote{ font-family:var(--sans); font-size:.76rem; color:var(--ink-3); white-space:nowrap; }
+.repo-policy{ font-size:.84rem; color:var(--ink-2); background:#F3F7F6; border:1px solid var(--border); border-left:4px solid var(--teal); border-radius:10px; padding:.95rem 1.15rem; margin-top:1.4rem; }
+.repo-policy b{ color:var(--slate); }
+@media (max-width:620px){ .doc{ grid-template-columns:auto 1fr; } .doc-act{ grid-column:1/-1; justify-content:flex-start; } .doc-reqnote{ white-space:normal; } }
+
 footer{ background:var(--slate); color:#DDECEA; text-align:center; padding:2.6rem 2rem; margin-top:2.6rem; line-height:1.8; }
 footer a{ color:#7FD3C0; text-decoration:none; } footer .foot-rule{ width:60px; height:3px; background:var(--teal); margin:1.2rem auto; border:0; border-radius:2px; }
 
@@ -210,6 +235,7 @@ footer a{ color:#7FD3C0; text-decoration:none; } footer .foot-rule{ width:60px; 
   <li><a href="#school">The School</a></li>
   <li><a href="#approach">How it works</a></li>
   <li><a href="#editions">Editions</a></li>
+  <li><a href="#documents">Documents</a></li>
   <li><a href="#alumni">Alumni</a></li>
   <li><a href="#join">Get involved</a></li>
  </ul>
@@ -291,6 +317,124 @@ footer a{ color:#7FD3C0; text-decoration:none; } footer .foot-rule{ width:60px; 
    </div>
   </div>
  </div>
+</section>
+
+<!-- ============ DOCUMENTS / REPOSITORY ============ -->
+<section id="documents">
+ <h2><span class="kicker">Repository</span>Documents</h2>
+ <p class="lead">The official documents of the FAO Drylands School, gathered in one place. Public materials – concept notes, agendas, flyers, programmes and summary reports – can be downloaded directly. Participant records and internal documents are held securely and are available on request.</p>
+
+ <div class="repo-key">
+  <span class="k"><span class="badge badge-pub">Public</span> open access · download below</span>
+  <span class="k"><span class="badge badge-req">On request</span> not published here · available on request</span>
+ </div>
+
+ <div class="repo-group">
+  <h3>About the School</h3>
+  <div class="doc">
+   <div class="doc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z"/><path d="M14 2v5h5"/></svg></div>
+   <div class="doc-main"><div class="doc-title">The Drylands School – COFO Working Group overview</div><div class="doc-meta">PDF · 4.0 MB · presentation</div></div>
+   <div class="doc-act"><span class="badge badge-pub">Public</span><a class="doc-dl" href="resources/dryland-school/ds-cofowg-overview.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg>Download</a></div>
+  </div>
+ </div>
+
+ <div class="repo-group">
+  <h3>1st edition · Amman, Jordan 2023</h3>
+  <div class="doc">
+   <div class="doc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z"/><path d="M14 2v5h5"/></svg></div>
+   <div class="doc-main"><div class="doc-title">Concept note – Transformative approaches in agrosilvopastoral systems</div><div class="doc-meta">PDF · 0.6 MB</div></div>
+   <div class="doc-act"><span class="badge badge-pub">Public</span><a class="doc-dl" href="resources/dryland-school/ss1-2023-concept-note.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg>Download</a></div>
+  </div>
+  <div class="doc">
+   <div class="doc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z"/><path d="M14 2v5h5"/></svg></div>
+   <div class="doc-main"><div class="doc-title">Agenda – First Drylands Summer School</div><div class="doc-meta">PDF · 0.8 MB</div></div>
+   <div class="doc-act"><span class="badge badge-pub">Public</span><a class="doc-dl" href="resources/dryland-school/ss1-2023-agenda.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg>Download</a></div>
+  </div>
+ </div>
+
+ <div class="repo-group">
+  <h3>2nd edition · Nairobi, Kenya 2024</h3>
+  <div class="doc">
+   <div class="doc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z"/><path d="M14 2v5h5"/></svg></div>
+   <div class="doc-main"><div class="doc-title">Concept note – Monitoring restoration in agrosilvopastoral systems</div><div class="doc-meta">PDF · 0.9 MB</div></div>
+   <div class="doc-act"><span class="badge badge-pub">Public</span><a class="doc-dl" href="resources/dryland-school/ss2-2024-concept-note.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg>Download</a></div>
+  </div>
+  <div class="doc">
+   <div class="doc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z"/><path d="M14 2v5h5"/></svg></div>
+   <div class="doc-main"><div class="doc-title">Flyer &amp; call for applications</div><div class="doc-meta">PDF · 0.4 MB</div></div>
+   <div class="doc-act"><span class="badge badge-pub">Public</span><a class="doc-dl" href="resources/dryland-school/ss2-2024-flyer.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg>Download</a></div>
+  </div>
+  <div class="doc">
+   <div class="doc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z"/><path d="M14 2v5h5"/></svg></div>
+   <div class="doc-main"><div class="doc-title">Programme</div><div class="doc-meta">PDF · 0.4 MB</div></div>
+   <div class="doc-act"><span class="badge badge-pub">Public</span><a class="doc-dl" href="resources/dryland-school/ss2-2024-programme.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg>Download</a></div>
+  </div>
+  <div class="doc">
+   <div class="doc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z"/><path d="M14 2v5h5"/></svg></div>
+   <div class="doc-main"><div class="doc-title">Summary report</div><div class="doc-meta">PDF · 0.4 MB</div></div>
+   <div class="doc-act"><span class="badge badge-pub">Public</span><a class="doc-dl" href="resources/dryland-school/ss2-2024-summary-report.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg>Download</a></div>
+  </div>
+  <div class="doc">
+   <div class="doc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z"/><path d="M14 2v5h5"/></svg></div>
+   <div class="doc-main"><div class="doc-title">Evaluation summary (aggregated)</div><div class="doc-meta">PDF · 0.5 MB</div></div>
+   <div class="doc-act"><span class="badge badge-pub">Public</span><a class="doc-dl" href="resources/dryland-school/ss2-2024-evaluation-summary.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg>Download</a></div>
+  </div>
+  <div class="doc">
+   <div class="doc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z"/><path d="M14 2v5h5"/></svg></div>
+   <div class="doc-main"><div class="doc-title">FAO publication – 2nd Drylands School (cd1861en)</div><div class="doc-meta">PDF · 3.8 MB · FAO Document Repository</div></div>
+   <div class="doc-act"><span class="badge badge-pub">Public</span><a class="doc-dl" href="resources/dryland-school/ss2-2024-fao-cd1861en.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg>Download</a></div>
+  </div>
+ </div>
+
+ <div class="repo-group">
+  <h3>3rd edition · Ulaanbaatar, Mongolia 2025</h3>
+  <div class="doc">
+   <div class="doc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z"/><path d="M14 2v5h5"/></svg></div>
+   <div class="doc-main"><div class="doc-title">Concept note – Improving the governance of drylands</div><div class="doc-meta">PDF · 0.6 MB</div></div>
+   <div class="doc-act"><span class="badge badge-pub">Public</span><a class="doc-dl" href="resources/dryland-school/ss3-2025-concept-note.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg>Download</a></div>
+  </div>
+  <div class="doc">
+   <div class="doc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z"/><path d="M14 2v5h5"/></svg></div>
+   <div class="doc-main"><div class="doc-title">Call for applications</div><div class="doc-meta">PDF · 0.3 MB</div></div>
+   <div class="doc-act"><span class="badge badge-pub">Public</span><a class="doc-dl" href="resources/dryland-school/ss3-2025-call-for-applications.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg>Download</a></div>
+  </div>
+  <div class="doc">
+   <div class="doc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z"/><path d="M14 2v5h5"/></svg></div>
+   <div class="doc-main"><div class="doc-title">FAO publication – 3rd Drylands School (cd5189en)</div><div class="doc-meta">PDF · 0.3 MB · FAO Document Repository</div></div>
+   <div class="doc-act"><span class="badge badge-pub">Public</span><a class="doc-dl" href="resources/dryland-school/ss3-2025-fao-cd5189en.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg>Download</a></div>
+  </div>
+ </div>
+
+ <div class="repo-group">
+  <h3>Restricted · available on request</h3>
+  <div class="doc req">
+   <div class="doc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+   <div class="doc-main"><div class="doc-title">Participant handbooks &amp; full evaluation report</div><div class="doc-meta">May contain participant details</div></div>
+   <div class="doc-act"><span class="badge badge-req">On request</span></div>
+  </div>
+  <div class="doc req">
+   <div class="doc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+   <div class="doc-main"><div class="doc-title">Participant applications, CVs &amp; travel documents</div><div class="doc-meta">Personal data</div></div>
+   <div class="doc-act"><span class="badge badge-req">On request</span></div>
+  </div>
+  <div class="doc req">
+   <div class="doc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+   <div class="doc-main"><div class="doc-title">Training certificates</div><div class="doc-meta">Personal data · issued to graduates</div></div>
+   <div class="doc-act"><span class="badge badge-req">On request</span></div>
+  </div>
+  <div class="doc req">
+   <div class="doc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+   <div class="doc-main"><div class="doc-title">Alumni &amp; participant contact lists</div><div class="doc-meta">Personal data</div></div>
+   <div class="doc-act"><span class="badge badge-req">On request</span></div>
+  </div>
+  <div class="doc req">
+   <div class="doc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+   <div class="doc-main"><div class="doc-title">Budgets, UN-to-UN agreements, ToRs &amp; internal correspondence</div><div class="doc-meta">Internal documents</div></div>
+   <div class="doc-act"><span class="badge badge-req">On request</span></div>
+  </div>
+ </div>
+
+ <p class="repo-policy"><b>Access policy.</b> Public documents are official, non-personal materials shared for open use. Personal data (applications, certificates, contact lists) and internal documents (budgets, agreements, correspondence) are <strong>not published</strong> on this site; they are held securely and made available on request, through the <a class="inl" href="COFO Working Group on Dryland Forests.html">COFO Working Group</a> secretariat, in line with the platform's <a class="inl" href="DRIP.html#transparency">Transparency and Data Policy</a>.</p>
 </section>
 
 <!-- ============ ALUMNI ============ -->
