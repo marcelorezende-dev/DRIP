@@ -30,6 +30,7 @@
       "旱地恢复倡议平台"],
     ["About", "Acerca de", "À propos", "О платформе", "نبذة", "关于"],
     ["Map", "Mapa", "Carte", "Карта", "الخريطة", "地图"],
+    ["Community", "Comunidad", "Communauté", "Сообщество", "المجتمع", "社区"],
     ["Research", "Investigación", "Recherche", "Исследования", "البحوث", "研究"],
     ["Transparency & Data Policy",
       "Transparencia y política de datos",

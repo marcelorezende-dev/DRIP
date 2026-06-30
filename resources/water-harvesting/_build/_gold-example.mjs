@@ -1,0 +1,78 @@
+// Gold record — used to verify the generator reproduces the approved page.
+export default [
+  {
+    slug: 'semicircular-bunds',
+    file: '__wh_verify.html',
+    title: 'Semi-circular bunds',
+    icon: 'droplets',
+    badge: 'RWH',
+    cardMeta: 'Micro-catchment · water harvesting',
+    cardOneliner: 'Crescent earth or stone bunds that pond runoff around trees, shrubs and crops – the workhorse micro-catchment of the drylands.',
+    series: 'Water Harvesting · Micro-catchment',
+    subtitle: 'Crescent earth or stone bunds that pond runoff around trees, shrubs and crops',
+    banner: {
+      img: 'assets/water-harvesting/semicircular-bunds-demilune-burkina-faso.jpg',
+      alt: 'Earth half-moon bunds mulched and planted with tree seedlings in the Sahel',
+      caption: 'Earth <em>demi-lunes</em> (half-moon bunds), mulched and planted with tree seedlings, in the Sahel – Niouma, Passoré Province, Burkina Faso.',
+      credit: 'Photo: Botanischwili, <a href="https://commons.wikimedia.org/wiki/File:Demi-lune_(half-moone)_agriculture.jpg" target="_blank" rel="noopener">CC BY-SA 3.0</a>, via Wikimedia Commons',
+      objectPosition: 'center 60%',
+    },
+    whatItIs: [
+      'Semi-circular bunds – also called <strong>half-moons</strong> or, in the Sahel, <em>demi-lunes</em> – are crescent-shaped banks of earth or stone built across a gentle slope with their open ends (the two tips) pointing <strong>upslope</strong>. Each crescent catches the thin sheet of rainwater that runs off the bare ground above it and ponds it inside the basin, where it soaks in around a planted tree, shrub or patch of crop instead of running away and eroding the soil (Oweis, 2001; Mekdaschi Studer &amp; Liniger, 2013).',
+      'They are one of the workhorse <strong>micro-catchment</strong> techniques of the drylands: cheap, built by hand or by tractor, and used from rangeland restoration in the Sahel and the Near East to olive and fruit orchards. In the WOCAT classification they belong to the <strong>micro-catchment water-harvesting</strong> group, where a short bare catchment feeds runoff onto an immediately adjacent planted area.',
+    ],
+    howItWorks: [
+      'Set the crescents out <strong>on the contour</strong>, tips pointing upslope, in <strong>staggered (offset) rows</strong> so each row catches what passes between the bunds above it',
+      'Build the bund high and firm enough to hold the design storm without overtopping; on stony ground use <strong>stacked stone</strong> instead of earth',
+      'Size the bare <strong>catchment above</strong> to the planted area inside using the catchment-to-cultivated ratio, so the harvested water matches the plant\'s need and the soil can store it (Oweis, 2001)',
+      'Plant trees, shrubs or fodder at the <strong>lowest point</strong> of each basin where water collects; mulch the basin to cut evaporation',
+      'Keep animals off while plants establish, and <strong>repair the bunds after each major storm</strong>',
+    ],
+    keyFacts: [
+      ['WOCAT group', 'Micro-catchment water harvesting'],
+      ['Catchment : cultivated', '~1:1 to 10:1'],
+      ['Suitable slope', '~1–15%'],
+      ['Soil depth', '≥ 100 cm (room to store water)'],
+      ['Soil texture', 'loam to clay loam'],
+      ['Spacing (trees)', 'bunds ~5–10 m apart'],
+      ['Best for', 'trees, shrubs, fodder, orchards, rangeland restoration'],
+      ['Construction', 'manual (low cost, high labour) or mechanized'],
+    ],
+    factsNote: 'Design parameters from Oweis (2001) and the FAO water-harvesting manual (Critchley &amp; Siegert, 1991); classification from Mekdaschi Studer &amp; Liniger (2013).',
+    inlineFigure: {
+      img: 'assets/water-harvesting/semicircular-stone-bunds-ethiopia.jpg',
+      alt: 'Stone semi-circular bunds on a hillslope in the Ethiopian highlands',
+      caption: 'The stone form: semi-circular <strong>stone</strong> bunds and micro-basins on a degraded hillslope, Oda Bultum, Ethiopia. On stony or steeper ground, stacked stone replaces the earth bank.',
+      credit: 'Photo: USAID in Africa (REAAP), public domain, via <a href="https://commons.wikimedia.org/wiki/File:Resilience_Enhanced_through_Adaptation,_Action-learning_and_Partnerships_(REAAP)_(26925262761).jpg" target="_blank" rel="noopener">Wikimedia Commons</a>',
+    },
+    callout: {
+      title: 'Match the catchment to the planting',
+      body: 'The technique only works if the bare catchment above each bund is large enough to deliver the water the plant needs – but not so large that storms breach the bund. In drier years or on smooth, low-runoff ground the catchment is enlarged or its surface compacted to induce more runoff; where rainfall is higher, a smaller catchment is enough.',
+    },
+    variantsHeading: 'Two main forms &amp; a larger cousin',
+    variants: [
+      '<strong>Earth half-moons (<em>demi-lunes</em>)</strong> – hand- or tractor-built earth crescents; the classic Sahelian form for restoring bare, crusted land (Burkina Faso, Niger).',
+      '<strong>Stone semi-circular bunds</strong> – stacked-stone crescents for stony or steeper slopes, common in the Near East and the Ethiopian highlands.',
+      '<strong>Large semi-circular bunds</strong> – the same shape built bigger, to harvest runoff from a longer external slope; WOCAT classes these under macro-catchment harvesting.',
+    ],
+    wocat: {
+      measures: ['S', 'V'],
+      group: 'Micro-catchment water harvesting',
+      degradation: ['Water degradation (aridification)', 'Soil erosion by water'],
+    },
+    sources: [
+      '<strong>Theib Oweis</strong> (ex-ICARDA) – Module 1 “Setting the scene” and Module 4 “Designing micro-catchment RWH systems” (design parameters, catchment-to-cultivated ratio)',
+      '<strong>Rima Mekdaschi-Studer &amp; Hanspeter Liniger</strong> (WOCAT) – Modules 1 &amp; 2 (the four water-harvesting groups)',
+      '<strong>Abdelmadjid Boulassel</strong> (INRAA, Algeria) – Module 1, half-moon variants',
+      '<strong>Ihab Jnad</strong> (ACSAD) – Module 7, rangeland applications in Jordan, Saudi Arabia and Syria',
+      '<strong>Wael Abu Rmaileh</strong> (UN-ESCWA) – Module 8, Palestine case study',
+    ],
+    apaRefs: [
+      'Critchley, W., &amp; Siegert, K. (1991). <em>Water harvesting: A manual for the design and construction of water harvesting schemes for plant production</em>. FAO. <a class="inl" href="https://www.fao.org/4/u3160e/u3160e00.htm" target="_blank" rel="noopener">Link</a>',
+      'Mekdaschi Studer, R., &amp; Liniger, H. (2013). <em>Water harvesting: Guidelines to good practice</em>. CDE/Bern, RAIN, MetaMeta, IFAD. <a class="inl" href="https://www.wocat.net/library/media/47/" target="_blank" rel="noopener">Link</a>',
+      'Oweis, T., Prinz, D., &amp; Hachum, A. (2001). <em>Water harvesting: Indigenous knowledge for the future of the drier environments</em>. ICARDA.',
+      'FAO / ICARDA. (2022). <em>Webinars series on rainwater harvesting</em> (WEPS-NENA / Water Scarcity Initiative). <a class="inl" href="resources/water-harvesting/RWH webinar series_General flyer.pdf" target="_blank" rel="noopener">Series flyer (PDF)</a>',
+    ],
+    footMeta2: 'Micro-catchment · semi-circular bunds',
+  },
+];
