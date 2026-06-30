@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The FAO Drylands School – two-page brief | DRIP</title>
+<link rel="stylesheet" href="drip-manual.css">
+<style>
+:root{ --accent:#2E7D6B; --accent-deep:#244C54; }
+/* masthead tweaks for the FAO brief */
+.masthead .mh-top{ align-items:center; }
+.masthead .brand-logo{ height:38px; }       /* FAO logo, inverted to white by drip-manual.css */
+.masthead .mh-main{ align-items:center; }
+.mh-emblem{ width:78px; height:78px; flex:none; background:#fff; border-radius:14px; padding:.45rem; object-fit:contain; box-shadow:var(--shadow-sm); }
+/* edition table */
+table.ed{ width:100%; border-collapse:collapse; margin:.5rem 0; font-size:.88rem; }
+table.ed th{ background:var(--accent-deep); color:#fff; text-align:left; padding:.45rem .7rem; font-family:var(--sans); font-weight:600; font-size:.7rem; text-transform:uppercase; letter-spacing:.04em; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+table.ed td{ padding:.45rem .7rem; border-bottom:1px solid var(--hairline); vertical-align:top; }
+table.ed tr:last-child td{ border-bottom:0; }
+table.ed .yr{ font-family:var(--sans); font-weight:700; color:var(--accent-deep); white-space:nowrap; }
+table.ed .up{ font-family:var(--sans); font-size:.62rem; font-weight:700; text-transform:uppercase; letter-spacing:.04em; color:#fff; background:var(--water); border-radius:999px; padding:.05rem .45rem; margin-left:.35rem; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+/* co-branding row in colophon */
+.cobrand{ display:flex; align-items:center; gap:1.6rem; flex-wrap:wrap; margin:.2rem 0 .2rem; }
+.cobrand img{ width:auto; }
+.cobrand .fao{ height:34px; } .cobrand .dsl{ height:42px; } .cobrand .gef{ height:40px; }
+@media print{ table.ed{ break-inside:avoid; } .cobrand img{ -webkit-print-color-adjust:exact; print-color-adjust:exact; } }
+/* fit to two A4 pages */
+@media print{
+  @page{ size:A4; margin:10mm 12mm 11mm; }
+  body{ font-size:9pt; line-height:1.3; }
+  .m-section{ break-inside:auto; }          /* let sections flow so pages pack tight */
+  ol.steps li{ break-inside:avoid; }
+  .masthead .series{ font-size:.68rem; }
+  .colophon h2.m-h{ font-size:.82rem; }
+  .colophon .cite{ font-size:.74rem; }
+  .masthead{ padding:1.05rem 0 .9rem; }
+  .masthead h1{ font-size:1.65rem; }
+  .masthead .subtitle{ font-size:.95rem; margin-top:.3rem; }
+  .masthead .purpose{ font-size:.8rem; margin-top:.4rem; }
+  .mh-emblem{ width:64px; height:64px; }
+  .meta-strip .mi{ padding:.4rem .7rem; }
+  .meta-strip .mv{ font-size:.78rem; }
+  .body{ padding:1rem 0 .5rem; }
+  .m-section{ margin:.72rem 0; }
+  .m-section p{ margin:.32rem 0; }
+  h2.m-h{ margin-bottom:.4rem; padding-bottom:.3rem; }
+  ol.steps li{ padding:.38rem 0 .38rem 2.4rem; }
+  .callout{ margin:.6rem 0; padding:.7rem .95rem; }
+  table.ed td{ padding:.32rem .7rem; }
+  .colophon{ padding:.9rem 0 .6rem; }
+  .colophon .foot-meta{ margin-top:.6rem; padding-top:.5rem; }
+  .cobrand .fao{ height:30px; } .cobrand .dsl{ height:36px; } .cobrand .gef{ height:34px; }
+}
+</style>
+  <link rel="icon" type="image/png" href="assets/globe.png">
+  <link rel="stylesheet" href="drip-topbar.css">
+</head>
+<body>
+
+<div class="drip-topbar">
+  <a class="db-brand" href="DRIP.html"><span class="db-dm">DRIP<span>.</span></span><span class="db-sub">Drylands Restoration Initiatives Platform</span></a>
+  <nav class="db-nav">
+    <a class="db-home" href="DRIP.html"><svg class="db-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Home</span></a>
+    <a href="DRIP.html#story"><svg class="db-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg><span>About</span></a>
+    <a href="DRIP Map.html"><svg class="db-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0z"/><path d="M15 5.764v15"/><path d="M9 3.236v15"/></svg><span>Map</span></a>
+    <a href="Library.html"><svg class="db-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m16 6 4 14"/><path d="M12 6v14"/><path d="M8 8v12"/><path d="M4 4v16"/></svg><span>Library</span></a>
+    <a href="Community.html"><svg class="db-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg><span>Community</span></a>
+    <a href="MARVEL.html"><svg class="db-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></svg><span>MARVEL</span></a>
+    <a href="DRIP.html#transparency"><svg class="db-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg><span>Transparency and Data Policy</span></a>
+    <div class="langsw" id="langsw" role="group" aria-label="Choose a language">
+      <svg class="langsw-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></svg>
+      <button type="button" class="flag flag-en is-on" data-lang="en" title="English" aria-label="English"></button>
+      <button type="button" class="flag flag-es" data-lang="es" title="Español" aria-label="Español"></button>
+      <button type="button" class="flag flag-fr" data-lang="fr" title="Français" aria-label="Français"></button>
+      <button type="button" class="flag flag-ru" data-lang="ru" title="Русский" aria-label="Русский"></button>
+      <button type="button" class="flag flag-ar" data-lang="ar" title="العربية" aria-label="العربية"></button>
+      <button type="button" class="flag flag-zh" data-lang="zh" title="中文" aria-label="中文"></button>
+    </div>
+  </nav>
+</div>
+<div class="printbar">
+  <a class="btn" href="Community.html">← Community</a>
+  <button class="btn primary" onclick="window.print()">⎙ Print / Save as PDF</button>
+</div>
+
+<article class="manual">
+  <header class="masthead">
+    <div class="mh-top">
+      <img class="brand-logo" src="assets/fao-logo.png" alt="Food and Agriculture Organization of the United Nations">
+      <span class="series">Capacity &amp; Exchange · A two-page brief</span>
+    </div>
+    <div class="mh-main">
+      <img class="mh-emblem" src="assets/dryland-school-logo.png" alt="FAO Drylands School emblem">
+      <div>
+        <h1>The FAO Drylands School</h1>
+        <p class="subtitle">Training the champions of the world's drylands</p>
+        <p class="purpose">A global FAO platform for training, capacity development and the exchange of best practices in dryland forests, rangelands and agrosilvopastoral systems.</p>
+      </div>
+    </div>
+  </header>
+
+  <div class="meta-strip">
+    <div class="mi"><div class="mk">Initiative of</div><div class="mv">FAO COFO Working Group</div></div>
+    <div class="mi"><div class="mk">Established</div><div class="mv">2022</div></div>
+    <div class="mi"><div class="mk">Editions</div><div class="mv">4 · 2023–2026</div></div>
+    <div class="mi"><div class="mk">Format</div><div class="mv">4-day blended course</div></div>
+    <div class="mi"><div class="mk">Per cohort</div><div class="mv">20–25 champions</div></div>
+    <div class="mi"><div class="mk">Alumni</div><div class="mv">50+ · 25+ countries</div></div>
+    <div class="mi"><div class="mk">Language</div><div class="mv">English</div></div>
+    <div class="mi"><div class="mk">Selection</div><div class="mv">Open call</div></div>
+  </div>
+
+  <div class="body">
+    <section class="m-section">
+      <h2 class="m-h"><span class="n">i</span>What it is</h2>
+      <p class="lead">The FAO Drylands School trains <strong>“champions”</strong> – the planners, practitioners and policymakers who advocate for and operationalize transformative change in the management of dryland forests, rangelands and agrosilvopastoral systems.</p>
+      <p>An initiative of the <strong>COFO Working Group on Dryland Forests and Agrosilvopastoral Systems</strong> (a subsidiary body of FAO's Committee on Forestry, established 2016), it has run since 2022. Each edition is hosted in a different dryland region with universities, research institutes, UN bodies and the host government, back-to-back with a Working Group session, and supports the <strong>UN International Year of Rangelands and Pastoralists (IYRP) 2026</strong>.</p>
+    </section>
+
+    <section class="m-section">
+      <h2 class="m-h"><span class="n">1</span>How a school works</h2>
+      <ol class="steps">
+        <li><b>eLearning foundation.</b> Selected participants first complete the FAO eLearning Academy course <em>Transforming dryland forests and agrosilvopastoral systems</em> and prepare a case study from their own work.</li>
+        <li><b>Open call &amp; selection.</b> Partners disseminate an open call; 20–25 champions are chosen on motivation, capacity and potential impact, balancing gender, geography and diversity.</li>
+        <li><b>The four-day school.</b> A professionally facilitated, English-language course of technical lectures, group work on participants' own case studies and peer-to-peer learning.</li>
+        <li><b>Field day.</b> A day in the field with local communities and stakeholders – seeing restoration, rangeland and agrosilvopastoral practice first-hand.</li>
+        <li><b>Certificate &amp; network.</b> Graduates receive a certificate and digital badge, and join the alumni network – a standing community of practice with continued engagement.</li>
+      </ol>
+    </section>
+
+    <section class="m-section">
+      <h2 class="m-h"><span class="n">2</span>Four schools, four drylands</h2>
+      <table class="ed">
+        <thead><tr><th>Edition</th><th>Host &amp; dates</th><th>Theme</th></tr></thead>
+        <tbody>
+          <tr><td class="yr">1st · 2023</td><td>Amman, Jordan<br>Sep 2023</td><td>Transformative approaches in agrosilvopastoral systems</td></tr>
+          <tr><td class="yr">2nd · 2024</td><td>Nairobi, Kenya<br>12–15 Sep 2024</td><td>Monitoring restoration in agrosilvopastoral systems for sustainability &amp; ecosystem services</td></tr>
+          <tr><td class="yr">3rd · 2025</td><td>Ulaanbaatar, Mongolia<br>7–10 Jul 2025</td><td>Improving the governance of dryland forests, rangelands &amp; agrosilvopastoral systems</td></tr>
+          <tr><td class="yr">4th · 2026<span class="up">Upcoming</span></td><td>Adelaide, Australia<br>Jul 2026</td><td>Indigenous knowledges &amp; practices in drylands and fire management</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="m-section">
+      <h2 class="m-h"><span class="n">3</span>A growing alumni network</h2>
+      <p>Graduates form a standing, <strong>South–South community of practice</strong> that keeps exchanging knowledge and mentoring new cohorts between editions. The network already spans <strong>more than 25 countries</strong> across Africa, the Middle East, Asia, Europe and Latin America. Explore the full, filterable alumni map on the <a class="inl" href="Community.html#alumni">DRIP Community page</a>.</p>
+    </section>
+
+    <section class="m-section">
+      <h2 class="m-h"><span class="n">4</span>Partners</h2>
+      <p>Editions have been delivered with the <strong>UNCCD G20 Global Land Initiative</strong>, <strong>Community Jameel</strong>, <strong>CIFOR-ICRAF</strong>, <strong>WOCAT</strong> (CDE, University of Bern), the <strong>Swedish University of Agricultural Sciences</strong>, the <strong>Agricultural Research Council of South Africa</strong>, the <strong>IYRP Global Alliance</strong>, the GEF-7 <a class="inl" href="MARVEL.html">DSL-IP</a>, the <strong>Kenya Forest Service</strong>, host universities and the governments of Jordan, Kenya, Mongolia and Australia.</p>
+    </section>
+
+    <div class="callout">
+      <div class="ct">How to take part</div>
+      <p>Champions are recruited through an open call disseminated by FAO and partners ahead of each edition. To be ready, complete the FAO eLearning course <em>Transforming dryland forests and agrosilvopastoral systems</em> and prepare a short case study from your own work in drylands. Calls and selection are coordinated by the <a class="inl" href="COFO Working Group on Dryland Forests.html">COFO Working Group</a> secretariat with the host government and partners.</p>
+    </div>
+  </div>
+
+  <div class="colophon">
+    <h2 class="m-h">About this brief</h2>
+    <div class="col-grid">
+      <div>
+        <p class="cite">A two-page overview of the FAO Drylands School, prepared for the Drylands Restoration Initiatives Platform (DRIP). Full documentation – concept notes, agendas, reports and the alumni roster &amp; map – is on the <a class="inl" href="Community.html">DRIP Community page</a> and its <a class="inl" href="Community.html#documents">document repository</a>.</p>
+        <div class="foot-meta">
+          <span>Version 1.0 · 2026</span><span>English</span><span>Drylands Restoration Initiatives Platform</span><span>An FAO COFO Working Group initiative</span>
+        </div>
+      </div>
+      <div>
+        <h4>Partners &amp; affiliation</h4>
+        <div class="cobrand">
+          <img class="fao" src="assets/fao-logo.png" alt="Food and Agriculture Organization of the United Nations">
+          <img class="dsl" src="assets/logo-color.png" alt="DSL-IP — Dryland Sustainable Landscapes Impact Programme">
+          <img class="gef" src="assets/gef-logo.png" alt="Global Environment Facility">
+        </div>
+        <p class="cite" style="margin-top:.5rem">Contact &amp; applications: the COFO Working Group on Dryland Forests and Agrosilvopastoral Systems secretariat, FAO.</p>
+      </div>
+    </div>
+  </div>
+</article>
+
+</body>
+</html>
